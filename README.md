@@ -1,7 +1,7 @@
 # Redline
 Progressive reverse and investigation of AMX by Harman RPM packages.
 
-## Foreward
+## Foreword
 Please understand this is done from a perspective of enlightenment. If any material hosted here is believed to be unlawful please point out the exact offending files privately and I will see to their removal as soon as humanly possible.
 
 ## Purpose
