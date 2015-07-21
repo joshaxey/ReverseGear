@@ -16,8 +16,8 @@ Below is a listing of the components that make up this project.
 #### RedlineTest
 RedlineTest, a ZIP/PKZIP/DynaZIP/Custom unpacker/repacker/modifier built upon zlibnet.
 
-#### JADSharp (Personal Fork)
-A modified fork of JADSharp.
+#### JADSharp Plus
+GUI for working with the now retired JAD.
 
 #### RPM Reverse
 The continuing and evergrowing reverse of RPM packages and the platform itself.
