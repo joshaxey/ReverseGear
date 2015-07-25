@@ -1,4 +1,4 @@
-# Redline
+# ReverseGear
 Progressive reverse and investigation of AMX by Harman RPM packages.
 
 ## Foreword
@@ -25,7 +25,7 @@ GUI for working with the now retired JAD.
 <p>
 Repository is located [here](http:// "JADSharp Plus").
 
-#### RPM Reverse
+#### ReverseGear
 The continuing and evergrowing reverse of RPM packages and the platform itself.
 <p>
 Housed within this main repository.
