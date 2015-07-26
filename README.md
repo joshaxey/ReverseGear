@@ -11,19 +11,9 @@ The intention is to learn more about what exactly makes up one of these "IoT box
 <p>
 It is also to stretch the boundaries of the RPM platform and learn more about it's seemingly secretive inner workings.
 It will contain information, tools and code as well as documentation.
-
+<p>
 ## Contained Herein
 Below is a listing of the components (and their repos) that make up this project.
-
-#### Redline
-Redline, a ZIP/PKZIP/DynaZIP/Custom unpacker/repacker/modifier built upon zlibnet.
-<p>
-Repository is located [here](https://github.com/joshaxey/Redline "Redline").
-
-#### JADSharp Plus
-GUI for working with the now retired JAD.
-<p>
-Repository is located [here](https://github.com/joshaxey/JADSharp-Plus "JADSharp Plus").
 
 #### ReverseGear
 The continuing and evergrowing reverse of RPM packages and the platform itself.
@@ -34,7 +24,18 @@ Housed within this main repository.
 A collection of reference material to aid in this adventure.
 <p>
 This is PDF spec/data sheets for hardware, code snippets, etc. that have been or might be useful as this develops.
+<p>
+## Additional External Tools
 
+#### Redline
+Redline, a ZIP/PKZIP/DynaZIP/Custom unpacker/repacker/modifier built upon zlibnet.
+<p>
+Repository is located [here](https://github.com/joshaxey/Redline "Redline").
+
+#### JADSharp Plus
+GUI for working with the now retired JAD.
+<p>
+Repository is located [here](https://github.com/joshaxey/JADSharp-Plus "JADSharp Plus").
 
 ## Further
 TBC
