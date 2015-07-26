@@ -4,14 +4,17 @@ Progressive reverse and investigation of AMX by Harman RPM packages.
 Living list of reversed / unpacked contents: [here](https://github.com/joshaxey/ReverseGear/blob/master/rpmx_reverse/rpmx_contents_full/README.md "Here!").
 
 ## Notes:
-
+<p>
 ### Formats
+<pre>
 RPMX format: DynaZip
 RPM format: DynaZIP
 TKN format: DynaZIP (Protected and Unprotected)
 Code format: Java, JavaScript
-
+</pre>
+<p>
 ### Information Exposed
+<pre>
 Project Name
 Client Name
 Programmer Name
@@ -24,8 +27,10 @@ User Names
 Passwords
 Server Info (Vison2)
 Server Info (RMS)
-
+</pre>
+<p>
 ### Higher Level Info / Code Exposed
+<pre>
 PowerPC 64
 VxWorks RTOS
 Java VM
@@ -34,3 +39,4 @@ External Device Drivers
 Internal Modules
 Macros
 Misc. Meta Data
+</pre>
