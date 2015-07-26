@@ -18,7 +18,6 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   RPM_Report.pdf
 |   swt1.yaml
 |   swtInputs.yaml
-|   TREE.TXT
 |   volume.yaml
 |   
 +---commons-codec-1.4-AMX-01
