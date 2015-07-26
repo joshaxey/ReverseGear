@@ -1,7 +1,7 @@
 # ReverseGear
 Progressive reverse and investigation of AMX by Harman RPM packages.
 
-Living list of reversed / unpacked contents: [here](https://github.com/joshaxey/ReverseGear/blob/master/rpmx_contents_full/README.md "Here!").
+Living list of reversed / unpacked contents: [here](https://github.com/joshaxey/ReverseGear/blob/master/rpmx_reverse/rpmx_contents_full/README.md "Here!").
 
 ## Notes:
 
