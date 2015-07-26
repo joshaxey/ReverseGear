@@ -18,7 +18,7 @@ Below is a listing of the components (and their repos) that make up this project
 #### ReverseGear
 The continuing and evergrowing reverse of RPM packages and the platform itself.
 <p>
-Housed within this main repository. Living list of reversed / unpacked contents: [here](https://github.com/joshaxey/ReverseGear/blob/master/rpmx_contents_full/README.md "Here!").
+Housed within this main repository. Living list of reversed / unpacked contents: [here](https://github.com/joshaxey/ReverseGear/blob/master/rpmx_reverse/rpmx_contents_full/README.md "Here!").
 
 #### Reference Documents
 A collection of reference material to aid in this adventure.
