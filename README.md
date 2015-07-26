@@ -16,14 +16,14 @@ It will contain information, tools and code as well as documentation.
 Below is a listing of the components (and their repos) that make up this project.
 
 #### Redline
-RedlineTest, a ZIP/PKZIP/DynaZIP/Custom unpacker/repacker/modifier built upon zlibnet.
+Redline, a ZIP/PKZIP/DynaZIP/Custom unpacker/repacker/modifier built upon zlibnet.
 <p>
-Repository is located [here](http:// "Redline").
+Repository is located [here](https://github.com/joshaxey/Redline "Redline").
 
 #### JADSharp Plus
 GUI for working with the now retired JAD.
 <p>
-Repository is located [here](http:// "JADSharp Plus").
+Repository is located [here](https://github.com/joshaxey/JADSharp-Plus "JADSharp Plus").
 
 #### ReverseGear
 The continuing and evergrowing reverse of RPM packages and the platform itself.
