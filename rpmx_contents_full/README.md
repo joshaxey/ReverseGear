@@ -1,8 +1,6 @@
 # RPMX Level 1 Contents
 Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 
-``
-
 |   480x800-Scheduling.TP4
 |   auxSource.yaml
 |   cam1.yaml
@@ -4710,4 +4708,3 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
     \---res
             SNAPI2Standards.xml
             SNAPI2Standards.xsd
-``
