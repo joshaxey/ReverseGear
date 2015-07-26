@@ -1,0 +1,7 @@
+--- 
+panels: 
+  schPnl1:
+    bgColor: #324B73FF
+    logo: "http://dummyvisionurl.com"
+    theme: 480x800-Scheduling.TP4
+    type: V2

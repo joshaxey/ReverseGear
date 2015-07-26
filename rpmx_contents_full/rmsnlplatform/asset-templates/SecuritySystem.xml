@@ -1,0 +1,231 @@
+<!--  *********************************************  -->
+<!--                                                 -->
+<!--        AMX Resource Management Suite            -->
+<!--         Duet Device Asset Template              -->
+<!--                                                 -->
+<!--           TYPE:  Security System                -->
+<!--                                                 -->
+<!--  *********************************************  -->
+<asset name="Security System" 
+       description="Security Sysetm"
+       assetTypeKey="SecuritySystem"
+       templateVersion="4.0.0" >
+
+  <!--  *********************************************  -->
+  <!--           ASSET METADATA PROPERTIES             -->
+  <!--  *********************************************  -->
+  <metadata>
+    <!--            All Duet Modules           -->
+    <property name="Duet Device Category" key="duet.device.category" moduleProperty="Device-Category" />
+    <property name="Duet Device Channels" key="duet.device.channels" moduleProperty="Device-Channels"   dataType="NUMBER"  lowerBounds="0" />
+    <property name="Duet Device Levels" key="duet.device.levels" moduleProperty="Device-Levels"   dataType="NUMBER" lowerBounds="0" />
+    <property name="Duet Device Revision" key="duet.device.revision" moduleProperty="Device-Revision" />
+    <property name="Duet Module" key="duet.module.name" moduleProperty="Duet-Module" />
+    <property name="Duet Module Version" key="duet.module.version" method="getVersion" />
+    <property name="Physical Device (DPS)" key="duet.physical.dps" moduleProperty="Physical-Device" />
+  </metadata>
+
+  <!--  *********************************************  -->
+  <!--            ASSET MONITORED PARAMETERS           -->
+  <!--  *********************************************  -->
+  <parameters>	
+	<!--           All Duet Component              -->   
+    <parameter  name="Online Status"
+                description="Current asset online or offline state" 
+                key="asset.online"
+                allowReset="false"                
+                resetValue=""
+                parameterType="ASSET_ONLINE"   
+                units=""
+                dataType="ENUMERATION"
+                trackChanges="true" >
+        <thresholds>
+            <threshold name="Offline" 
+                       enabled="true" 
+                       compareOperator="EQUAL_TO"
+                       value="Offline" 
+                       statusTypeKey="ROOM_COMMUNICATION_ERROR"
+                       delayed="false"
+                       delayInterval=""
+                       notifyOnTrip="true"
+                       notifyOnRestore="true" />
+        </thresholds>                
+        <enumerations>
+                <enumeration ordinal="0" name="Offline" value="false" />
+                <enumeration ordinal="1" name="Online"  value="true" />
+        </enumerations>
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="isDeviceOnLine" javaType="java.lang.Boolean" />
+        </currentValueLookup>
+        <listener addListenerMethod="addModuleComponentListener"
+                  removeListenerMethod="removeModuleComponentListener"
+                  eventMethod="processDeviceOnLineEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.base.IModuleComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+    
+    <parameter  name="Device Data Initialized"
+                description="Duet module data has been initialized" 
+                key="asset.data.initialized"
+                allowReset="false"                
+                resetValue=""
+                parameterType="NONE"   
+                units=""
+                dataType="BOOLEAN"
+                trackChanges="false" >
+        <enumerations />    
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="isDataInitialized" javaType="java.lang.Boolean" />
+        </currentValueLookup>
+        <listener addListenerMethod="addModuleComponentListener"
+                  removeListenerMethod="removeModuleComponentListener"
+                  eventMethod="processDataInitializedEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.base.IModuleComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+    
+    <parameter  name="Module Debug State"
+                description="Duet module's current debug level" 
+                key="asset.debug.level"
+                allowReset="false"                
+                resetValue=""
+                units=""
+                dataType="ENUMERATION"
+                trackChanges="true"
+                parameterType="NONE" >
+            <enumerations>
+                <enumeration ordinal="0" name="Error"   value="1" />
+                <enumeration ordinal="1" name="Warning" value="2" />
+                <enumeration ordinal="2" name="Info"    value="3" />
+                <enumeration ordinal="3" name="Debug"   value="4" />                
+            </enumerations>
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getDebugState" javaType="java.lang.Integer" />
+        </currentValueLookup>
+        <listener addListenerMethod="addModuleComponentListener"
+                  removeListenerMethod="removeModuleComponentListener"
+                  eventMethod="processDebugEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.base.IModuleComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+
+    <!-- Power State Parameter - this is a fixed value of ON, this device cannot be turned OFF-->   
+    <parameter  name="Power Status"
+                description="This asset has a fixed power state of ON" 
+                key="asset.power"
+                allowReset="false"                
+                resetValue=""
+                parameterType="ASSET_POWER"   
+                units=""
+                dataType="ENUMERATION"
+                trackChanges="false"  
+                initialValue="On" >
+        <enumerations>
+                <enumeration ordinal="0" name="Off" instance="static" field="OFF" />
+                <enumeration ordinal="1" name="On"  instance="static" field="ON" />
+        </enumerations>
+    </parameter>    
+    
+   	<!--           Security System Component              -->   
+   	<parameter  name="Security Status"
+                description="Current security status" 
+                key="secuirty.system.status"
+                allowReset="false"                
+                resetValue=""
+                parameterType="SECURITY_STATE"   
+                units=""
+                dataType="ENUMERATION"
+                trackChanges="false"                
+               	>
+	    <enumerations>
+                <enumeration ordinal="0" name="Disarmed" instance="static" field="DISARMED" />
+                <enumeration ordinal="1" name="Armed Home"  instance="static" field="ARMED_HOME" />
+                <enumeration ordinal="2" name="Armed"  instance="static" field="ARMED" />
+                <enumeration ordinal="3" name="Alarm"  instance="static" field="ALARM" />
+        </enumerations>
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getSecurityStatus" javaType="com.amx.duet.devicesdk.type.SecurityStatus" />
+        </currentValueLookup> 
+        <listener addListenerMethod="addSecuritySystemComponentListener"
+                  removeListenerMethod="removeSecuritySystemComponentListener"
+                  eventMethod="processSecurityStatusEvent">
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.ISecuritySystemComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>     
+  
+    <parameter  name="OK to Arm"
+                description="Whether it is OK to arm the security system" 
+                key="security.oktoarm"
+                allowReset="false"                
+                resetValue=""
+                parameterType="NONE"   
+                units=""
+                dataType="BOOLEAN"
+                trackChanges="false"
+                hasModuleProperty="Has-OK-To-Arm"
+               	>
+        <enumerations />  
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="isOKToArm" javaType="java.lang.Boolean" />
+        </currentValueLookup> 
+        <listener addListenerMethod="addSecuritySystemComponentListener"
+                  removeListenerMethod="removeSecuritySystemComponentListener"
+                  eventMethod="processOKToArmEvent">
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.ISecuritySystemComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>	
+    
+  </parameters>    
+  
+  <!--  *********************************************  -->
+  <!--              ASSET CONTROL METHODS              -->
+  <!--  *********************************************  -->
+
+  <methods>     
+	<!--           Security System Component              -->     
+    <method name="Set Security State"
+            description="Set the current security system state" 
+            key="security.system.state" 
+            invokeMethod="setSecurityState" >
+       <arguments>
+         <argument ordinal="0"  
+                   name="Security System State"
+                   description="Select the security system state"
+                   dataType="ENUMERATION"
+                   defaultValue=""
+                   javaType="com.amx.duet.devicesdk.type.SecurityState" >
+            <enumerations>
+                <enumeration ordinal="0" name="None" instance="static" field="NONE" />
+                <enumeration ordinal="1" name="Arm Home" instance="static" field="ARM_HOME" />
+                <enumeration ordinal="2" name="Arm"  instance="static" field="ARM" />
+                <enumeration ordinal="3" name="Arm Home Now"  instance="static" field="ARM_HOME_NOW" />
+                <enumeration ordinal="4" name="Arm Now"  instance="static" field="ARM_NOW" />
+                <enumeration ordinal="5" name="Disarm"  instance="static" field="DISARM" />
+                <enumeration ordinal="6" name="Fire"  instance="static" field="FIRE" />
+                <enumeration ordinal="7" name="Panic"  instance="static" field="PANIC" />
+                <enumeration ordinal="8" name="Police"  instance="static" field="POLICE" />
+                <enumeration ordinal="9" name="Medical"  instance="static" field="MEDICAL" />
+            </enumerations>
+         </argument>
+         <argument ordinal="1"  
+                   name="Security System Password"
+                   description="Enter the security system password"
+                   dataType="STRING"
+                   defaultValue=""
+                   javaType="java.lang.String" >
+         </argument>  
+       </arguments>
+    </method>
+    
+  </methods>
+</asset>

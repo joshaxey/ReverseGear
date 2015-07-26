@@ -1,0 +1,504 @@
+<!--  *********************************************  -->
+<!--                                                 -->
+<!--        AMX Resource Management Suite            -->
+<!--         Duet Device Asset Template              -->
+<!--                                                 -->
+<!--           TYPE:  HVAC	                		 -->
+<!--                                                 -->
+<!--  *********************************************  -->
+<asset name="HVAC" 
+       description="HVAC"
+       assetTypeKey="HVAC"
+       templateVersion="4.0.0" >
+
+  <!--  *********************************************  -->
+  <!--           ASSET METADATA PROPERTIES             -->
+  <!--  *********************************************  -->
+  <metadata>
+  
+    <!--            All Duet Modules           -->
+    <property name="Duet Device Category" key="duet.device.category" moduleProperty="Device-Category" />
+    <property name="Duet Device Channels" key="duet.device.channels" moduleProperty="Device-Channels"   dataType="NUMBER"  lowerBounds="0" />
+    <property name="Duet Device Levels" key="duet.device.levels" moduleProperty="Device-Levels"   dataType="NUMBER" lowerBounds="0" />
+    <property name="Duet Device Revision" key="duet.device.revision" moduleProperty="Device-Revision" />
+    <property name="Duet Module" key="duet.module.name" moduleProperty="Duet-Module" />
+    <property name="Duet Module Version" key="duet.module.version" method="getVersion" />
+    <property name="Physical Device (DPS)" key="duet.physical.dps" moduleProperty="Physical-Device" />
+
+    
+  	<!--           HVAC Component              -->   
+    <property name="Cool Setpoint Range:Hi" 
+              key="hvac.cool.setpoint.hi" 
+              method="getCoolSetpointRangeHigh" 
+              dataType="NUMBER" 
+              lowerBounds="-200" 
+              upperBounds="300" 
+              hasModuleProperty="Has-CoolSetpoint"/>    
+    <property name="Cool Setpoint Range:Low" 
+              key="hvac.cool.setpoint.low" 
+              method="getCoolSetpointRangeLow" 
+              dataType="NUMBER" 
+              lowerBounds="-200" 
+              upperBounds="300" 
+              hasModuleProperty="Has-CoolSetpoint"/>    
+    <property name="Heat Setpoint Range High" 
+              key="hvac.heat.setpoint.high" 
+              method="getHeatSetpointRangeHigh" 
+              dataType="NUMBER" 
+              lowerBounds="-200" 
+              upperBounds="300"
+               />    
+    <property name="Heat Setpoint Range Low" 
+              key="hvac.heat.setpoint.low" 
+              method="getHeatSetpointRangeLow" 
+              dataType="NUMBER" 
+              lowerBounds="-200" 
+              upperBounds="300" 
+             /> 
+    <property name="Temperature Scale" 
+              key="hvac.temperature.scale" 
+              method="getTemperatureScale" 
+              dataType="STRING"
+              hasModuleProperty="Has-Temperature-Scale">     	      
+    </property>   
+                
+  </metadata>
+
+  <!--  *********************************************  -->
+  <!--            ASSET MONITORED PARAMETERS           -->
+  <!--  *********************************************  -->
+     <parameters>
+    
+    <!--           All Duet Component              -->   
+    <parameter  name="Online Status"
+                description="Current asset online or offline state" 
+                key="asset.online"
+                allowReset="false"                
+                resetValue=""
+                parameterType="ASSET_ONLINE"   
+                units=""
+                dataType="ENUMERATION"
+                trackChanges="true" >
+        <thresholds>
+            <threshold name="Offline" 
+                       enabled="true" 
+                       compareOperator="EQUAL_TO"
+                       value="Offline" 
+                       statusTypeKey="ROOM_COMMUNICATION_ERROR"
+                       delayed="false"
+                       delayInterval=""
+                       notifyOnTrip="true"
+                       notifyOnRestore="true" />
+        </thresholds>                
+        <enumerations>
+                <enumeration ordinal="0" name="Offline" value="false" />
+                <enumeration ordinal="1" name="Online"  value="true" />
+        </enumerations>
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="isDeviceOnLine" javaType="java.lang.Boolean" />
+        </currentValueLookup>
+        <listener addListenerMethod="addModuleComponentListener"
+                  removeListenerMethod="removeModuleComponentListener"
+                  eventMethod="processDeviceOnLineEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.base.IModuleComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+    
+    <parameter  name="Device Data Initialized"
+                description="Duet module data has been initialized" 
+                key="asset.data.initialized"
+                allowReset="false"                
+                resetValue=""
+                parameterType="NONE"   
+                units=""
+                dataType="BOOLEAN"
+                trackChanges="false" >
+        <enumerations />    
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="isDataInitialized" javaType="java.lang.Boolean" />
+        </currentValueLookup>
+        <listener addListenerMethod="addModuleComponentListener"
+                  removeListenerMethod="removeModuleComponentListener"
+                  eventMethod="processDataInitializedEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.base.IModuleComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+    
+    <parameter  name="Module Debug State"
+                description="Duet module's current debug level" 
+                key="asset.debug.level"
+                allowReset="false"                
+                resetValue=""
+                units=""
+                dataType="ENUMERATION"
+                trackChanges="true"
+                parameterType="NONE" >
+            <enumerations>
+                <enumeration ordinal="0" name="Error"   value="1" />
+                <enumeration ordinal="1" name="Warning" value="2" />
+                <enumeration ordinal="2" name="Info"    value="3" />
+                <enumeration ordinal="3" name="Debug"   value="4" />                
+            </enumerations>
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getDebugState" javaType="java.lang.Integer" />
+        </currentValueLookup>
+        <listener addListenerMethod="addModuleComponentListener"
+                  removeListenerMethod="removeModuleComponentListener"
+                  eventMethod="processDebugEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.base.IModuleComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+
+    <!--           HVAC Component              -->
+    <parameter  name="Cool Setpoint"
+                description="Current cool setpoint" 
+                key="hvac.cool.setpoint"
+                allowReset="false"                
+                resetValue="0"
+                units="&#0176;"
+                dataType="NUMBER"
+                trackChanges="false"
+                parameterType="NONE"                
+                minLookupMethod="getCoolSetpointRangeLow"
+                maxLookupMethod="getCoolSetpointRangeHigh"
+                hasModuleProperty="Has-CoolSetpoint"
+                >
+        <enumerations />
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getCoolSetpoint" javaType="java.lang.Boolean" />
+        </currentValueLookup>    
+        <listener addListenerMethod="addHVACComponentListener"
+                  removeListenerMethod="removeHVACComponentListener"
+                  eventMethod="processCoolSetpointEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IHVACComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+    
+    <parameter  name="Heat Setpoint"
+                description="Current heat setpoint" 
+                key="hvac.heat.setpoint"
+                allowReset="false"                
+                resetValue="0"
+                units="&#0176;"
+                dataType="NUMBER"
+                trackChanges="false"
+                parameterType="NONE"                
+                minLookupMethod="getHeatSetpointRangeLow"
+                maxLookupMethod="getHeatSetpointRangeHigh"
+                >
+        <enumerations />
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getHeatSetpoint" javaType="java.lang.Integer" />
+        </currentValueLookup>
+        <listener addListenerMethod="addHVACComponentListener"
+                  removeListenerMethod="removeHVACComponentListener"
+                  eventMethod="processHeatSetpointEvent">
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IHVACComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+    
+    <!-- The power status is derived from the FanStatus ON/OFF -->   
+    <parameter  name="Power Status"
+                description="Current asset power state" 
+                key="asset.power"
+                allowReset="false"                
+                resetValue=""
+                parameterType="ASSET_POWER"   
+                units=""
+                dataType="ENUMERATION"
+                trackChanges="true" >
+        <enumerations>
+                <enumeration ordinal="0" name="Off" instance="static" field="OFF" />
+                <enumeration ordinal="1" name="On"  instance="static" field="ON" />
+        </enumerations>
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getFanStatus" javaType="com.amx.duet.devicesdk.type.PowerState" />
+        </currentValueLookup>
+        <listener addListenerMethod="addHVACComponentListener"
+                  removeListenerMethod="removeHVACComponentListener"
+                  eventMethod="processFanStatusEvent">
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IHVACComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+        
+    <parameter  name="Fan Status"
+                description="Current fan status" 
+                key="hvac.fan.status"
+                allowReset="false"                
+                resetValue=""
+                parameterType="NONE"   
+                units=""
+                dataType="ENUMERATION"
+                trackChanges="false"
+               	>
+	    <enumerations>
+                <enumeration ordinal="0" name="Off" instance="static" field="OFF" />
+                <enumeration ordinal="1" name="On"  instance="static" field="ON" />
+            </enumerations>
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getFanStatus" javaType="com.amx.duet.devicesdk.type.PowerState" />
+        </currentValueLookup>
+        <listener addListenerMethod="addHVACComponentListener"
+                  removeListenerMethod="removeHVACComponentListener"
+                  eventMethod="processFanStatusEvent">
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IHVACComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter> 
+  
+    <parameter  name="Thermostat Hold"
+                description="The thermostat hold state" 
+                key="hvac.thermostat.hold"
+                allowReset="false"                
+                resetValue=""
+                parameterType="NONE"   
+                units=""
+                dataType="BOOLEAN"
+                trackChanges="false"
+                hasModuleProperty="Has-Hold"
+               	>
+        <enumerations />    
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="isHoldOn" javaType="java.lang.Boolean" />
+        </currentValueLookup>      
+        <listener addListenerMethod="addHVACComponentListener"
+                  removeListenerMethod="removeHVACComponentListener"
+                  eventMethod="processHoldEvent">
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IHVACComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+    
+    <parameter  name="Thermostat Lock"
+                description="The thermostat lock state" 
+                key="hvac.thermostat.lock"
+                allowReset="false"                
+                resetValue=""
+                parameterType="NONE"   
+                units=""
+                dataType="BOOLEAN"
+                trackChanges="false"
+                hasModuleProperty="Has-Lock"
+               	>
+        <enumerations />    
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="isLockOn" javaType="java.lang.Boolean" />
+        </currentValueLookup>     
+        <listener addListenerMethod="addHVACComponentListener"
+                  removeListenerMethod="removeHVACComponentListener"
+                  eventMethod="processLockEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IHVACComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+    
+    <parameter  name="HVAC State"
+                description="Current hvac state" 
+                key="hvac.state"
+                allowReset="false"                
+                resetValue=""
+                parameterType="HVAC_STATE"   
+                units=""
+                dataType="ENUMERATION"
+                trackChanges="false"
+               	>
+	    <enumerations>
+                <enumeration ordinal="0" name="Off" instance="static" field="OFF" />
+                <enumeration ordinal="1" name="Heat"  instance="static" field="HEAT" />
+                <enumeration ordinal="2" name="Emergency Heat"  instance="static" field="EMERGENCY_HEAT" />
+                <enumeration ordinal="3" name="Cool"  instance="static" field="COOL" />
+                <enumeration ordinal="4" name="Auto"  instance="static" field="AUTO" />
+            </enumerations>
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getHVACState" javaType="com.amx.duet.devicesdk.type.HVACState" />
+        </currentValueLookup>      
+        <listener addListenerMethod="addHVACComponentListener"
+                  removeListenerMethod="removeHVACComponentListener"
+                  eventMethod="processHVACStateEvent">
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IHVACComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter> 
+    
+    <parameter  name="Indoor Temperature"
+                description="Current indoor temperature" 
+                key="temperature.indoor"
+                allowReset="false"                
+                resetValue="0"
+                units="&#0176;"
+                dataType="DECIMAL"
+                trackChanges="false"
+                parameterType="TEMPERATURE"   
+                bargraphKey="temperature"             
+                min="-200"
+                max="300">
+        <enumerations />
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getIndoorTemperature" javaType="java.lang.Float" />
+        </currentValueLookup>       
+        <listener addListenerMethod="addHVACComponentListener"
+                  removeListenerMethod="removeHVACComponentListener"
+                  eventMethod="processIndoorTemperatureEvent">
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IHVACComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+ 
+    <parameter  name="Outdoor Temperature"
+                description="Current outdoor temperature" 
+                key="temperature.outdoor"
+                allowReset="false"                
+                resetValue="0"
+                units="&#0176;"
+                dataType="DECIMAL"
+                trackChanges="false"
+                parameterType="TEMPERATURE"     
+                bargraphKey="temperature"              
+                min="-200"
+                max="300"
+                hasModuleProperty="Has-Outdoor-Temperature">
+        <enumerations />
+        <currentValueLookup updateOperation="SET_VALUE">
+             <method name="getOutdoorTemperature" javaType="java.lang.Float" />
+        </currentValueLookup>      
+        <listener addListenerMethod="addHVACComponentListener"
+                  removeListenerMethod="removeHVACComponentListener"
+                  eventMethod="processOutdoorTemperatureEvent">
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IHVACComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+    
+  </parameters>  
+  <!--  *********************************************  -->
+  <!--              ASSET CONTROL METHODS              -->
+  <!--  *********************************************  -->
+
+  <methods>   
+   <!--           HVAC Component              -->   
+    <method name="Set Cool Setpoint"
+            description="Set the cool setpoint" 
+            key="hvac.cool.setpoint" 
+            invokeMethod="setCoolSetpoint"
+            hasModuleProperty="Has-CoolSetpoint" >
+       <arguments>
+         <argument ordinal="0"  
+                   name="Cool Setpoint"
+                   description="Set the cool setpoint"
+                   dataType="NUMBER"
+                   defaultValue=""
+                   minLookupMethod="getCoolSetpointRangeLow"
+                   maxLookupMethod="getCoolSetpointRangeHigh"
+                   step="1"
+                   javaType="java.lang.Integer" />
+       </arguments>
+    </method>
+    
+    <method name="Set Heat Setpoint"
+            description="Set the heat setpoint" 
+            key="hvac.heat.setpoint" 
+            invokeMethod="setHeatSetpoint"
+             >
+       <arguments>
+         <argument ordinal="0"  
+                   name="Heat Setpoint"
+                   description="Set the heat setpoint"
+                   dataType="NUMBER"
+                   defaultValue=""
+                   minLookupMethod="getHeatSetpointRangeLow"
+                   maxLookupMethod="getHeatSetpointRangeHigh"
+                   step="1"
+                   javaType="java.lang.Integer" />
+       </arguments>
+    </method>
+    
+    <method name="Set Fan State"
+            description="Set the fan state" 
+            key="hvac.fan.state" 
+            invokeMethod="setFanState" >
+       <arguments>
+         <argument ordinal="0"  
+                   name="Fan State"
+                   description="Select the fan state to apply"
+                   dataType="ENUMERATION"
+                   defaultValue=""
+                   javaType="com.amx.duet.devicesdk.type.FanState" >
+            <enumerations>
+                <enumeration ordinal="0" name="Auto" instance="static" field="AUTO" />
+                <enumeration ordinal="1" name="On"  instance="static" field="ON" />
+            </enumerations>
+         </argument> 
+       </arguments>
+    </method>
+    
+    <method name="Set HVAC State"
+            description="Set the HVAC state" 
+            key="hvac.state" 
+            invokeMethod="setHVACState" >
+       <arguments>
+         <argument ordinal="0"  
+                   name="HVAC State"
+                   description="Select the HVAC state to apply"
+                   dataType="ENUMERATION"
+                   defaultValue=""
+                   javaType="com.amx.duet.devicesdk.type.HVACState" >
+            <enumerations>
+                <enumeration ordinal="0" name="Off" instance="static" field="OFF" />
+                <enumeration ordinal="1" name="Heat"  instance="static" field="HEAT" />
+                <enumeration ordinal="2" name="Emergency Heat"  instance="static" field="EMERGENCY_HEAT" />
+                <enumeration ordinal="3" name="Cool"  instance="static" field="COOL" />
+                <enumeration ordinal="4" name="Auto"  instance="static" field="AUTO" />
+            </enumerations>
+         </argument> 
+       </arguments>
+    </method>
+    
+    <method name="Sets Thermostat Hold"
+            description="Sets the thermostat hold state ON or OFF" 
+            key="hvac.thermostat.hold" 
+            invokeMethod="setHoldOn" 
+            hasModuleProperty="Has-Hold">
+       <arguments>
+         <argument ordinal="0"  
+                   name="Thermostat Hold State"
+                   description="Select the thermostat hold state to apply"
+                   dataType="BOOLEAN"
+                   javaType="java.lang.Boolean"
+                   defaultValue="false" />
+       </arguments>
+    </method>
+    
+    <method name="Sets Thermostat Lock"
+            description="Sets the thermostat lock state ON or OFF" 
+            key="hvac.thermostat.lock" 
+            invokeMethod="setLockOn" 
+            hasModuleProperty="Has-Lock">
+       <arguments>
+         <argument ordinal="0"  
+                   name="Thermostat Lock State"
+                   description="Select the thermostat lock state to apply"
+                   dataType="BOOLEAN"
+                   javaType="java.lang.Boolean"
+                   defaultValue="false" />
+       </arguments>
+    </method>    
+  </methods>
+</asset>

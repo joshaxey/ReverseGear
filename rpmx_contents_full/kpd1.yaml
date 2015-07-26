@@ -1,0 +1,15 @@
+--- 
+kpd1:
+  deviceMake: AMX
+  deviceModel: MET-7E-WH
+  friendlyName: Dummy Keypad
+  guiMappings: 
+    button6: "disp1|1|channel|25|to"
+    button4: "cam1|0|channel|163|off"
+    button5: "disp1|1|channel|24|to"
+    button2: "macro|room1.on"
+    button3: "cam1|0|channel|163|on"
+    button1: "macro|room1.off"
+  lvlMappings: 
+    level1: "vol|pgm1"
+  physicalDevice: "8001:1:0"

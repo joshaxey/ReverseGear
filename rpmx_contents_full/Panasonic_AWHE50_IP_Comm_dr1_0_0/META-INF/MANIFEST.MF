@@ -1,0 +1,78 @@
+Manifest-Version: 1.0.0
+PROPERTY-Has-Power: true
+PROPERTY-Has-Iris: true
+Import-Package: com.amx.duet.devicesdk; specification-version=1.15.0,c
+ om.amx.duet.devicesdk.base; specification-version=1.15.0,com.amx.duet
+ .devicesdk.component; specification-version=1.15.0,com.amx.duet.devic
+ esdk.type; specification-version=1.15.0,org.osgi.service.http; specif
+ ication-version=1.1,org.osgi.service.device; specification-version=1.
+ 0.1,com.amx.duet.driver; specification-version=1.0.1,com.amx.duet.cor
+ e.osgi; specification-version=1.0.1,com.amx.duet.da; specification-ve
+ rsion=1.0.2,com.amx.duet.util.metadata; specification-version=1.0.1,c
+ om.amx.duet.util; specification-version=1.0.1
+PROPERTY-Has-Pan-Tilt-Speed: true
+PROPERTY-Has-Focus-Speed: true
+PROPERTY-Has-Auto-Focus-Cycle: true
+Device-Model: AW-HE50,AW-HE120,AW-HE60
+Bundle-Version: 1.0.5
+Bundle-Copyright: (C) Copyright AMX Corp. 2004 - 2011. All Rights Rese
+ rved.
+Bundle-Name: Panasonic_AWHE50_IP_Comm_dr1_0_0
+Device-SDKClass: com.amx.duet.devicesdk.Camera
+PROPERTY-Has-Camera-Preset: true
+AMX-Type: Duet
+Device-Category: IP
+DynamicImport-Package: *
+PROPERTY-Has-Pan-Tilt: true
+PROPERTY-Has-Auto-Iris-Cycle: true
+PROPERTY-Has-Auto-Focus: true
+Duet-Firmware-Version: 3.50.430
+PROPERTY-Has-Power-Cycle: true
+Bundle-Activator: com.amx.duet.impl.Panasonic.AWHE50.dr1_0_0.Activator
+Device-Make: Panasonic
+Device-Revision: 1.0.0
+Device-SDKInterface: com.amx.duet.devicesdk.ICamera2
+Export-Package: com.amx.duet.Panasonic.AWHE50.dr1_0_0; specification-v
+ ersion=1.0.5,com.amx.duet.impl.Panasonic.AWHE50.dr1_0_0; specificatio
+ n-version=1.0.5,com.amx.duet.tools.Panasonic.AWHE50.net.http.dr1_0_0;
+  specification-version=1.0.5,com.amx.duet.util.regexp.Panasonic.AWHE5
+ 0.dr1_0_0; specification-version=1.0.5,com.amx.duet.util.tools.Panaso
+ nic.AWHE50.dr1_0_0; specification-version=1.0.5,org.apache.commons.co
+ dec.binary.dr1_0_0; specification-version=1.0.5,org.apache.commons.co
+ dec.digest.dr1_0_0; specification-version=1.0.5,org.apache.commons.co
+ dec.dr1_0_0; specification-version=1.0.5,org.apache.commons.codec.lan
+ guage.dr1_0_0; specification-version=1.0.5,org.apache.commons.codec.n
+ et.dr1_0_0; specification-version=1.0.5,org.apache.commons.httpclient
+ .auth.dr1_0_0; specification-version=1.0.5,org.apache.commons.httpcli
+ ent.cookie.dr1_0_0; specification-version=1.0.5,org.apache.commons.ht
+ tpclient.dr1_0_0; specification-version=1.0.5,org.apache.commons.http
+ client.methods.dr1_0_0; specification-version=1.0.5,org.apache.common
+ s.httpclient.methods.multipart.dr1_0_0; specification-version=1.0.5,o
+ rg.apache.commons.httpclient.params.dr1_0_0; specification-version=1.
+ 0.5,org.apache.commons.httpclient.protocol.dr1_0_0; specification-ver
+ sion=1.0.5,org.apache.commons.httpclient.util.dr1_0_0; specification-
+ version=1.0.5,org.apache.commons.logging.dr1_0_0; specification-versi
+ on=1.0.5,org.apache.commons.logging.impl.dr1_0_0; specification-versi
+ on=1.0.5
+Device-Levels: 35
+Router-Service: com.amx.duet.routers.snapi.ISNAPIRouter
+PROPERTY-Has-Iris-Speed: true
+PROPERTY-Has-Tilt-Ramp: true
+PROPERTY-Has-Camera-Preset-Cycle: true
+File-Dependencies: devicesdkrt.jar; specification-version=1.15.0,snapi
+ router.jar; specification-version=1.15.0
+PROPERTY-Has-Pan-Ramp: true
+PROPERTY-Has-Focus: true
+Device-Class: com.amx.duet.impl.Panasonic.AWHE50.dr1_0_0.PanasonicCame
+ ra
+Bundle-Vendor: AMX LLC.
+PROPERTY-Has-Iris-Ramp: true
+PROPERTY-Has-Focus-Ramp: true
+PROPERTY-Has-Zoom-Ramp: true
+Device-Channels: 301
+PROPERTY-Has-Zoom-Speed: true
+PROPERTY-Has-Zoom: true
+PROPERTY-Has-Auto-Iris: true
+Device-Interface: com.amx.duet.impl.Panasonic.AWHE50.dr1_0_0.IPanasoni
+ cCamera
+

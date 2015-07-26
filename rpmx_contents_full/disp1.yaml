@@ -1,0 +1,17 @@
+--- 
+disp1:
+  duetModule: 
+    manifest: 
+      Duet-Module: Samsung_DB55D_Comm_dr1_0_0
+      Device-SDKClass: com.amx.duet.devicesdk.TV
+      Device-Make: Samsung
+      Device-Category: "ip,serial,rs-232"
+      Device-Revision: 1.0.0
+      Bundle-Version: 1.0.0
+      Device-GUID: ""
+      Device-Model: DB55D
+    properties: 
+      - "1|command|PROPERTY-Baud_Rate,9600"
+  fileName: Samsung_DB55D_Comm_dr1_0_0.jar
+  friendlyName: Dummy LCD
+  physicalDevice: "5001:1:0"

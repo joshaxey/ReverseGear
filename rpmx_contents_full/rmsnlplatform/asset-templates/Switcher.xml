@@ -1,0 +1,395 @@
+<!--  *********************************************  -->
+<!--                                                 -->
+<!--        AMX Resource Management Suite            -->
+<!--         Duet Device Asset Template              -->
+<!--                                                 -->
+<!--           TYPE:  Switcher                		 -->
+<!--                                                 -->
+<!--  *********************************************  -->
+<asset name="Switcher" 
+       description="Switcher"
+       assetTypeKey="Switcher"
+       templateVersion="4.0.0" >
+
+  <!--  *********************************************  -->
+  <!--           ASSET METADATA PROPERTIES             -->
+  <!--  *********************************************  -->
+  <metadata>
+  
+    <!--            All Duet Modules           -->
+    <property name="Duet Device Category" key="duet.device.category" moduleProperty="Device-Category" />
+    <property name="Duet Device Channels" key="duet.device.channels" moduleProperty="Device-Channels"   dataType="NUMBER"  lowerBounds="0" />
+    <property name="Duet Device Levels" key="duet.device.levels" moduleProperty="Device-Levels"   dataType="NUMBER" lowerBounds="0" />
+    <property name="Duet Device Revision" key="duet.device.revision" moduleProperty="Device-Revision" />
+    <property name="Duet Module" key="duet.module.name" moduleProperty="Duet-Module" />
+    <property name="Duet Module Version" key="duet.module.version" method="getVersion" />
+    <property name="Physical Device (DPS)" key="duet.physical.dps" moduleProperty="Physical-Device" />
+    
+    <!--           Switcher Component          -->     
+    <property name="Switcher Input Count" 
+              key="switcher.input.count" 
+              method="getInputCount" 
+              dataType="NUMBER" 
+              lowerBounds="0"               
+               />    
+	<property name="Switcher Output Count" 
+              key="switcher.output.count" 
+              method="getOutputCount" 
+              dataType="NUMBER" 
+              lowerBounds="0"              
+               />            
+    <property name="Switcher Preset Count" 
+              key="switcher.preset.count" 
+              method="getSwitcherPresetCount" 
+              dataType="NUMBER" 
+              lowerBounds="0" 
+              hasModuleProperty="Has-Switcher-Preset"
+              />    
+     
+  </metadata>
+
+  <!--  *********************************************  -->
+  <!--            ASSET MONITORED PARAMETERS           -->
+  <!--  *********************************************  -->
+  <parameters>
+    <!--           All Duet Component              -->   
+    <parameter  name="Online Status"
+                description="Current asset online or offline state" 
+                key="asset.online"
+                allowReset="false"                
+                resetValue=""
+                parameterType="ASSET_ONLINE"   
+                units=""
+                dataType="ENUMERATION"
+                trackChanges="true" >
+        <thresholds>
+            <threshold name="Offline" 
+                       enabled="true" 
+                       compareOperator="EQUAL_TO"
+                       value="Offline" 
+                       statusTypeKey="ROOM_COMMUNICATION_ERROR"
+                       delayed="false"
+                       delayInterval=""
+                       notifyOnTrip="true"
+                       notifyOnRestore="true" />
+        </thresholds>                
+        <enumerations>
+                <enumeration ordinal="0" name="Offline" value="false" />
+                <enumeration ordinal="1" name="Online"  value="true" />
+        </enumerations>
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="isDeviceOnLine" javaType="java.lang.Boolean" />
+        </currentValueLookup>
+        <listener addListenerMethod="addModuleComponentListener"
+                  removeListenerMethod="removeModuleComponentListener"
+                  eventMethod="processDeviceOnLineEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.base.IModuleComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+    
+    <parameter  name="Device Data Initialized"
+                description="Duet module data has been initialized" 
+                key="asset.data.initialized"
+                allowReset="false"                
+                resetValue=""
+                parameterType="NONE"   
+                units=""
+                dataType="BOOLEAN"
+                trackChanges="false" >
+        <enumerations />    
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="isDataInitialized" javaType="java.lang.Boolean" />
+        </currentValueLookup>
+        <listener addListenerMethod="addModuleComponentListener"
+                  removeListenerMethod="removeModuleComponentListener"
+                  eventMethod="processDataInitializedEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.base.IModuleComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+    
+    <parameter  name="Module Debug State"
+                description="Duet module's current debug level" 
+                key="asset.debug.level"
+                allowReset="false"                
+                resetValue=""
+                units=""
+                dataType="ENUMERATION"
+                trackChanges="true"
+                parameterType="NONE" >
+            <enumerations>
+                <enumeration ordinal="0" name="Error"   value="1" />
+                <enumeration ordinal="1" name="Warning" value="2" />
+                <enumeration ordinal="2" name="Info"    value="3" />
+                <enumeration ordinal="3" name="Debug"   value="4" />                
+            </enumerations>
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getDebugState" javaType="java.lang.Integer" />
+        </currentValueLookup>
+        <listener addListenerMethod="addModuleComponentListener"
+                  removeListenerMethod="removeModuleComponentListener"
+                  eventMethod="processDebugEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.base.IModuleComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+    
+    <!-- Power State Parameter - this is a fixed value of ON, this device cannot be turned OFF-->   
+    <parameter  name="Power Status"
+                description="This asset has a fixed power state of ON" 
+                key="asset.power"
+                allowReset="false"                
+                resetValue=""
+                parameterType="ASSET_POWER"   
+                units=""
+                dataType="ENUMERATION"
+                trackChanges="false"  
+                initialValue="On" >
+        <enumerations>
+                <enumeration ordinal="0" name="Off" instance="static" field="OFF" />
+                <enumeration ordinal="1" name="On"  instance="static" field="ON" />
+        </enumerations>
+    </parameter>        
+    
+    <!--           Volume Component              -->
+    <parameter  name="Volume Mute"
+                description="The current volume mute state" 
+                key="volume.mute"
+                allowReset="false"                
+                resetValue=""
+                parameterType="NONE"   
+                units=""
+                dataType="BOOLEAN"
+                trackChanges="false" 
+                hasModuleProperty="Has-Volume"                   
+               	>
+        <enumerations />    
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="isVolumeMuteOn" javaType="java.lang.Boolean" />
+        </currentValueLookup>       
+        <listener addListenerMethod="addVolumeComponentListener"
+                  removeListenerMethod="removeVolumeComponentListener"
+                  eventMethod="processVolumeMuteEvent">
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IVolumeComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+   
+    <parameter  name="Volume Level"
+                description="Current volume level" 
+                key="volume.level"
+                allowReset="false"                
+                resetValue=""
+                dataType="LEVEL"
+                trackChanges="false"
+                parameterType="NONE"
+                units=""                
+                min="0"
+                max="255"
+                bargraphKey="volume.level"
+                hasModuleProperty="Has-Volume">
+        <enumerations />  
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getVolume" javaType="java.lang.Integer" />
+        </currentValueLookup> 
+        <listener addListenerMethod="addVolumeComponentListener"
+                  removeListenerMethod="removeVolumeComponentListener"
+                  eventMethod="processVolumeEvent">
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IVolumeComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter> 
+    
+    <!--           Gain Component              -->
+    <parameter  name="Gain Mute"
+                description="The current gain mute state" 
+                key="gain.mute"
+                allowReset="false"                
+                resetValue=""
+                parameterType="NONE"   
+                units=""
+                dataType="BOOLEAN"
+                trackChanges="false"  
+                hasModuleProperty="Has-Gain"                
+               	>
+        <enumerations />    
+        <currentValueLookup updateOperation="SET_VALUE">
+        	<method name="isGainMuteOn" javaType="java.lang.Boolean" />
+        </currentValueLookup>  
+        <listener addListenerMethod="addGainComponentListener"
+                  removeListenerMethod="removeGainComponentListener"
+                  eventMethod="processGainMuteEvent">
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IGainComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+   
+    <parameter  name="Gain Level"
+                description="Current gain level" 
+                key="gain.level"
+                allowReset="false"                
+                resetValue=""
+                dataType="LEVEL"
+                trackChanges="false"
+                parameterType="NONE"
+                units=""                
+                min="0"
+                max="255"
+                bargraphKey="general"
+                hasModuleProperty="Has-Gain">
+        <enumerations />  
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getGain" javaType="java.lang.Integer" />
+        </currentValueLookup> 
+        <listener addListenerMethod="addGainComponentListener"
+                  removeListenerMethod="removeGainComponentListener"
+                  eventMethod="processGainEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IGainComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter> 
+  </parameters>
+  
+  <!--  *********************************************  -->
+  <!--              ASSET CONTROL METHODS              -->
+  <!--  *********************************************  -->
+
+  <methods>
+      
+	<!--          Volume Component          --> 
+    <method name="Set Volume Mute"
+            description="Turn the volume mute on or off" 
+            key="volume.mute" 
+            invokeMethod="setVolumeMuteOn" 
+            hasModuleProperty="Has-Volume">
+       <arguments>
+         <argument ordinal="0"  
+                   name="Volume Mute State"
+                   description="Select the volume mute state to apply"
+                   dataType="BOOLEAN"
+                   defaultValue="false"
+                   javaType="java.lang.Boolean"  />
+       </arguments>
+    </method>
+      
+    <method name="Set Volume Level"
+            description="Set the volume level" 
+            key="volume.level" 
+            invokeMethod="setVolume"
+            hasModuleProperty="Has-Volume" >
+       <arguments>
+         <argument ordinal="0"  
+                   name="Volume Level"
+                   description="Set the volume level in the range 0-255"
+                   dataType="LEVEL"
+                   defaultValue=""
+                   min="0"
+                   max="255"
+                   step="1"
+                   javaType="java.lang.Integer" />
+       </arguments>
+    </method>   
+       
+    <!--          Gain Component          -->     
+    <method name="Set Gain Mute"
+            description="Turn the gain mute ON or OFF" 
+            key="gain.mute" 
+            invokeMethod="setGainMuteOn"
+            hasModuleProperty="Has-Gain" >
+       <arguments>
+         <argument ordinal="0"  
+                   name="Gain Mute State"
+                   description="Select the gain mute state to apply"
+                   dataType="BOOLEAN"
+                   defaultValue=""
+                   javaType="java.lang.Boolean" />
+       </arguments>
+    </method>
+      
+    <method name="Set Gain Level"
+            description="Set the gain level" 
+            key="gain.level" 
+            invokeMethod="setGain" 
+            hasModuleProperty="Has-Gain">
+       <arguments>
+         <argument ordinal="0"  
+                   name="Gain Level"
+                   description="Set the gain level in the range 0-255"
+                   dataType="LEVEL"
+                   defaultValue=""
+                   min="0"
+                   max="255"
+                   step="1"
+                   javaType="java.lang.Integer" />
+       </arguments>
+    </method>
+ 	
+ 	<!--          Switcher Component          --> 
+    <method name="Select Switcher Preset"
+            description="Select the switcher's preset" 
+            key="switcher.preset" 
+            invokeMethod="setSwitcherPreset"
+            hasModuleProperty="Has-Switcher-Preset" >
+       <arguments>
+         <argument ordinal="0"  
+                   name="Switcher Preset"
+                   description="Select the switcher's preset to apply"
+                   dataType="NUMBER"
+                   defaultValue="1"
+                   min="1"
+                   maxLookupMethod="getSwitcherPresetCount"         
+                   javaType="java.lang.Integer" >          
+         </argument> 
+       </arguments>
+    </method>
+    
+    <method name="Switch"
+            description="Connect the input source to the output source" 
+            key="switcher.switch" 
+            invokeMethod="switchInputToOutput" 
+            >
+       <arguments>
+		<argument ordinal="0"  
+                   name="Switch Level"
+                   description="Select the switch level to apply"
+                   dataType="ENUMERATION"
+                   defaultValue="All"
+                   javaType="com.amx.duet.devicesdk.type.SwitchLevel" >
+            <enumerations>
+                <enumeration ordinal="0" name="All" instance="static" field="ALL" />
+                <enumeration ordinal="1" name="Audio"  instance="static" field="AUDIO" />
+                <enumeration ordinal="2" name="Video"  instance="static" field="VIDEO" />
+            </enumerations>
+         </argument> 
+         <argument ordinal="1"  
+                   name="Input"
+                   description="Set the switcher's input source"
+                   dataType="NUMBER"
+                   defaultValue=""
+                   min="0"
+                   maxLookupMethod="getInputCount"         
+                   javaType="java.lang.Integer" >          
+         </argument> 
+         <argument ordinal="2"  
+                   name="Output"
+                   description="Set the switcher's output source"
+                   dataType="NUMBER"
+                   defaultValue=""
+                   min="0"
+                   maxLookupMethod="getOutputCount"         
+                   javaType="java.lang.Integer" >          
+         </argument> 
+       </arguments>
+    </method>
+    
+
+  </methods>
+</asset>

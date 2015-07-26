@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" data-ng-app="app" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" data-ng-app="app" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" data-ng-app="app" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" data-ng-app="app" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title data-ng-bind="title">RPM</title>
+
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" href="content/images/touch-icon-iphone.png" />
+  <link rel="apple-touch-icon" sizes="72×72"   href="content/images/apple-touch-icon-72×72.png" />
+  <link rel="apple-touch-icon" sizes="114×114" href="content/images/apple-touch-icon-114×114.png" />
+
+  <link href="vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendors/angular-xeditable/css/xeditable.css" rel="stylesheet">
+  <link href="content/css/app.css" rel="stylesheet">
+
+  <script src="vendors/modernizr/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+</head>
+<body>
+
+
+  <div data-ng-include="'app/layout/layout.html'"></div>
+
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="vendors/jquery/jquery-1.11.0.min.js"><\/script>')</script>
+
+  <!-- Bootstrap (v3.1.1) -->
+  <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- Angular (v1.3.1 -->
+  <script src="vendors/angular/v1.3.1/angular.min.js"></script>
+  <script src="vendors/angular/v1.3.1/angular-route.min.js"></script>
+
+  <!-- Angular-xEditable (v0.1.8) -->
+  <script src="vendors/angular-xeditable/js/xeditable.min.js"></script>
+
+  <!-- Bootstrapping -->
+  <script src="app/app.js"></script>
+  <script src="app/app.routes.js"></script>
+  <script src="app/js/controllers/rpmControllers.js"></script>
+  <script src="app/js/services/rpmServices.js"></script>
+
+  <!-- Reusable Blocks/Modules -->
+  <script src="app/blocks/logger/logger-module.js"></script>
+
+  <!-- Core modules -->
+  <script src="app/core/app.core.js"></script>
+
+  <!-- Features -->
+  <script src="app/layout/layout-module.js"></script>
+  <script src="app/dashboard/dashboard-module.js"></script>
+  <script src="app/settings/settings-module.js"></script>
+  <script src="app/environment/environment-module.js"></script>
+</body>
+</html>

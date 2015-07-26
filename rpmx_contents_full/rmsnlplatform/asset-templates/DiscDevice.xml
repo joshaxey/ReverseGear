@@ -1,0 +1,473 @@
+<!--  *********************************************  -->
+<!--                                                 -->
+<!--        AMX Resource Management Suite            -->
+<!--         Duet Device Asset Template              -->
+<!--                                                 -->
+<!--           TYPE:  DISC DEVICE	                 -->
+<!--                                                 -->
+<!--  *********************************************  -->
+<asset name="Disc Device" 
+       description="Disc Device"
+       assetTypeKey="DiscDevice"
+       templateVersion="4.0.0" >
+
+  <!--  *********************************************  -->
+  <!--           ASSET METADATA PROPERTIES             -->
+  <!--  *********************************************  -->
+  <metadata>
+    <!--            All Duet Modules           -->
+    <property name="Duet Device Category" key="duet.device.category" moduleProperty="Device-Category" />
+    <property name="Duet Device Channels" key="duet.device.channels" moduleProperty="Device-Channels"   dataType="NUMBER"  lowerBounds="0" />
+    <property name="Duet Device Levels" key="duet.device.levels" moduleProperty="Device-Levels"   dataType="NUMBER" lowerBounds="0" />
+    <property name="Duet Device Revision" key="duet.device.revision" moduleProperty="Device-Revision" />
+    <property name="Duet Module" key="duet.module.name" moduleProperty="Duet-Module" />
+    <property name="Duet Module Version" key="duet.module.version" method="getVersion" />
+    <property name="Physical Device (DPS)" key="duet.physical.dps" moduleProperty="Physical-Device" />
+
+    
+    <!--           DiscTransport Component              -->   
+    <property name="Disc Capacity" key="disc.capacity" method="getDiscCapacity" dataType="NUMBER" lowerBounds="0" />    
+  </metadata>
+
+  <!--  *********************************************  -->
+  <!--            ASSET MONITORED PARAMETERS           -->
+  <!--  *********************************************  -->
+ <parameters>
+    <!--           All Duet Component              -->   
+    <parameter  name="Online Status"
+                description="Current asset online or offline state" 
+                key="asset.online"
+                allowReset="false"                
+                resetValue=""
+                parameterType="ASSET_ONLINE"   
+                units=""
+                dataType="ENUMERATION"
+                trackChanges="true" >
+        <thresholds>
+            <threshold name="Offline" 
+                       enabled="true" 
+                       compareOperator="EQUAL_TO"
+                       value="Offline" 
+                       statusTypeKey="ROOM_COMMUNICATION_ERROR"
+                       delayed="false"
+                       delayInterval=""
+                       notifyOnTrip="true"
+                       notifyOnRestore="true" />
+        </thresholds>                
+        <enumerations>
+                <enumeration ordinal="0" name="Offline" value="false" />
+                <enumeration ordinal="1" name="Online"  value="true" />
+        </enumerations>
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="isDeviceOnLine" javaType="java.lang.Boolean" />
+        </currentValueLookup>
+        <listener addListenerMethod="addModuleComponentListener"
+                  removeListenerMethod="removeModuleComponentListener"
+                  eventMethod="processDeviceOnLineEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.base.IModuleComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+    
+    <parameter  name="Device Data Initialized"
+                description="Duet module data has been initialized" 
+                key="asset.data.initialized"
+                allowReset="false"                
+                resetValue=""
+                parameterType="NONE"   
+                units=""
+                dataType="BOOLEAN"
+                trackChanges="false" >
+        <enumerations />    
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="isDataInitialized" javaType="java.lang.Boolean" />
+        </currentValueLookup>
+        <listener addListenerMethod="addModuleComponentListener"
+                  removeListenerMethod="removeModuleComponentListener"
+                  eventMethod="processDataInitializedEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.base.IModuleComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+    
+    <parameter  name="Module Debug State"
+                description="Duet module's current debug level" 
+                key="asset.debug.level"
+                allowReset="false"                
+                resetValue=""
+                units=""
+                dataType="ENUMERATION"
+                trackChanges="true"
+                parameterType="NONE" >
+            <enumerations>
+                <enumeration ordinal="0" name="Error"   value="1" />
+                <enumeration ordinal="1" name="Warning" value="2" />
+                <enumeration ordinal="2" name="Info"    value="3" />
+                <enumeration ordinal="3" name="Debug"   value="4" />                
+            </enumerations>
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getDebugState" javaType="java.lang.Integer" />
+        </currentValueLookup>
+        <listener addListenerMethod="addModuleComponentListener"
+                  removeListenerMethod="removeModuleComponentListener"
+                  eventMethod="processDebugEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.base.IModuleComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+
+    <!--           Power Component              -->   
+    <parameter  name="Power Status"
+                description="Current asset power state" 
+                key="asset.power"
+                allowReset="false"                
+                resetValue=""
+                parameterType="ASSET_POWER"   
+                units=""
+                dataType="ENUMERATION"
+                trackChanges="true"
+                hasModuleProperty="Has-Power" >
+		<enumerations>
+                <enumeration ordinal="0" name="Off" instance="static" field="OFF" />
+                <enumeration ordinal="1" name="On"  instance="static" field="ON" />
+        </enumerations>
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getPower" javaType="com.amx.duet.devicesdk.type.PowerState" />
+        </currentValueLookup>
+        <listener addListenerMethod="addPowerComponentListener"
+                  removeListenerMethod="removePowerComponentListener"
+                  eventMethod="processPowerEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IPowerComponentListener</proxyInterface>
+                  </proxyInterfaces>
+        </listener>
+    </parameter> 
+    
+    <!--           DiscTransport Component              -->
+    <parameter  name="Transport State"
+                description="Current disc transport" 
+                key="transport.state"
+                allowReset="false"                
+                resetValue=""
+                units=""
+                dataType="ENUMERATION"
+                initialValue="Stop"
+                trackChanges="true"
+                parameterType="TRANSPORT_STATE"
+                hasModuleProperty="Has-Disc-Transport" >
+        <enumerations>
+                <enumeration ordinal="0" name="Stop"  instance="static" field="STOP" />
+                <enumeration ordinal="1" name="Play" instance="static" field="PLAY"   />
+                <enumeration ordinal="2" name="Pause"  instance="static" field="PAUSE" />                
+                <enumeration ordinal="3" name="Previous"  instance="static" field="PREVIOUS" />                
+                <enumeration ordinal="4" name="Next"  instance="static" field="NEXT" />                
+                <enumeration ordinal="5" name="Scan_Fwd"  instance="static" field="SCAN_FWD" />                
+                <enumeration ordinal="6" name="Scan_Rev"  instance="static" field="SCAN_REV" />                
+                <enumeration ordinal="7" name="Frame_Fwd"  instance="static" field="FRAME_FWD" />                
+                <enumeration ordinal="8" name="Frame_Rev"  instance="static" field="FRAME_REV" />                
+                <enumeration ordinal="9" name="Slow_Fwd"  instance="static" field="SLOW_FWD" />                
+                <enumeration ordinal="10" name="Slow_Rev"  instance="static" field="SLOW_REV" />                
+                <enumeration ordinal="11" name="Record"  instance="static" field="RECORD" />                
+                <enumeration ordinal="12" name="Record_Pause"  instance="static" field="RECORD_PAUSE" />                
+        </enumerations>      
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getDiscTransport" javaType="com.amx.duet.devicesdk.type.DiscTransport" />
+        </currentValueLookup>
+        <listener addListenerMethod="addDiscTransportComponentListener"
+                  removeListenerMethod="removeDiscTransportComponentListener"
+                  eventMethod="processDiscTransportEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IDiscTransportComponentListener</proxyInterface>                  
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+
+    <parameter  name="Run Time"
+                description="Current disc transport runtime" 
+                key="transport.runtime"
+                allowReset="true"            
+                resetValue="0"
+                units="Hours"
+                dataType="DECIMAL"
+                trackChanges="true"
+                initialValue="0"
+                parameterType="TRANSPORT_USAGE"
+                min="0"
+                hasModuleProperty="Has-Disc-Transport" >
+        <listener implementationClass="com.amx.rms.client.netlinx.platform.asset.duet.parameter.DiscTransportRuntimeParameterListener" />
+    </parameter>
+
+	<parameter  name="Disc Number"
+                description="Current disc number" 
+                key="disc.selected"
+                allowReset="false"                
+                resetValue=""
+                dataType="NUMBER"
+                trackChanges="false"
+                parameterType="NONE"
+                units=""      
+                min="1"
+                hasModuleProperty="Has-Disc-Select"
+                >
+        <enumerations />        
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getDiscInfo" javaType="com.amx.duet.devicesdk.type.DiscInfo" />
+            <method name="getDiscSlotNumber" javaType="java.lang.Integer" />
+        </currentValueLookup>
+        <listener addListenerMethod="addDiscDeviceComponentListener"
+                  removeListenerMethod="removeDiscDeviceComponentListener"
+                  eventMethod="processDiscInfoEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IDiscDeviceComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+
+    <parameter  name="Disc Duration"
+                description="The time and frame count of the current media" 
+                key="disc.duration"
+                allowReset="false"          
+                resetValue=""
+                dataType="STRING"
+                trackChanges="false"
+                parameterType="NONE"
+                units="">
+        <enumerations />        
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getDiscInfo" javaType="com.amx.duet.devicesdk.type.DiscInfo" />
+            <method name="getDuration" javaType="com.amx.duet.devicesdk.type.MediaTime" />
+        </currentValueLookup>
+        <listener addListenerMethod="addDiscDeviceComponentListener"
+                  removeListenerMethod="removeDiscDeviceComponentListener"
+                  eventMethod="processDiscInfoEvent" > 
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IDiscDeviceComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+    
+    <parameter  name="Number of Tracks"
+                description="The total tracks" 
+                key="disc.track.count"
+                allowReset="false"          
+                resetValue=""
+                dataType="NUMBER"
+                trackChanges="false"
+                parameterType="NONE"
+                units=""
+                min="0"
+                >
+        <enumerations />        
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getDiscInfo" javaType="com.amx.duet.devicesdk.type.DiscInfo" />
+            <method name="getTotalTracks" javaType="java.lang.Integer" />
+        </currentValueLookup>
+        <listener addListenerMethod="addDiscDeviceComponentListener"
+                  removeListenerMethod="removeDiscDeviceComponentListener"
+                  eventMethod="processDiscInfoEvent" > 
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IDiscDeviceComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+    
+    <parameter  name="Disc Type"
+                description="Current disc media type" 
+                key="disc.type"
+                allowReset="false"          
+                resetValue=""
+                dataType="STRING"
+                trackChanges="false"
+                parameterType="NONE"
+                units="">
+        <enumerations />        
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getDiscInfo" javaType="com.amx.duet.devicesdk.type.DiscInfo" />
+            <method name="getAVType" javaType="com.amx.duet.devicesdk.type.AVType" />
+        </currentValueLookup>
+        <listener addListenerMethod="addDiscDeviceComponentListener"
+                  removeListenerMethod="removeDiscDeviceComponentListener"
+                  eventMethod="processDiscInfoEvent" > 
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IDiscDeviceComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+    
+    <parameter  name="Track/Chapter Number"
+                description="The track number" 
+                key="disc.track.selected"
+                allowReset="false"          
+                resetValue=""
+                dataType="NUMBER"
+                trackChanges="false"
+                parameterType="NONE"
+                units=""
+                min="0"
+                >
+        <enumerations />        
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getTrackInfo" javaType="com.amx.duet.devicesdk.type.TrackInfo" />
+            <method name="getTrackNumber" javaType="java.lang.Integer" />
+        </currentValueLookup>
+        <listener addListenerMethod="addDiscTransportComponentListener"
+                  removeListenerMethod="removeDiscTransportComponentListener"
+                  eventMethod="processTrackInfoEvent" > 
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IDiscTransportComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+    
+    <parameter  name="Track/Chapter Duration"
+                description="The length of the track" 
+                key="disc.track.duration"
+                allowReset="false"          
+                resetValue=""
+                dataType="STRING"
+                trackChanges="false"
+                parameterType="NONE"
+                units="">
+        <enumerations />        
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getTrackInfo" javaType="com.amx.duet.devicesdk.type.TrackInfo" />
+            <method name="getDuration" javaType="com.amx.duet.devicesdk.type.MediaTime" />
+        </currentValueLookup>
+        <listener addListenerMethod="addDiscTransportComponentListener"
+                  removeListenerMethod="removeDiscTransportComponentListener"
+                  eventMethod="processTrackInfoEvent" > 
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IDiscTransportComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+  </parameters>
+  <!--  *********************************************  -->
+  <!--              ASSET CONTROL METHODS              -->
+  <!--  *********************************************  -->
+
+  <methods>
+
+    <!--           Power Component              -->   
+    <method name="Set Power"
+            description="Turn the asset/device ON or OFF" 
+            key="asset.power" 
+            invokeMethod="setPower"
+            hasModuleProperty="Has-Power" >
+       <arguments>
+         <argument ordinal="0"  
+                   name="Power State"
+                   description="Select the power state to apply"
+                   dataType="ENUMERATION"
+                   defaultValue="Off"
+                   javaType="com.amx.duet.devicesdk.type.PowerState" >
+            <enumerations>
+                <enumeration ordinal="0" name="Off" instance="static" field="OFF" />
+                <enumeration ordinal="1" name="On"  instance="static" field="ON" />
+            </enumerations>
+         </argument> 
+       </arguments>
+    </method>
+    
+    <!--           DiscTransport Component              -->   
+    
+    <method name="Play"
+            description="Play the current media content" 
+            key="transport.play" 
+            invokeMethod="setDiscTransport" 
+            hasModuleProperty="Has-Disc-Transport">
+       <arguments fixed="true">
+         <argument javaType="com.amx.duet.devicesdk.type.DiscTransport"
+                   instance="static" 
+                   field="PLAY" />           
+       </arguments>
+   </method>
+
+   <method name="Stop"
+            description="Stop the current media content" 
+            key="transport.stop" 
+            invokeMethod="setDiscTransport" 
+            hasModuleProperty="Has-Disc-Transport">
+       <arguments fixed="true">
+         <argument javaType="com.amx.duet.devicesdk.type.DiscTransport"
+                   instance="static" 
+                   field="STOP" />           
+       </arguments>
+   </method>
+
+   <method name="Pause"
+           description="Pause the current media content" 
+           key="transport.pause" 
+           invokeMethod="setDiscTransport" 
+           hasModuleProperty="Has-Disc-Transport">
+       <arguments fixed="true">
+         <argument javaType="com.amx.duet.devicesdk.type.DiscTransport"
+                   instance="static" 
+                   field="PAUSE" />           
+       </arguments>
+    </method>
+
+    <method name="Select Disc"
+            description="Select the disc to load" 
+            key="disc.select" 
+            invokeMethod="setDisc"
+            hasModuleProperty="Has-Disc-Select" >
+       <arguments>
+         <argument ordinal="0"  
+                   name="Disc"
+                   description="Select the disc number to load"
+                   dataType="NUMBER"
+                   defaultValue="1"
+                   javaType="java.lang.Integer"
+                   maxLookupMethod="getDiscCapacity"
+                   min="1"
+                   >           
+         </argument> 
+       </arguments>
+   </method>
+
+   <method name="Next Track/Chapter"
+           description="Advance to the next track/chapter on the disc." 
+           key="transport.next" 
+           invokeMethod="setDiscTransport" 
+           hasModuleProperty="Has-Disc-Transport">
+       <arguments fixed="true">
+         <argument javaType="com.amx.duet.devicesdk.type.DiscTransport"
+                   instance="static" 
+                   field="NEXT" />           
+       </arguments>
+   </method>
+
+   <method name="Previous Track/Chapter"
+           description="Go back to the previous track/chapter on the disc." 
+           key="transport.previous" 
+           invokeMethod="setDiscTransport"
+           hasModuleProperty="Has-Disc-Transport" >
+       <arguments fixed="true">
+         <argument javaType="com.amx.duet.devicesdk.type.DiscTransport"
+                   instance="static" 
+                   field="PREVIOUS" />           
+       </arguments>
+   </method>
+
+   <method name="Select Track/Chapter"
+            description="Select the track/chapter on the disc to load" 
+            key="disc.track.select" 
+            invokeMethod="setPlayPosition" >
+       <arguments>
+         <argument ordinal="0"  
+                   name="Track"
+                   description="Select the track number"
+                   dataType="NUMBER"
+                   defaultValue="1"
+                   javaType="java.lang.Integer"
+                   min="1" >           
+         </argument> 
+       </arguments>
+   </method>
+
+  </methods>
+</asset>

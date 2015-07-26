@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ComponentSdkStandards xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:ComponentSdkStandards.xsd">
+    <Standard id="AlphaButton" displayName="Alpha Button" editable="false">
+        <Name key="A">A</Name>
+        <Name key="B">B</Name>
+        <Name key="C">C</Name>
+        <Name key="D">D</Name>
+        <Name key="E">E</Name>
+        <Name key="F">F</Name>
+        <Name key="G">G</Name>
+        <Name key="H">H</Name>
+        <Name key="I">I</Name>
+        <Name key="J">J</Name>
+        <Name key="K">K</Name>
+        <Name key="L">L</Name>
+        <Name key="M">M</Name>
+        <Name key="N">N</Name>
+        <Name key="O">O</Name>
+        <Name key="P">P</Name>
+        <Name key="Q">Q</Name>
+        <Name key="R">R</Name>
+        <Name key="S">S</Name>
+        <Name key="T">T</Name>
+        <Name key="U">U</Name>
+        <Name key="V">V</Name>
+        <Name key="W">W</Name>
+        <Name key="X">X</Name>
+        <Name key="Y">Y</Name>
+        <Name key="Z">Z</Name>
+        <Name key="a">a</Name>
+        <Name key="b">b</Name>
+        <Name key="c">c</Name>
+        <Name key="d">d</Name>
+        <Name key="e">e</Name>
+        <Name key="f">f</Name>
+        <Name key="g">g</Name>
+        <Name key="h">h</Name>
+        <Name key="i">i</Name>
+        <Name key="j">j</Name>
+        <Name key="k">k</Name>
+        <Name key="l">l</Name>
+        <Name key="m">m</Name>
+        <Name key="n">n</Name>
+        <Name key="o">o</Name>
+        <Name key="p">p</Name>
+        <Name key="q">q</Name>
+        <Name key="r">r</Name>
+        <Name key="s">s</Name>
+        <Name key="t">t</Name>
+        <Name key="u">u</Name>
+        <Name key="v">v</Name>
+        <Name key="w">w</Name>
+        <Name key="x">x</Name>
+        <Name key="y">y</Name>
+        <Name key="z">z</Name>
+    </Standard>
+    <Standard id="AspectRatio" displayName="Aspect Ratio" editable="true">
+        <Name key="ANAMORPHIC">Anamorphic</Name>
+        <Name key="WIDESCREEN">Widescreen</Name>
+        <Name key="NORMAL">Normal</Name>
+    </Standard>
+    <Standard id="AVType" displayName="Audio Video Type" editable="false">
+        <Name key="DATA">Data</Name>
+        <Name key="APPLICATION">Application</Name>
+        <Name key="AUDIO_ONLY">Audio Only</Name>
+        <Name key="VIDEO_ONLY">Video Only</Name>
+        <Name key="AUDIO_VIDEO">Audio Video</Name>
+    </Standard>
+    <Standard id="BarometricPressure" displayName="Barometric Pressure" editable="false">
+        <Name key="RISING">Rising</Name>
+        <Name key="FALLING">Falling</Name>
+        <Name key="STEADY">Steady</Name>
+    </Standard>
+    <Standard id="Boolean" editable="false">
+        <Name key="TRUE">true</Name>
+        <Name key="FALSE">false</Name>
+    </Standard>
+  <Standard id="Button" displayName="Keypad Button" editable="false">
+        <Name key="DIGIT_0">0</Name>
+        <Name key="DIGIT_1">1</Name>
+        <Name key="DIGIT_2">2</Name>
+        <Name key="DIGIT_3">3</Name>
+        <Name key="DIGIT_4">4</Name>
+        <Name key="DIGIT_5">5</Name>
+        <Name key="DIGIT_6">6</Name>
+        <Name key="DIGIT_7">7</Name>
+        <Name key="DIGIT_8">8</Name>
+        <Name key="DIGIT_9">9</Name>
+        <Name key="CLEAR">Clear</Name>
+        <Name key="CANCEL">Cancel</Name>
+        <Name key="EXIT">Exit</Name>
+        <Name key="ENTER">Enter</Name>
+        <Name key="RETURN">Return</Name>
+        <Name key="DOT">.</Name>
+    </Standard>
+    <Standard id="ButtonState" displayName="Button State" editable="false">
+      	<Name key="PUSH">Push</Name>
+      	<Name key="RELEASE">Release</Name>
+      	<Name key="CLICK">Click</Name>
+      	<Name key="DOUBLE_CLICK">Double Click</Name>
+	  	<Name key="HOLD">Hold</Name>
+    </Standard>
+    <Standard id="ButtonStatus" displayName="Button Status" editable="false">
+        <Name key="ON">On</Name>
+        <Name key="OFF">Off</Name>
+        <Name key="BLINK">Blink</Name>
+		<Name key="RAPID_BLINK">Rapid Blink</Name>
+    </Standard>
+    <Standard id="CompassDirection" displayName="Compass Direction" editable="false">
+        <Name key="N">N</Name>
+        <Name key="NNE">NNE</Name>
+        <Name key="NE">NE</Name>
+        <Name key="ENE">ENE</Name>
+        <Name key="E">E</Name>
+        <Name key="ESE">ESE</Name>
+        <Name key="SE">SE</Name>
+        <Name key="SSE">SSE</Name>
+        <Name key="S">S</Name>
+        <Name key="SSW">SSW</Name>
+        <Name key="SW">SW</Name>
+        <Name key="WSW">WSW</Name>
+        <Name key="W">W</Name>
+        <Name key="WNW">WNW</Name>
+        <Name key="NW">NW</Name>
+        <Name key="NNW">NNW</Name>
+    </Standard>
+    <Standard id="DateTimeFormat" displayName="Date Time Format" editable="false">
+      <Name key="MM_DD">MM/dd</Name>
+      <Name key="DD_MM">dd/MM</Name>
+      <Name key="MM_DD_YYYY">MM/dd/yyyy</Name>
+      <Name key="DD_MM_YYYY">dd/MM/yyyy</Name>
+      <Name key="MONTH_DD_YYYY">MMMM dd, yyyy</Name>
+      <Name key="DD_MONTH_YYYY">dd MMMM, yyyy</Name>
+      <Name key="DAY_IN_WEEK">EEEE</Name>
+      <Name key="YYYY_MM_DD">yyyy-MM-Dd</Name>
+      <Name key="HH_MM_SS">hh:mm:ss</Name>
+      <Name key="H_MM">h:mm</Name>
+      <Name key="HH_MM_SS_AMPM">hh:mm:ss A</Name>
+      <Name key="H_MM_AMPM">h:mm a</Name>
+      <Name key="HH24_MM_SS">HH:mm:ss</Name>
+      <Name key="H24_MM">H:mm</Name>
+    </Standard>
+    <Standard id="DialerButton" displayName="Dialer Button" editable="false">
+        <Name key="POUND">#</Name>
+        <Name key="LEFT_PAREN">(</Name>
+        <Name key="RIGHT_PAREN">)</Name>
+        <Name key="DASH">-</Name>
+        <Name key="UNDER_SCORE">_</Name>
+        <Name key="ASTERISK">*</Name>
+        <Name key="COMMA">,</Name>
+        <Name key="CONFERENCE">Conference</Name>
+        <Name key="DIAL">Dial</Name>
+        <Name key="FLASH">Flash</Name>
+        <Name key="HOLD">Hold</Name>
+        <Name key="ACCEPT">Accept</Name>
+        <Name key="REJECT">Reject</Name>
+    </Standard>
+    <Standard id="DialerStatus" displayName="Dialer Status" editable="false">
+        <Name key="DIALING">Dialing</Name>
+        <Name key="BUSY">Busy</Name>
+        <Name key="RINGING">Ringing</Name>
+        <Name key="DISCONNECTED">Disconnected</Name>
+        <Name key="NEGOTIATING">Negotiating</Name>
+        <Name key="FAULT">Fault</Name>
+        <Name key="CONNECTED">Connected</Name>
+    </Standard>
+    <Standard id="DiscButton" displayName="Disc Button" editable="false">
+        <Name key="PROGRAM">Program</Name>
+        <Name key="CONTINUE">Continue</Name>
+        <Name key="TITLE">Title</Name>
+        <Name key="TOP_MENU">Top Menu</Name>
+        <Name key="ANGLE">Angle</Name>
+        <Name key="ZOOM">Zoom</Name>
+        <Name key="AB_REPEAT">AB Repeat</Name>
+		<!--<Name key="SUBTITLE">Subtitle</Name>-->
+		<!--<Name key="ADVANCE">Advance</Name>-->
+    </Standard>
+    <Standard id="Duration" editable="false">
+        <Name key="DAY">Day</Name>
+        <Name key="WEEK">Week</Name>
+        <Name key="MONTH">Month</Name>
+        <Name key="YEAR">Year</Name>
+        <Name key="YTD">YTD</Name>
+    </Standard>
+    <Standard id="ExtendedButton" displayName="Miscellaneous Button" editable="false">
+        <Name key="FORWARD">Forward</Name>
+        <Name key="BACK">Back</Name>
+        <Name key="HELP">Help</Name>
+        <Name key="RESET">Reset</Name>
+        <Name key="SUBTITLE">Subtitle</Name>
+        <Name key="MENU">Menu</Name>
+        <Name key="AUDIO">Audio</Name>
+        <Name key="DIMMER">Dimmer</Name>
+        <Name key="DISPLAY">Display</Name>
+        <Name key="PAGE_UP">Page Up</Name>
+        <Name key="PAGE_DOWN">Page Down</Name>
+        <Name key="VIDEO">Video</Name>
+        <Name key="SLEEP">Sleep</Name>
+        <Name key="FUNCTION">Function</Name>
+        <Name key="SETUP">Setup</Name> <!-- PRO-14 -->
+    </Standard>
+    <Standard id="FanState" displayName="Fan State" editable="false">
+		<Name key="AUTO">Auto</Name>
+		<Name key="ON">On</Name>
+		<Name key="LOW">Low</Name>
+		<Name key="MEDIUM">Medium</Name>
+		<Name key="HIGH">High</Name>
+    </Standard>
+	<Standard id="FanStatus" displayName="Fan Status" editable="false">
+		<Name key="OFF">Off</Name>
+		<Name key="ON">On</Name>
+		<Name key="LOW">Low</Name>
+		<Name key="MEDIUM">Medium</Name>
+		<Name key="HIGH">High</Name>
+    </Standard>
+    <Standard id="FocusRamp" displayName="Focus Ramp" editable="false">
+        <Name key="FAR">Far</Name>
+        <Name key="NEAR">Near</Name>
+        <Name key="STOP">Stop</Name>
+    </Standard>
+    <Standard id="GainRamp" displayName="Gain Level Ramp" editable="false">
+      <Name key="UP">Up</Name>
+      <Name key="DOWN">Down</Name>
+      <Name key="STOP">Stop</Name>
+    </Standard>
+    <Standard id="HasGroup" displayName="Has Properties" editable="false">
+      <Name key="HAS">Has</Name>
+    </Standard>
+    <Standard id="HumidifyState" displayName="Humidify State" editable="false">
+        <Name key="OFF">Off</Name>
+        <Name key="HUMIDIFY">Humidify</Name>
+        <Name key="DEHUMIDIFY">Dehumidify</Name>
+        <Name key="AUTO">Auto</Name>
+    </Standard>
+    <Standard id="HumidifyStatus" displayName="Humidify Status" editable="false">
+      <Name key="OFF">Off</Name>
+      <Name key="HUMIDIFY">Humidify</Name>
+      <Name key="DEHUMIDIFY">Dehumidify</Name>
+    </Standard>
+    <Standard id="HVACState" displayName="HVAC State" editable="false">
+        <Name key="OFF">Off</Name>
+        <Name key="HEAT">Heat</Name>
+        <Name key="EMERGENCY_HEAT">Emergency Heat</Name>
+        <Name key="COOL">Cool</Name>
+        <Name key="AUTO">Auto</Name>
+    </Standard>
+    <Standard id="HVACStatus" displayName="HVAC Status" editable="false">
+      <Name key="OFF">Off</Name>
+      <Name key="HEAT">Heat</Name>
+      <Name key="EMERGENCY_HEAT">Emergency Heat</Name>
+      <Name key="COOL">Cool</Name>
+      <Name key="COOL_2">Cool 2</Name>
+    </Standard>
+    <Standard id="InputSource" />
+    <Standard id="IODirection" displayName="I/O Direction" editable="false">
+        <Name key="INPUT">Input</Name>
+        <Name key="OUTPUT">Output</Name>
+    </Standard>
+    <Standard id="IOSense" displayName="I/O Sense" editable="false">
+      <Name key="LOW">Low</Name>
+      <Name key="HIGH">High</Name>
+    </Standard>
+    <Standard id="IOState" displayName="I/O State" editable="false">
+      <Name key="ON">On</Name>
+      <Name key="OFF">Off</Name>
+    </Standard>
+    <Standard id="IrisRamp" displayName="Iris Ramp" editable="false">
+        <Name key="OPEN">Open</Name>
+        <Name key="CLOSE">Close</Name>
+        <Name key="STOP">Stop</Name>
+    </Standard>
+    <Standard id="LampState" displayName="Lamp State" editable="false">
+	    <Name key="OFF">Off</Name>
+	    <Name key="ON">On</Name>
+	</Standard>
+    <Standard id="LampStatus" displayName="Lamp Status" editable="false">
+	    <Name key="OFF">Off</Name>
+	    <Name key="ON">On</Name>
+	    <Name key="COOLING">Cooling</Name>
+	    <Name key="WARMING">Warming</Name>
+    </Standard>
+    <Standard id="LevelRamp" displayName="Level Ramp" editable="false">
+      <Name key="UP">Up</Name>
+      <Name key="DOWN">Down</Name>
+      <Name key="STOP">Stop</Name>
+    </Standard>
+    <Standard id="LightState" displayName="Light State" editable="false">
+        <Name key="ON">On</Name>
+        <Name key="OFF">Off</Name>
+    </Standard>
+    <Standard id="MediaElement" displayName="Media Element" editable="false">
+      <Name key="TITLE">Title</Name>
+      <Name key="ARTIST">Artist</Name>
+      <Name key="GENRE">Genre</Name>
+      <Name key="ALBUM">Album</Name>
+      <Name key="TRACK">Track</Name>
+      <Name key="PLAYLIST">Playlist</Name>
+    </Standard>
+    <Standard id="MediaSearchElement" displayName="Media Search Element" editable="false">
+        <Name key="ARTIST">Artist</Name>
+        <Name key="GENRE">Genre</Name>
+        <Name key="ALL">All</Name>
+        <Name key="ITEM">Item</Name>
+        <Name key="KEYWORDS">Keywords</Name>
+        <Name key="PLAYLIST">Playlist</Name>
+        <Name key="BOOKMARK">Bookmark</Name>
+        <Name key="ID">Id</Name>
+    </Standard>
+    <Standard id="MediaTransport" displayName="Media Transport"  editable="false">
+		<Name key="PLAY">Play</Name>
+		<Name key="STOP">Stop</Name>
+		<Name key="PAUSE">Pause</Name>
+		<Name key="PREVIOUS">Previous</Name>
+		<Name key="NEXT">Next</Name>
+		<Name key="SCAN_FWD">Scan Fwd</Name>
+		<Name key="SCAN_REV">Scan Rev</Name>
+		<Name key="FRAME_FWD">Frame Fwd</Name>
+		<Name key="FRAME_REV">Frame Rev</Name>
+		<Name key="SLOW_FWD">Slow Fwd</Name>
+		<Name key="SLOW_REV">Slow Rev</Name>
+		<Name key="RECORD">Record</Name>
+		<Name key="RECORD_PAUSE">Record Pause</Name>
+		<Name key="FF">FF</Name>
+		<Name key="REW">Rew</Name>
+    </Standard>
+    <Standard id="MotorDirection" displayName="Motor Direction" editable="false">
+        <Name key="OPEN">Open</Name>
+        <Name key="CLOSE">Close</Name>
+        <Name key="STOP">Stop</Name>
+    </Standard>
+    <!-- <Standard id="MultiScreenSelect" displayName="Multi-Screen Selection" editable="false">
+      <Name key="LEFT">Left</Name>
+      <Name key="RIGHT">Right</Name>
+      <Name key="MAIN">Main</Name>
+      <Name key="SUB">Sub</Name>
+    </Standard> -->
+    <Standard id="Navigation" displayName="Navigation Button" editable="false">
+        <Name key="UP">Up</Name>
+        <Name key="DOWN">Down</Name>
+        <Name key="LEFT">Left</Name>
+        <Name key="RIGHT">Right</Name>
+        <Name key="UP_LEFT">Up Left</Name>
+        <Name key="UP_RIGHT">Up Right</Name>
+        <Name key="DOWN_LEFT">Down Left</Name>
+        <Name key="DOWN_RIGHT">Down Right</Name>
+    </Standard>
+    <Standard id="OnOffState" editable="false">
+        <Name key="ON">On</Name>
+        <Name key="OFF">Off</Name>
+    </Standard>
+    <Standard id="PanRamp" displayName="Pan Ramp" editable="false">
+        <Name key="RIGHT">Right</Name>
+        <Name key="LEFT">Left</Name>
+        <Name key="STOP">Stop</Name>
+    </Standard>
+    <Standard id="PhonebookSearchElement" displayName="Phonebook Search Element" editable="false">
+        <Name key="INDEX">Index</Name>
+    </Standard>
+    <Standard id="PoolSpaHeatState" displayName="Pool/Spa Heat State" editable="false">
+        <Name key="OFF">Off</Name>
+        <Name key="HEATER">Heater</Name>
+        <Name key="SOLAR_PREFERRED">Solar Preferred</Name>
+        <Name key="SOLAR">Solar</Name>
+    </Standard>
+    <Standard id="PoolSpaHeatStatus" displayName="Pool/Spa Heat Status" editable="false">
+      <Name key="OFF">Off</Name>
+      <Name key="HEATER">Heater</Name>
+      <Name key="SOLAR">Solar</Name>
+    </Standard>
+    <Standard id="PoolSpaJetLevel" displayName="Pool/Spa Jet Level" editable="false">
+        <Name key="OFF">Off</Name>
+        <Name key="LOW">Low</Name>
+        <Name key="MEDIUM">Medium</Name>
+        <Name key="HIGH">High</Name>
+    </Standard>
+  <Standard id="PowerState" displayName="Power State" editable="false">
+    <Name key="OFF">Off</Name>
+    <Name key="ON">On</Name>
+  </Standard>
+  <Standard id="PowerStatus" displayName="Power Status" editable="false">
+    <Name key="OFF">Off</Name>
+    <Name key="ON">On</Name>
+    <Name key="COOLING">Cooling</Name>
+	<Name key="WARMING">Warming</Name>
+  </Standard>
+  <Standard id="RandomState" displayName="Random State" editable="false">
+	    <Name key="RANDOM_OFF">Random Off</Name>
+	    <Name key="RANDOM_DISC">Random Disc</Name>
+        <Name key="RANDOM_ALL">Random All</Name>
+        <Name key="RANDOM_PLAYLIST">Random Playlist</Name>
+  </Standard>
+    <Standard id="ReaderStatus" displayName="Reader Status" editable="false">
+        <Name key="OFFLINE">Offline</Name>
+        <Name key="ONLINE">Online</Name>
+    </Standard>
+    <Standard id="RecordType" displayName="Record Type" editable="false">
+        <Name key="ALL">All</Name>
+        <Name key="APPLICATION">Application</Name>
+        <Name key="ARTIST">Artist</Name>
+        <Name key="AUDIO">Audio</Name>
+        <Name key="CHAPTER">Chapter</Name>
+        <Name key="DISC">Disc</Name>
+        <Name key="GENRE">Genre</Name>
+        <Name key="PICTURE">Picture</Name>
+        <Name key="PLAYLIST">Playlist</Name>
+        <Name key="STATION">Station</Name>
+        <Name key="TRACK">Track</Name>
+        <Name key="VIDEO">Video</Name>
+        <Name key="BOOKMARK">Bookmark</Name>
+    </Standard>
+    <Standard id="RelayState" displayName="Relay State" editable="false">
+        <Name key="ON">On</Name>
+        <Name key="OFF">Off</Name>
+    </Standard>
+    <Standard id="RepeatState" editable="false">
+        <Name key="REPEAT_OFF">Repeat Off</Name>
+        <Name key="REPEAT_DISC">Repeat Disc</Name>
+        <Name key="REPEAT_TRACK">Repeat Track</Name>
+        <Name key="REPEAT_ALL">Repeat All</Name>
+        <Name key="REPEAT_PLAYLIST">Repeat Playlist</Name>
+		<Name key="REPEAT_CHAPTER">Repeat Chapter</Name>
+		<Name key="REPEAT_TITLE">Repeat Title</Name>
+    </Standard>
+    <Standard id="SecurityPointState" displayName="Security Point State" editable="false">
+        <Name key="BYPASS">Bypass</Name>
+        <Name key="ACTIVE">Active</Name>
+    </Standard>
+    <Standard id="SecurityPointStatus" displayName="Security Point Status" editable="false">
+        <Name key="ACTIVE">Active</Name>
+        <Name key="FAULT">Fault</Name>
+        <Name key="BYPASSED">Bypassed</Name>
+    </Standard>
+    <Standard id="SecurityState" displayName="Security System State" editable="false">
+      <Name key="ARM_HOME">Arm Home</Name>
+      <Name key="ARM">Arm</Name>
+      <Name key="ARM_HOME_NOW">Arm Home Now</Name>
+      <Name key="ARM_NOW">Arm Now</Name>
+      <Name key="DISARM">Disarm</Name>
+      <Name key="FIRE">Fire</Name>
+      <Name key="PANIC">Panic</Name>
+      <Name key="POLICE">Police</Name>
+      <Name key="MEDICAL">Medical</Name>
+      <Name key="NONE">None</Name>
+    </Standard>
+    <Standard id="SecurityStatus" displayName="Security System Status" editable="false">
+        <Name key="ACTIVE">Active</Name>
+        <Name key="FAULT">Fault</Name>
+        <Name key="BYPASSED">Bypassed</Name>
+    </Standard>
+    <Standard id="SensorType" displayName="Sensor Type" editable="false">
+    	<Name key="ANALOG">Analog</Name>
+    	<Name key="DIGITAL">Digital</Name>
+    </Standard>
+    <Standard id="SettopBoxButton" displayName="Settop Box Button" editable="false">
+        <Name key="GUIDE">Guide</Name>
+        <Name key="INFO">Info</Name>
+        <Name key="LIST">List</Name>
+        <Name key="LIVE_TV">Live TV</Name>
+        <Name key="THUMBS_UP">Thumbs Up</Name>
+        <Name key="THUMBS_DOWN">Thumbs Down</Name>
+        <Name key="INSTANT_REPLAY">Instant Replay</Name>
+        <Name key="ADVANCE">Advance</Name>
+        <Name key="FAVORITES">Favorites</Name>
+        <Name key="PPV">PPV</Name>
+		<!--<Name key="DISPLAY">Display</Name>-->
+		<!--<Name key="PAGE_UP">Page Up</Name>-->
+		<!--<Name key="PAGE_DOWN">Page Down</Name>-->
+    </Standard>
+    <Standard id="SignalType" displayName="Signal Type" editable="false">
+        <Name key="RGB">RGB</Name>
+        <Name key="SVIDEO">S-Video</Name>
+        <Name key="COMPOSITE">Composite</Name>
+        <Name key="COMPONENT">Component</Name>
+        <Name key="DVI">DVI</Name>
+        <Name key="SDI">SDI</Name>
+        <Name key="VGA">VGA</Name>
+        <Name key="HDMI">HDMI</Name>
+		<Name key="DISPLAY_PORT">Display Port</Name>
+		<Name key="ETHERNET">Ethernet</Name>
+		<Name key="FIREWIRE">Firewire</Name>
+		<Name key="INTERNAL">Internal</Name>
+		<Name key="IPOD_INTERFACE">iPOD Interface </Name>
+		<Name key="LINE_SIGNAL">Line Signal</Name>
+		<Name key="MIC_SIGNAL">Mic Signal</Name>
+		<Name key="OPTION_CARD">Option Card</Name>
+		<Name key="PHONO_SIGNAL">Phono Signal</Name>
+		<Name key="RF_AM">RF AM</Name>
+		<Name key="RF_FM">RF FM</Name>
+		<Name key="RF_COAX">RF Coax</Name>
+		<Name key="SCART">Scart</Name>
+		<Name key="SIRIUS_INTERFACE">Sirius Interface</Name>
+		<Name key="SPDIF_COAX">SPDIF Coax</Name>
+		<Name key="SPDIF_OPTICAL">SPDIF Optical</Name>
+		<Name key="USB">USB</Name>
+		<Name key="WIFI">Wifi</Name>
+    </Standard>
+    <Standard id="StationSearchCommand" displayName="Station Search" editable="false">
+        <Name key="FORWARD">Forward</Name>
+        <Name key="BACKWARD">Backward</Name>
+        <Name key="STOP">Stop</Name>
+    </Standard>
+    <Standard id="SurroundMode" displayName="Surround Mode" editable="true">
+      <Name key="MOVIE">Movie</Name>
+      <Name key="MUSIC">Music</Name>
+      <Name key="OFF">Off</Name>
+    </Standard>
+    <Standard id="SwitchLevel" displayName="Audio/Video Switch Level" editable="false">
+        <Name key="ALL">All</Name>
+        <Name key="VIDEO">Video</Name>
+        <Name key="AUDIO">Audio</Name>
+    </Standard>
+    <Standard id="TagButtonState" displayName="Tag Button State" editable="false">
+        <Name key="PUSH">Push</Name>
+        <Name key="RELEASE">Release</Name>
+    </Standard>
+    <Standard id="TemperatureScale" displayName="Temperature Scale" editable="false">
+      <Name key="FAHRENHEIT">Fahrenheit</Name>
+      <Name key="CELSIUS">Celsius</Name>
+    </Standard>
+    <Standard id="TestAction" displayName="Test Action" editable="false">
+        <Name key="START">Start</Name>
+        <Name key="STOP">Stop</Name>
+        <Name key="INTERRUPT">Interrupt</Name>
+    </Standard>
+    <Standard id="TestResult" displayName="Test Result" editable="false">
+      <Name key="PASS">Pass</Name>
+      <Name key="FAIL">Fail</Name>
+    </Standard>
+    <Standard id="TiltRamp" displayName="Tilt Ramp" editable="false">
+      <Name key="UP">Up</Name>
+      <Name key="DOWN">Down</Name>
+      <Name key="STOP">Stop</Name>
+    </Standard>
+    <Standard id="TunerBand" displayName="Tuner Band" editable="true">
+        <Name key="AM">AM</Name>
+        <Name key="FM">FM</Name>
+        <Name key="FM_MONO">FM Mono</Name>
+        <Name key="HD_AM">HD AM</Name>
+        <Name key="HD_FM">HD FM</Name>
+        <Name key="XM">XM</Name>
+        <Name key="SIRIUS">Sirius</Name>
+        <Name key="CABLE">CABLE</Name>
+		<Name key="INTERNET">Internet</Name>
+		<Name key="WEATHER">Weather</Name>
+    </Standard>
+    <Standard id="UnitScale" displayName="Unit Scale" editable="false">
+      <Name key="IMPERIAL">Imperial</Name>
+      <Name key="METRIC">Metric</Name>
+    </Standard>
+    <Standard id="UPSBackupProperties" displayName="UPS Backup Properties" editable="false">
+        <Name key="CHARGE">Charge</Name>
+        <Name key="VOLTAGE">Voltage</Name>
+        <Name key="CURRENT">Current</Name>
+        <Name key="REPLACEDATE">Repalce Date</Name>
+        <Name key="TEMPERATURE">Temperature</Name>
+    </Standard>
+    <Standard id="UPSBackupStatus" displayName="UPS Backup Status" editable="false">
+        <Name key="OK">Ok</Name>
+        <Name key="LOW">Low</Name>
+        <Name key="DEPLETED">Depleted</Name>
+    </Standard>
+    <Standard id="UPSBackupTimer" displayName="UPS Backup Timer" editable="false">
+      <Name key="TIMEONBATTERY">Time On Battery</Name>
+      <Name key="TIMETODEPLETED">Time To Depleted</Name>
+      <Name key="TIMETOLOW">Time To Low</Name>
+    </Standard>
+    <Standard id="UPSInputProperties" displayName="UPS Input Properties" editable="false">
+        <Name key="DELAYONTIME">Delay Ontime</Name>
+        <Name key="DELAYOFFTIME">Delay Offtime</Name>
+        <Name key="FREQUENCY">Frequency</Name>
+        <Name key="VOLTAGE">Voltage</Name>
+        <Name key="LINES">Current</Name>
+        <Name key="POWER">Power</Name>
+        <Name key="CAPACITY">Capacity</Name>
+    </Standard>
+    <Standard id="UPSOutletProperties" displayName="UPS Outlet Properties" editable="false">
+        <Name key="BYPASSCURRENT">Bypass Current</Name>
+        <Name key="BYPASSFREQUENCY">Bypass Frequency</Name>
+        <Name key="BYPASSLINES">Bypass Lines</Name>
+        <Name key="BYPASSLOAD">Bypass Load</Name>
+        <Name key="BYPASSPOWER">Bypass Power</Name>
+        <Name key="BYPASSPOWERSOURCE">Bypass Power Source</Name>
+        <Name key="BYPASSVOLTAGE">Bypass Voltage</Name>
+        <Name key="OUTPUTCURRENT">Output Current</Name>
+        <Name key="OUTPUTFREQUENCY">Output Frequency</Name>
+        <Name key="OUTPUTLINES">Output Lines</Name>
+        <Name key="OUTPUTLOAD">Outputload</Name>
+        <Name key="OUTPUTPOWER">Output Power</Name>
+        <Name key="OUTPUTPOWERSOURCE">Output Power Source</Name>
+        <Name key="OUTPUTVOLTAGE">Output Voltage</Name>
+    </Standard>
+    <Standard id="UPSOutletState" displayName="UPS Outlet State" editable="false">
+      <Name key="ON">On</Name>
+      <Name key="OFF">Off</Name>
+    </Standard>
+    <Standard id="UPSState" displayName="UPS State" editable="false">
+        <Name key="SHUTDOWN">Shutdown</Name>
+        <Name key="REBOOT">Reboot</Name>
+        <Name key="OUTPUT_ONLY">Output Only</Name>
+        <Name key="STARTUP">Startup</Name>
+        <Name key="NORMAL">Normal</Name>
+        <Name key="BATTERY">Battery</Name>
+        <Name key="BYPASS">Bypass</Name>
+        <Name key="MANUAL_BYPASS">Manual Bypass</Name>
+        <Name key="REDUCING">Reducing</Name>
+        <Name key="BOOSTING">Boosting</Name>
+    </Standard>
+    <Standard id="VideoConferencerButton" displayName="Video Conferencer Button" editable="false">
+        <Name key="SEND_GRAPHICS">Send Graphics</Name>
+        <Name key="SEND_INPUT">Send Input</Name>
+        <Name key="PREVIEW_INPUT">Preview Input</Name>
+    </Standard>
+    <!-- <Standard id="VideoType" displayName="Video Type" editable="false">
+        <Name key="AUTO">Auto</Name>
+        <Name key="NTSC">NTSC</Name>
+        <Name key="PAL">PAL</Name>
+        <Name key="SECAM">Secam</Name>
+    </Standard> -->
+    <Standard id="WeatherConditions" displayName="Weather Condition" editable="false">
+        <Name key="BLIZZARD">Blizzard</Name>
+        <Name key="BLOWINGSNOW">Blowing Snow</Name>
+        <Name key="CLEAR">Clear</Name>
+        <Name key="CLOUDY">Cloudy</Name>
+        <Name key="DRIZZLE">Drizzle</Name>
+        <Name key="DUST">Dust</Name>
+        <Name key="FAIR">Fair</Name>
+        <Name key="FOG">Fog</Name>
+        <Name key="FREEZINGDRIZZLE">Freezing Drizzle</Name>
+        <Name key="FREEZINGRAIN">Freezing Rain</Name>
+        <Name key="HAZE">Haze</Name>
+        <Name key="HUMID">Humid</Name>
+        <Name key="ICE">Ice</Name>
+        <Name key="MOSTLYCLOUDY">Mostly Cloudy</Name>
+        <Name key="MOSTLYSUNNY">Mostly Sunny</Name>
+        <Name key="PARTLYCLOUDY">Partly Cloudy</Name>
+        <Name key="RAIN">Rain</Name>
+        <Name key="RAINSHOWERS">Rain Showers</Name>
+        <Name key="RAINSNOWMIX">Rain Snow Mix</Name>
+        <Name key="SLEET">Sleet</Name>
+        <Name key="SMOKE">Smoke</Name>
+        <Name key="SNOW">Snow</Name>
+        <Name key="SNOWFLURRIES">Snow Flurries</Name>
+        <Name key="SNOWSHOWERS">Snow Showers</Name>
+        <Name key="SUNNY">Sunny</Name>
+        <Name key="THUNDERSTORMS">Thunderstorms</Name>
+        <Name key="VERYCOLD">Very Cold</Name>
+        <Name key="WINDY">Windy</Name>
+    </Standard>
+    <Standard id="ZoomRamp" displayName="Zoom Ramp" editable="false">
+      <Name key="IN">In</Name>
+      <Name key="OUT">Out</Name>
+      <Name key="STOP">Stop</Name>
+    </Standard>
+    <Standard id="ZOrderAdjust" displayName="Z-Order" editable="false">
+        <Name key="FRONT">Front</Name>
+        <Name key="BACK">Back</Name>
+        <Name key="FORWARD">Forward</Name>
+        <Name key="BACKWARD">Backward</Name>
+    </Standard>
+</ComponentSdkStandards>

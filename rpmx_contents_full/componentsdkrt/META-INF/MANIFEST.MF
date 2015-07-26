@@ -1,0 +1,31 @@
+Manifest-Version: 2.0
+Ant-Version: Apache Ant 1.8.2
+Created-By: 1.7.0_04-b20 (Oracle Corporation)
+Sealed: true
+AMX-Type: Duet
+Bundle-Activator: com.amx.duet.componentsdk.base.Activator
+Bundle-Copyright: Copyright 2004-2011 AMX LLC.  All Rights Reserved.
+Bundle-Description: Component SDK providing base classes and interface
+ s
+Bundle-Name: Component SDK
+Bundle-SymbolicName: com.amx.duet.componentsdk
+Bundle-Vendor: AMX LLC
+Bundle-Version: 1.0.38.20140220-0438
+Device-Make: AMX LLC
+Device-Model: ComponentSDK
+Device-Revision: 1.0.0
+Import-Package: com.amx.duet.core.license,com.amx.duet.core.master,com
+ .amx.duet.core.master.netlinx,com.amx.duet.core.osgi,com.amx.duet.da,
+ com.amx.duet.driver,com.amx.duet.util.metadata,org.kxml2.io,org.kxml2
+ .kdom,org.osgi.framework,org.osgi.service.device,org.osgi.service.htt
+ p,org.xmlpull.v1
+DynamicImport-Package: *
+Export-Package: com.amx.duet.componentsdk.base;version=1.0.0, com.amx.
+ duet.componentsdk.datatype;version=1.0.0,com.amx.duet.componentsdk.ev
+ ent;version=1.0.0,com.amx.duet.componentsdk.instance;version=1.0.0,co
+ m.amx.duet.componentsdk.interfaces;version=1.0.0,com.amx.duet.compone
+ ntsdk.standards;version=1.0.0,com.amx.duet.componentsdk.utilities;ver
+ sion=1.0.0,com.amx.duet.componentsdk.xsd.componentsdk;version=1.0.0
+Bundle-ManifestVersion: 2
+Bundle-ClassPath: .
+

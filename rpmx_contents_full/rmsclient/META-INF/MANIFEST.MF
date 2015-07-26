@@ -1,0 +1,44 @@
+Manifest-Version: 1.0
+Bundle-Copyright: Copyright 2004-2014 AMX LLC.  All Rights Reserved.
+Bundle-Description: AMX Resource Management Suite Client (Core Service
+ s)
+Bundle-Name: AMX RMS Client Core
+Bundle-SymbolicName: rms.client.core
+Bundle-Vendor: AMX LLC
+Bundle-Version: 4.4.5
+Device-Make: AMX
+Device-Model: RMS-Client
+Device-Revision: 4.0.0
+DynamicImport-Package: *
+Import-Package: org.apache.commons.codec;version="1.4.0",  org.apache.
+ commons.codec.binary;version="1.4.0", org.apache.commons.codec.digest
+ ;version="1.4.0",  org.apache.commons.codec.language;version="1.4.0",
+  org.apache.commons.codec.net;version="1.4.0",  org.apache.commons.ht
+ tpclient;version="3.1.0",  org.apache.commons.httpclient.auth;version
+ ="3.1.0",  org.apache.commons.httpclient.cookie;version="3.1.0",  org
+ .apache.commons.httpclient.methods;version="3.1.0",  org.apache.commo
+ ns.httpclient.params;version="3.1.0", org.apache.commons.httpclient.p
+ rotocol;version="3.1.0",  org.apache.commons.httpclient.util;version=
+ "3.1.0",  org.apache.commons.lang;version="2.5.0",  org.apache.common
+ s.lang.builder;version="2.5.0",  org.apache.commons.lang.enum;version
+ ="2.5.0",  org.apache.commons.lang.enums;version="2.5.0",  org.apache
+ .commons.lang.exception;version="2.5.0",  org.apache.commons.lang.mat
+ h;version="2.5.0",  org.apache.commons.lang.mutable;version="2.5.0", 
+  org.apache.commons.lang.reflect;version="2.5.0",  org.apache.commons
+ .lang.text;version="2.5.0",  org.apache.commons.lang.time;version="2.
+ 5.0",  org.apache.commons.logging;version="1.1.1",  org.apache.common
+ s.logging.impl;version="1.1.1",  org.kxml2.io,  org.kxml2.kdom,  org.
+ xmlpull.v1
+Export-Package: com.amx.rms.client;version=4.4.5, com.amx.rms.client.e
+ vent;version=4.4.5, com.amx.rms.client.exception;version=4.4.5, com.a
+ mx.rms.client.logging;version=4.4.5, com.amx.rms.client.model;version
+ =4.4.5, com.amx.rms.client.management;version=4.4.5, com.amx.rms.clie
+ nt.service;version=4.4.5, com.amx.rms.client.service.impl;version=4.4
+ .5, com.amx.rms.client.service.result;version=4.4.5, com.amx.rms.clie
+ nt.platform;version=4.4.5, com.amx.rms.client.util;version=4.4.5
+Bundle-ClassPath: .
+File-Dependencies: commons-codec-1.4-AMX-01.jar;version="1.4.0", commo
+ ns-httpclient-3.1-AMX-01.jar;version="3.1.0", commons-lang-2.5-AMX-01
+ .jar;version="2.5.0", commons-logging-1.1.1-AMX-01.jar;version="1.1.1
+ "
+

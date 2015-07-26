@@ -1,0 +1,53 @@
+<div class="container" data-ng-controller="shadeCtrl as vm">
+
+    <ul class="nav nav-pills">
+        <li data-ng-repeat="nav in vm.subNavList" data-ng-class="{active: vm.subNavSelected.manifestID === nav.manifestID}"><a href="#/{{nav.url}}">{{nav.label}}</a></li>
+    </ul>
+
+    <p>Modify these settings for this shade.</p>
+
+    <form editable-form name="appForm" onaftersave="vm.saveData()">
+        <div class="row">
+            <div class="col-md-12">
+                <fieldset>
+                    <legend><span>{{ vm.subNavSelected.label }}</span></legend>
+                    <dl class="dl-horizontal">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <dt>Open Relay</dt><dd>  <span editable-select="vm.data.open.action"     e-ng-options="o.value as o.text for o in vm.actions" title="Assign this relay's action.">{{ vm.showActions(vm.data.open.action  ) }}</span></dd>
+                            </div>
+                            <div class="col-md-8" ng-show="(vm.data.open.action   == 'timed') || appForm.$visible">
+                                <dt>Time</dt><dd><span editable-number="vm.data.open.time"   e-min="0" e-max="3000" title="Assign this relay's travel time.">{{ vm.data.open.time + " sec" || "empty"}}</span></dd>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <dt>Close Relay</dt><dd>  <span editable-select="vm.data.close.action" e-ng-options="o.value as o.text for o in vm.actions" title="Assign this relay's action.">{{ vm.showActions(vm.data.close.action) }}</span></dd>
+                            </div>
+                            <div class="col-md-8" ng-show="(vm.data.close.action == 'timed') || appForm.$visible">
+                                <dt>Time</dt><dd><span editable-number="vm.data.close.time" e-min="0" e-max="3000" title="Assign this relay's travel time.">{{ vm.data.close.time + " sec" || "empty"}}</span></dd>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <dt>Stop Relay</dt><dd>  <span editable-select="vm.data.stop.action" e-ng-options="o.value as o.text for o in vm.actions" title="Assign this relay's action.">{{ vm.showActions(vm.data.stop.action) }}</span></dd>
+                            </div>
+                            <div class="col-md-8" ng-show="(vm.data.stop.action == 'timed') || appForm.$visible">
+                                <dt>Time</dt><dd><span editable-number="vm.data.stop.time" e-min="0" e-max="3000" title="Assign this relay's travel time.">{{ vm.data.stop.time + " sec" || "empty"}}</span></dd>
+                            </div>
+                        </div>
+                    </dl>
+                </fieldset>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="btn-group pull-right">
+                        <button type="button" class="btn btn-default"        ng-show="!appForm.$visible" ng-click="appForm.$show()"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+                        <button type="button" class="btn btn-default cancel" ng-show=" appForm.$visible" ng-disabled="appForm.$waiting" ng-click="appForm.$cancel()"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                        <button type="submit" class="btn btn-success accept" ng-show=" appForm.$visible" ng-disabled="appForm.$waiting"><span class="glyphicon glyphicon-ok"></span> Accept</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

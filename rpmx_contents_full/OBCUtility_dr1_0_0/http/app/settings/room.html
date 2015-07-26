@@ -1,0 +1,37 @@
+<div class="container" data-ng-controller="roomCtrl as vm">
+
+    <ul class="nav nav-pills">
+        <li data-ng-repeat="nav in vm.subNavList" data-ng-class="{active: vm.subNavSelected.manifestID === nav.manifestID}"><a href="#/{{nav.url}}">{{nav.label}}</a></li>
+    </ul>
+
+    <p>Modify these settings for this room.</p>
+
+    <form editable-form name="appForm" onaftersave="vm.saveData()">
+        <div class="row">
+            <div class="col-md-12">
+                <fieldset>
+                    <legend><span>{{ vm.subNavSelected.label }}</span></legend>
+                    <dl class="dl-horizontal">
+                        <dt>Room Name</dt>          <dd>{{ vm.data.name }}</dd>
+                        <dt>Room Number (Phone)</dt><dd><span editable-text="vm.data.supportPhoneNumber"  >{{ vm.data.supportPhoneNumber      || "empty" }}</span></dd>
+                        <dt>Audio Conf. (Phone)</dt><dd><span editable-text="vm.data.atcPhone"            >{{ vm.data.atcPhone                || "empty" }}</span></dd>
+                        <dt>Video Conf. (ISDN)</dt> <dd><span editable-text="vm.data.vtcISDN"             >{{ vm.data.vtcISDN                 || "empty" }}</span></dd>
+                        <dt>Video Conf. (IP)</dt>   <dd><span editable-text="vm.data.vtcIP"               >{{ vm.data.vtcIP                   || "empty" }}</span></dd>
+                        <dt>Room Off Time</dt>      <dd><span editable-text="vm.data.autoOff_clockOffTime" e-pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]" e-title="HH:MM (24h)">{{ vm.data.autoOff_clockOffTime || "empty" }}</span></dd>
+                        <dt>Room Off By Time</dt>   <dd><span editable-checkbox="vm.data.autoOff_enabled" >{{ vm.data.autoOff_enabled && "enabled" || "disabled"  }}</span></dd>
+                        <dt>Room Off Inactivity</dt><dd><span editable-select="vm.data.autoOff_inactivityCount" e-ng-options="o.value as o.text for o in vm.inactivityList">{{ vm.showInactivityList(vm.data.autoOff_inactivityCount) }}</span></dd>
+                    </dl>
+                </fieldset>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="btn-group pull-right">
+                        <button type="button" class="btn btn-default"        ng-show="!appForm.$visible" ng-click="appForm.$show()"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+                        <button type="button" class="btn btn-default cancel" ng-show=" appForm.$visible" ng-disabled="appForm.$waiting" ng-click="appForm.$cancel()"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                        <button type="submit" class="btn btn-success accept" ng-show=" appForm.$visible" ng-disabled="appForm.$waiting"><span class="glyphicon glyphicon-ok"></span> Accept</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

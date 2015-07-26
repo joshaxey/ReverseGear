@@ -1,0 +1,37 @@
+Manifest-Version: 1.0.0
+AMX-Type: Duet
+Bundle-Name: OBCUtility_dr1_0_0
+Device-Make: AMX
+Duet-Firmware-Version: v3.21.343
+Device-Channels: 255
+Device-Levels: 8
+Device-Model: OBCUtility
+Device-Category: other
+Device-SDKClass: com.amx.duet.devicesdk.Utility
+Device-SDKInterface: com.amx.duet.devicesdk.IUtility
+Device-Class: com.amx.obcutility.dr1_0_0.AMXOBCUtility
+Device-Revision: 1.0.0
+Router-Service: com.amx.duet.routers.snapi.ISNAPIRouter
+Bundle-Activator: com.amx.obcutility.dr1_0_0.Activator
+Bundle-Version: 1.0.3
+Bundle-Vendor: AMX Corporation
+Bundle-Copyright: (C) Copyright AMX Corp. 2014. All Rights Reserved.
+Import-Package: 
+ org.osgi.service.http; specification-version=1.1,
+ org.osgi.service.device; specification-version=1.0.1,
+ com.amx.duet.driver; specification-version=1.0.1,
+ com.amx.duet.core.osgi; specification-version=1.0.1,
+ com.amx.duet.da; specification-version=1.0.2,
+ com.amx.duet.util.metadata; specification-version=1.0.1,
+ com.amx.duet.util; specification-version=1.0.1,
+ com.amx.duet.devicesdk; specification-version=1.15.0,
+ com.amx.duet.devicesdk.base; specification-version=1.15.0,
+ com.amx.duet.devicesdk.component; specification-version=1.15.0,
+ com.amx.duet.devicesdk.type; specification-version=1.15.0
+Export-Package: com.amx.obcutility.dr1_0_0; specification-version=1.0.3
+File-Dependencies: 
+ json-bundle.jar,
+ snapirouter.jar; specification-version=1.15.0,
+ devicesdkrt.jar; specification-version=1.15.0
+DynamicImport-Package: *
+

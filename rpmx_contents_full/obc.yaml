@@ -1,0 +1,15 @@
+--- 
+obc:
+  duetModule: 
+    manifest: 
+      Duet-Module: OBCUtility_dr1_0_0
+      Device-Make: AMX
+      Device-Model: OBCUtility
+      Device-SDKClass: com.amx.duet.devicesdk.Utility
+      Device-Category: other
+      Device-Revision: 1.0.0
+      Bundle-Version: 1.0.3
+      Device-GUID: ""
+  fileName: OBCUtility_dr1_0_0.jar
+  friendlyName: OBC
+  physicalDevice: "0:1:0"

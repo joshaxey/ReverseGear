@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dev:type-info xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dev="http://www.amx.com/duet/devicesdk"  xsi:schemaLocation="http://www.amx.com/duet/devicesdk/deviceclass.xsd">
+	<dev:class superclass="com.amx.duet.devicesdk.Utility" serializable="true" name="com.amx.rms.client.gui.dr4_0_0.RmsClientGui">
+		<dev:extends>
+			<dev:extend name="com.amx.duet.core.master.netlinx.IButtonListener"></dev:extend>
+			<dev:extend name="com.amx.duet.core.master.netlinx.IDataListener"></dev:extend>
+			<dev:extend name="com.amx.rms.client.gui.dr4_0_0.RMSClientUIConstant"></dev:extend>
+		</dev:extends>
+		<dev:fields></dev:fields>
+		<dev:methods>
+			<dev:constructor visibility="public" name="RmsClientGui"></dev:constructor>
+			<dev:constructor visibility="public" name="RmsClientGui">
+				<dev:params>
+					<dev:param type="org.osgi.framework.BundleContext" name="bctxt"></dev:param>
+					<dev:param type="com.amx.duet.da.NetLinxDevice" name="nd"></dev:param>
+					<dev:param type="java.util.Properties" name="props"></dev:param>
+				</dev:params>
+			</dev:constructor>
+			<dev:method visibility="public" type="boolean" name="isDeviceOnLine"></dev:method>
+			<dev:method visibility="public" type="boolean" name="isDataInitialized"></dev:method>
+			<dev:method visibility="public" type="boolean" name="setDataInitializedState">
+				<dev:params>
+					<dev:param type="boolean" name="state"></dev:param>
+				</dev:params>
+			</dev:method>
+			<dev:method visibility="public" type="void" name="refresh"></dev:method>
+			<dev:method visibility="public" type="void" name="reinitialize"></dev:method>
+			<dev:method visibility="public" type="void" name="handleDataEvent">
+				<dev:params>
+					<dev:param type="com.amx.duet.core.master.netlinx.Event" name="evt"></dev:param>
+				</dev:params>
+			</dev:method>
+			<dev:method visibility="public" type="void" name="handleButtonEvent">
+				<dev:params>
+					<dev:param type="com.amx.duet.core.master.netlinx.Event" name="evt"></dev:param>
+				</dev:params>
+			</dev:method>
+			<dev:method visibility="public" type="void" name="handleAdvancedEvent">
+				<dev:params>
+					<dev:param type="com.amx.duet.core.master.netlinx.Event" name="obj"></dev:param>
+				</dev:params>
+			</dev:method>
+			<dev:method visibility="public" type="com.amx.duet.da.NetLinxDevice" name="getTPfromBase">
+				<dev:params>
+					<dev:param type="java.lang.String" name="strTPBase"></dev:param>
+				</dev:params>
+			</dev:method>
+			<dev:method visibility="public" type="com.amx.rms.client.gui.dr4_0_0.RMSNetLinxDevice" name="getMatchingRMSTouchPanel">
+				<dev:params>
+					<dev:param type="com.amx.duet.core.master.netlinx.DPS" name="dps"></dev:param>
+				</dev:params>
+			</dev:method>
+			<dev:method visibility="public" type="java.util.ArrayList" name="getTPList"></dev:method>
+			<dev:method visibility="public" type="java.lang.String" name="getBundleVersion"></dev:method>
+			<dev:method visibility="public" type="java.lang.String" name="getClientVersion"></dev:method>
+			<dev:method visibility="public" type="java.lang.String" name="getBaseURL"></dev:method>
+			<dev:method visibility="public" type="boolean" name="isServerOnline"></dev:method>
+			<dev:method visibility="public" type="com.amx.rms.client.gui.dr4_0_0.RmsServiceTracker" name="getServiceTracker"></dev:method>
+			<dev:method visibility="public" type="void" name="closeAllRmsPopUpPages"></dev:method>
+		</dev:methods>
+	</dev:class>
+</dev:type-info>

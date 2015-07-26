@@ -1,0 +1,26 @@
+--- 
+rms4:
+  duetModule: 
+    manifest: 
+      Duet-Module: RmsNetLinxAdapter_dr4_0_0
+      Device-SDKClass: com.amx.duet.devicesdk.Utility
+      Device-Make: AMX
+      Device-Model: RMS-NetLinx-Adapter
+      Device-Category: other
+      Device-Revision: 4.0.0
+    properties: 
+      - "1|command|CONFIG.SERVER.URL-http://dummyrms.com"
+      - "1|command|CONFIG.SERVER.PASSWORD-password"
+      - "1|command|CONFIG.CLIENT.NAME-Dummy Room"
+      - "1|command|CONFIG.CLIENT.ENABLED-true"
+  fileName: RmsNetLinxAdapter_dr4_0_0.jar
+  scheduling: 
+    duetModule: 
+      manifest: 
+        Duet-Module: RmsClientGui_dr4_0_0
+        Device-SDKClass: com.amx.duet.devicesdk.Utility
+        Device-Make: AMX
+        Device-Model: RMS-Client-Gui
+        Device-Category: other
+        Device-Revision: 4.0.0
+    fileName: RmsClientGui_dr4_0_0.jar

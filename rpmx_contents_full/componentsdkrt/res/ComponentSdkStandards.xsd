@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="ComponentSdkStandards" type="StandardsType">
+		<xs:key name="id">
+			<xs:selector xpath="Standard" />
+			<xs:field xpath="@id" />
+		</xs:key>
+	</xs:element>
+	<xs:complexType name="StandardType">
+		<xs:sequence>
+			<xs:element name="Name" minOccurs="1" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="key" type="xs:string" use="required" />
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string" />
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="displayName" type="xs:string" use="optional" />
+		<xs:attribute name="editable" type="xs:boolean" use="required" />
+	</xs:complexType>
+	<xs:complexType name="StandardsType">
+		<xs:sequence>
+			<xs:element name="Standard" type="StandardType" minOccurs="1" maxOccurs="unbounded">
+				<xs:key name="key">
+					<xs:selector xpath="*" />
+					<xs:field xpath="@key" />
+				</xs:key>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

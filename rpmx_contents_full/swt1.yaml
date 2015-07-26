@@ -1,0 +1,7 @@
+--- 
+swt1:
+  fileName: SDX-410-DX.xml
+  friendlyName: Dummy Switcher
+  physicalDevice: "5201:1:0"
+  properties: 
+    - "1|command|VIDIN_AUTO_SELECT-DISABLE"

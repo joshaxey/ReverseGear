@@ -1,0 +1,51 @@
+Manifest-Version: 1.0
+Bundle-Activator: com.amx.rms.client.netlinx.web.osgi.Activator
+Bundle-Copyright: Copyright 2014 AMX LLC.  All Rights Reserved.
+Bundle-Description: Resource Management Suite Client (NetLinx Web)
+Bundle-Name: rms-client-netlinx-web
+Bundle-Vendor: AMX LLC
+Bundle-Version: 4.4.5
+Device-Make: AMX
+Device-Model: RMS-Client-NetLinx-Web
+Device-Revision: 4.0.0
+DynamicImport-Package: org.osgi.util.tracker, javax.servlet, javax.ser
+ vlet.http
+Import-Package: org.osgi.framework;version="1.3", org.osgi.service.htt
+ p;version="1.2", org.osgi.service.device;version="1.1", com.amx.duet.
+ core.osgi;version="1.0.1",  com.amx.duet.da;version="1.0.2", com.amx.
+ duet.util;version="1.0.1",  com.amx.duet.devicesdk;version="1.16.0", 
+  com.amx.duet.devicesdk.base;version="1.16.0",  com.amx.duet.devicesd
+ k.component;version="1.16.0",  com.amx.duet.devicesdk.type;version="1
+ .16.0",  org.apache.commons.codec;version="1.4.0",  org.apache.common
+ s.codec.binary;version="1.4.0", org.apache.commons.codec.digest;versi
+ on="1.4.0",  org.apache.commons.codec.language;version="1.4.0", org.a
+ pache.commons.codec.net;version="1.4.0",  org.apache.commons.httpclie
+ nt;version="3.1.0",  org.apache.commons.httpclient.auth;version="3.1.
+ 0",  org.apache.commons.httpclient.cookie;version="3.1.0",  org.apach
+ e.commons.httpclient.methods;version="3.1.0",  org.apache.commons.htt
+ pclient.params;version="3.1.0", org.apache.commons.httpclient.protoco
+ l;version="3.1.0",  org.apache.commons.httpclient.util;version="3.1.0
+ ",  org.apache.commons.lang;version="2.5.0",  org.apache.commons.lang
+ .builder;version="2.5.0",  org.apache.commons.lang.enum;version="2.5.
+ 0",  org.apache.commons.lang.enums;version="2.5.0",  org.apache.commo
+ ns.lang.exception;version="2.5.0",  org.apache.commons.lang.math;vers
+ ion="2.5.0",  org.apache.commons.lang.mutable;version="2.5.0",  org.a
+ pache.commons.lang.reflect;version="2.5.0",  org.apache.commons.lang.
+ text;version="2.5.0",  org.apache.commons.lang.time;version="2.5.0", 
+  org.apache.commons.logging;version="1.1.1",  org.apache.commons.logg
+ ing.impl;version="1.1.1", org.kxml2.io,  org.kxml2.kdom,  org.xmlpull
+ .v1, com.amx.rms.client;version=4.4.5, com.amx.rms.client.event;versi
+ on=4.4.5, com.amx.rms.client.exception;version=4.4.5, com.amx.rms.cli
+ ent.logging;version=4.4.5, com.amx.rms.client.model;version=4.4.5, co
+ m.amx.rms.client.platform;version=4.4.5, com.amx.rms.client.service;v
+ ersion=4.4.5, com.amx.rms.client.service.impl;version=4.4.5, com.amx.
+ rms.client.osgi;version=4.4.5, com.amx.rms.client.osgi.util;version=4
+ .4.5, com.amx.rms.client.util;version=4.4.5
+Export-Package: com.amx.rms.client.netlinx.web;version=4.4.5
+Bundle-ClassPath: .
+File-Dependencies: commons-codec-1.4-AMX-01.jar;version="1.4.0", commo
+ ns-httpclient-3.1-AMX-01.jar;version="3.1.0", commons-lang-2.5-AMX-01
+ .jar;version="2.5.0", commons-logging-1.1.1-AMX-01.jar;version="1.1.1
+ ", devicesdkrt.jar;version="1.16.0", snapirouter.jar;version="1.16.0"
+ , rmsclient-osgi.jar;version="4.4.5", rmsclient.jar;version="4.4.5"
+

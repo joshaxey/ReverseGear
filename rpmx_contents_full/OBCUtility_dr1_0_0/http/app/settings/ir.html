@@ -1,0 +1,30 @@
+<div class="container" data-ng-controller="irCtrl as vm">
+
+    <ul class="nav nav-pills">
+        <li data-ng-repeat="nav in vm.subNavList" data-ng-class="{active: vm.subNavSelected.manifestID === nav.manifestID}"><a href="#/{{nav.url}}">{{nav.label}}</a></li>
+    </ul>
+
+    <p>Modify these IR settings for this device.</p>
+
+    <form editable-form name="appForm" onaftersave="vm.saveData()">
+        <div class="row">
+            <div class="col-md-12">
+                <fieldset>
+                    <legend><span>{{ vm.subNavSelected.label }}</span></legend>
+                    <dl class="dl-horizontal">
+                        <dt>IR Pulse Time</dt><dd><span editable-number="vm.data.pulseTime" e-min=".1" e-max="2" e-step=".1" title="Assign the IR pulse time as 1/10 second.">{{ vm.data.pulseTime + " sec" || "empty" }}</span></dd>
+                    </dl>
+                </fieldset>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="btn-group pull-right">
+                        <button type="button" class="btn btn-default"        ng-show="!appForm.$visible" ng-click="appForm.$show()"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+                        <button type="button" class="btn btn-default cancel" ng-show=" appForm.$visible" ng-disabled="appForm.$waiting" ng-click="appForm.$cancel()"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                        <button type="submit" class="btn btn-success accept" ng-show=" appForm.$visible" ng-disabled="appForm.$waiting"><span class="glyphicon glyphicon-ok"></span> Accept</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

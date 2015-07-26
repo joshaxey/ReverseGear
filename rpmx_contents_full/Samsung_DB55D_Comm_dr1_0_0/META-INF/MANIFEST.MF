@@ -1,0 +1,76 @@
+Manifest-Version: 1.0.0
+Import-Package: com.amx.duet.devicesdk; specification-version=1.15.0,c
+ om.amx.duet.devicesdk.base; specification-version=1.15.0,com.amx.duet
+ .devicesdk.component; specification-version=1.15.0,com.amx.duet.devic
+ esdk.type; specification-version=1.15.0,org.osgi.service.http; specif
+ ication-version=1.1,org.osgi.service.device; specification-version=1.
+ 0.1,com.amx.duet.driver; specification-version=1.0.1,com.amx.duet.cor
+ e.osgi; specification-version=1.0.1,com.amx.duet.da; specification-ve
+ rsion=1.0.2,com.amx.duet.util.metadata; specification-version=1.0.1,c
+ om.amx.duet.util; specification-version=1.0.1
+PROPERTY-Has-Aspect-Ratio-Cycle: true
+Has-PIP-Tuner: false
+Device-Model: DB55D,DB48D,DB40D,DB32D,DM32D
+Poll_Time: Integer,10000,1000..300000
+Bundle-Copyright: (C) Copyright AMX Corp. 2004 - 2013. All Rights Rese
+ rved.
+Bundle-Name: Samsung_DB55D_Comm_dr1_0_0
+PROPERTY-Has-Lamp: false
+AMX-Type: Duet
+Baud_Rate: String,9600,9600
+Device-Category: ip,serial,rs-232
+PROPERTY-Has-Freeze: false
+PROPERTY-Has-Tint: true
+PROPERTY-Has-Power-Cycle: true
+PROPERTY-Has-Aspect-Ratio: true
+Bundle-Activator: com.amx.duet.impl.Samsung.DB55D.dr1_0_0.Activator
+Device-Make: Samsung
+PROPERTY-Has-Menu-10Key: false
+Device-Revision: 1.0.0
+Supported-Bands: false
+PROPERTY-Lamp-Count: 1
+PROPERTY-Has-PIP: true
+PROPERTY-Has-Volume-Mute-Cycle: true
+PROPERTY-Has-Input-Select-Cycle: true
+Router-Service: com.amx.duet.routers.snapi.ISNAPIRouter
+Bundle-Vendor: AMX LLC.
+PROPERTY-Has-PIP-Cycle: true
+Device-Channels: 255
+Device-Interface: com.amx.duet.impl.Samsung.DB55D.dr1_0_0.ISamsungTV
+PROPERTY-Has-Color: true
+PROPERTY-Has-Menu: false
+PROPERTY-Has-Power: true
+PROPERTY-Menu-List: blank
+PROPERTY-Has-Input-Select: true
+Support-PIP: false
+Bundle-Version: 1.0.0
+PROPERTY-Has-Picture-Mute: false
+PROPERTY-Has-PIP-Position-Cycle: true
+PROPERTY-Has-Sharpness: true
+Device-SDKClass: com.amx.duet.devicesdk.TV
+PROPERTY-Has-Contrast: true
+Support-Multiple-Screens: false
+PROPERTY-Has-Station: true
+PROPERTY-Has-Picture-Mute-Cycle: false
+DynamicImport-Package: *
+PROPERTY-Menu-Navigate-List: blank
+Duet-Firmware-Version: 3.60.453
+PROPERTY-Has-Brightness: true
+Device-SDKInterface: com.amx.duet.devicesdk.ITV4
+PROPERTY-Has-Freeze-Cycle: false
+Export-Package: com.amx.duet.impl.Samsung.DB55D.dr1_0_0; specification
+ -version=1.0.0,com.amx.duet.util.Samsung.DB55D.dr1_0_0; specification
+ -version=1.0.0,com.amx.duet.util.comp.Samsung.DB55D.dr1_0_0; specific
+ ation-version=1.0.0,com.amx.duet.util.regexp.Samsung.DB55D.dr1_0_0; s
+ pecification-version=1.0.0,com.amx.duet.util.tools.Samsung.DB55D.dr1_
+ 0_0; specification-version=1.0.0
+PROPERTY-Has-Menu-Navigate: false
+Device-Levels: 15
+Support-Discrete-Power: false
+File-Dependencies: devicesdkrt.jar; specification-version=1.15.0,snapi
+ router.jar; specification-version=1.15.0
+Device-Class: com.amx.duet.impl.Samsung.DB55D.dr1_0_0.SamsungTV
+PROPERTY-Has-Volume: true
+PROPERTY-Has-Volume-Ramp: true
+Device_ID: Integer,1,1..99
+

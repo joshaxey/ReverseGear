@@ -1,0 +1,29 @@
+Manifest-Version: 1.0.0
+Export-Package: com.amx.rpmutility.dr1_0_0; specification-version=1.0.
+ 0
+Device-Model: RPMUtility
+AMX-Type: Duet
+Device-Channels: 255
+Router-Service: com.amx.duet.routers.snapi.ISNAPIRouter
+Bundle-Name: RPMUtility_dr1_0_0
+Duet-Firmware-Version: v3.21.343
+Device-Revision: 1.0.0
+Bundle-Copyright: (C) Copyright AMX Corp. 2004-2007. All Rights Reserv
+ ed.
+File-Dependencies: snapirouter.jar; specification-version=1.15.0,devic
+ esdkrt.jar; specification-version=1.15.0
+Device-SDKClass: com.amx.duet.devicesdk.Utility
+DynamicImport-Package: *
+Bundle-Vendor: AMX Corporation
+Device-Levels: 8
+Device-Category: other
+Bundle-Version: 1.0.3
+Device-Class: com.amx.rpmutility.dr1_0_0.AMXRPMUtility
+Bundle-Activator: com.amx.rpmutility.dr1_0_0.Activator
+Import-Package: org.osgi.service.http,org.osgi.service.device,com.amx.
+ duet.driver,com.amx.duet.da,com.amx.duet.core.osgi,com.amx.duet.devic
+ esdk,com.amx.duet.devicesdk.base,com.amx.duet.devicesdk.component,com
+ .amx.duet.devicesdk.type,com.amx.duet.util.metadata,com.amx.duet.util
+Device-SDKInterface: com.amx.duet.devicesdk.IUtility
+Device-Make: AMX
+

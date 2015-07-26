@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="RMSWebConfig.xsl" ?>
+<RmsInformation title="RMS Web Configuration" subtitle="RMS Web Configuration" explanation="Edit RMS Web configuration/settings" enabled="true" >
+	<webConfig serverURL="meetingmanager.amx.com" serverPassword="password" clientName="Test Room" connection="false" connectionFailMessage=""/>
+</RmsInformation>
+
+<!--  Example XML for the Web Configuration Page 
+This is the XML the servlet will post to the web page on request.
+This is the main entry point to the RMS Web page configuration.
+This page is purely for information purposes and user cannot enter any info.
+
+Explanation of parameters:
+
+title = string.     Web page Title
+enabled = boolean   Whether to allow master to connect to RMS Server
+serverURL = string. RMS Server URL
+serverPassword = string. RMS server password 
+clientName = string. 		Client Gateway name
+sslEnabled = boolean  Whether to use SSL
+-->

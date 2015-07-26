@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dev:type-info xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dev="http://www.amx.com/duet/devicesdk"  xsi:schemaLocation="http://www.amx.com/duet/devicesdk/deviceclass.xsd">
+	<dev:class superclass="com.amx.duet.devicesdk.Utility" serializable="true" name="com.amx.rms.client.netlinx.adapter.RmsNetLinxAdapter">
+		<dev:extends>
+			<dev:extend name="com.amx.rms.client.event.RmsVersionEventListener"></dev:extend>
+		</dev:extends>
+		<dev:methods>
+			<dev:constructor visibility="public" name="RmsNetLinxAdapter"></dev:constructor>
+			<dev:constructor visibility="public" name="RmsNetLinxAdapter">
+				<dev:params>
+					<dev:param type="org.osgi.framework.BundleContext" comment="" name="context"></dev:param>
+					<dev:param type="com.amx.duet.da.NetLinxDevice" comment="" name="netlinxDevice"></dev:param>
+					<dev:param type="java.util.Properties" comment="" name="properties"></dev:param>
+				</dev:params>
+			</dev:constructor>
+			<dev:method visibility="public" type="void" name="handleDataEvent">
+				<dev:params>
+					<dev:param type="com.amx.duet.core.master.netlinx.Event" name="obj"></dev:param>
+					<dev:param type="int" name="type"></dev:param>
+				</dev:params>
+			</dev:method>
+			<dev:method visibility="public" type="boolean" name="isDeviceOnLine"></dev:method>
+			<dev:method visibility="public" type="boolean" name="isDataInitialized"></dev:method>
+			<dev:method visibility="public" type="void" name="printVersion"></dev:method>
+		</dev:methods>
+	</dev:class>
+</dev:type-info>

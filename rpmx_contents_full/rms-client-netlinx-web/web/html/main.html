@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+
+    <title>RMS Client</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap-3.3.1/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/custom.css" rel="stylesheet">
+</head>
+
+<body>
+<!-- Preloader -->
+<div id="spinner"></div>
+
+<!-- Fixed navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <img class="navbar-brand" src="../assets/amx-logo-blue.png"/>
+            <!--<img class="navbar-brand" src="../assets/rms-logo-large.png"/>-->
+            <!--<img class="navbar-brand" src="../assets/rms-logo-large.png" height="50px" width="52px" />-->
+            <!--<img class="navbar-brand" src="../assets/rms-logo-large.png" height="100px" width="104px" />-->
+            <a class="navbar-brand" href="#">Resource Management Suite</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#">Server</a></li>
+                <li><a href="#about">Assets</a></li>
+                <li><a href="#about">Locations</a></li>
+                <li><a href="#contact">Scheduling</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Logs</a></li>
+                        <li><a href="#">Messages</a></li>
+                        <li><a href="#">Diagnostics</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Documentation</li>
+                        <li><a href="#">Release Notes</a></li>
+                        <li><a href="#">Programmer's Guide</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</div>
+
+
+<div class="container">
+<form role="form">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <span class="panel-title">Server Connection Configuration</span>
+            <span class="checkbox pull-right">
+                <label>
+                    <input type="checkbox"> Allow Client to Connect
+                </label>
+            </span>
+        </div>
+
+        <div class="panel-body">
+            <div class="form-group">
+                <label for="clientGatewayName">Client Gateway Name</label>
+                <input type="text" class="form-control" id="clientGatewayName" placeholder="Name">
+            </div>
+
+
+            <div class="form-group">
+                <label for="rmsServerUrl">RMS Server URL</label>
+                <input type="url" class="form-control" id="rmsServerUrl" placeholder="http://rms-server-hostname/rms">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword">RMS Server Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-default pull-right">Test Connection</button>
+
+        </div>
+    </div>
+
+    <!--<div class="panel-footer">-->
+            <div class="pull-right" id="server-config-button-container">
+                <button type="submit" class="btn btn-default ">Cancel</button>
+                <button type="submit" class="btn btn-default">Save</button>
+            </div>
+        <!--</div>-->
+    <!--</div>-->
+
+</form>
+</div>
+<p>
+
+    <!--<div class="progress progress-striped active">-->
+    <!--<div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"-->
+    <!--style="width: 45%">-->
+    <!--<span class="sr-only">45% Complete</span>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <!--<!-- Main component for a primary marketing message or call to action -->
+    <!--<div class="jumbotron">-->
+
+    <!--<div class="input-group">-->
+    <!--<span class="input-group-addon">@</span>-->
+    <!--<input type="text" class="form-control" placeholder="Username">-->
+    <!--</div>-->
+    <!--<h1>Test1</h1>-->
+    <!--<p>Test2</p>-->
+    <!--<p>Test3</p>-->
+    <!--<p>-->
+    <!--<!--<a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
+    -->
+    <!--</p>-->
+    <!--</div>-->
+
+    </div> <!-- /container -->
+
+
+<div id="footer">
+    <div class="container">
+        <h4><span id="clientVersion" class="text-muted">Version 4</span>
+        <span id="clientConnectionStatus" class="label label-danger pull-right">OFFLINE</span></h4>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="../js/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="../js/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script src="../js/jquery/1.11.0/jquery.min.js"></script>
+<script src="../js/bootstrap-3.3.1/bootstrap.min.js"></script>
+<script src="../js/custom.js"></script>
+
+</body>
+</html>

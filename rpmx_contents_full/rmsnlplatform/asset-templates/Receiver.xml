@@ -1,0 +1,599 @@
+<!--  *********************************************  -->
+<!--                                                 -->
+<!--        AMX Resource Management Suite            -->
+<!--         Duet Device Asset Template              -->
+<!--                                                 -->
+<!--           TYPE:  Receiver		             	 -->
+<!--                                                 -->
+<!--  *********************************************  -->
+<asset name="Receiver" 
+       description="Receiver"
+       assetTypeKey="Receiver"
+       templateVersion="4.0.0" >
+
+  <!--  *********************************************  -->
+  <!--           ASSET METADATA PROPERTIES             -->
+  <!--  *********************************************  -->
+  <metadata>
+  
+    <!--            All Duet Modules           -->
+    <property name="Duet Device Category" key="duet.device.category" moduleProperty="Device-Category" />
+    <property name="Duet Device Channels" key="duet.device.channels" moduleProperty="Device-Channels"   dataType="NUMBER"  lowerBounds="0" />
+    <property name="Duet Device Levels" key="duet.device.levels" moduleProperty="Device-Levels"   dataType="NUMBER" lowerBounds="0" />
+    <property name="Duet Device Revision" key="duet.device.revision" moduleProperty="Device-Revision" />
+    <property name="Duet Module" key="duet.module.name" moduleProperty="Duet-Module" />
+    <property name="Duet Module Version" key="duet.module.version" method="getVersion" />
+    <property name="Physical Device (DPS)" key="duet.physical.dps" moduleProperty="Physical-Device" />
+    
+     <!--           Tuner Station Component              --> 
+    <property name="Station Preset Count" key="tuner.station.count"  dataType="NUMBER"  method="getStationPresetCount" lowerBounds="0" hasModuleProperty="Has-Station-Preset"/>    
+    <property name="Tuner Band Count" key="tuner.band.count" dataType="NUMBER" method="getTunerBandPropertyCount"  lowerBounds="0" hasModuleProperty="Has-Tuner-Band"/>    
+    
+    <!--           Source Select Component              -->   
+    <property name="Input Source Count" key="source.input.count" method="getInputCount" dataType="NUMBER" lowerBounds="0" hasModuleProperty="Has-Input-Select"/>      
+  </metadata>
+
+  <!--  *********************************************  -->
+  <!--            ASSET MONITORED PARAMETERS           -->
+  <!--  *********************************************  -->
+  <parameters>
+	<!--           All Duet Component              -->   
+    <parameter  name="Online Status"
+                description="Current asset online or offline state" 
+                key="asset.online"
+                allowReset="false"                
+                resetValue=""
+                parameterType="ASSET_ONLINE"   
+                units=""
+                dataType="ENUMERATION"
+                trackChanges="true" >
+        <thresholds>
+            <threshold name="Offline" 
+                       enabled="true" 
+                       compareOperator="EQUAL_TO"
+                       value="Offline" 
+                       statusTypeKey="ROOM_COMMUNICATION_ERROR"
+                       delayed="false"
+                       delayInterval=""
+                       notifyOnTrip="true"
+                       notifyOnRestore="true" />
+        </thresholds>                
+        <enumerations>
+                <enumeration ordinal="0" name="Offline" value="false" />
+                <enumeration ordinal="1" name="Online"  value="true" />
+        </enumerations>
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="isDeviceOnLine" javaType="java.lang.Boolean" />
+        </currentValueLookup>
+        <listener addListenerMethod="addModuleComponentListener"
+                  removeListenerMethod="removeModuleComponentListener"
+                  eventMethod="processDeviceOnLineEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.base.IModuleComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+    
+    <parameter  name="Device Data Initialized"
+                description="Duet module data has been initialized" 
+                key="asset.data.initialized"
+                allowReset="false"                
+                resetValue=""
+                parameterType="NONE"   
+                units=""
+                dataType="BOOLEAN"
+                trackChanges="false" >
+        <enumerations />    
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="isDataInitialized" javaType="java.lang.Boolean" />
+        </currentValueLookup>
+        <listener addListenerMethod="addModuleComponentListener"
+                  removeListenerMethod="removeModuleComponentListener"
+                  eventMethod="processDataInitializedEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.base.IModuleComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+    
+    <parameter  name="Module Debug State"
+                description="Duet module's current debug level" 
+                key="asset.debug.level"
+                allowReset="false"                
+                resetValue=""
+                units=""
+                dataType="ENUMERATION"
+                trackChanges="true"
+                parameterType="NONE" >
+            <enumerations>
+                <enumeration ordinal="0" name="Error"   value="1" />
+                <enumeration ordinal="1" name="Warning" value="2" />
+                <enumeration ordinal="2" name="Info"    value="3" />
+                <enumeration ordinal="3" name="Debug"   value="4" />                
+            </enumerations>
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getDebugState" javaType="java.lang.Integer" />
+        </currentValueLookup>
+        <listener addListenerMethod="addModuleComponentListener"
+                  removeListenerMethod="removeModuleComponentListener"
+                  eventMethod="processDebugEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.base.IModuleComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+
+    <!--           Power Component              -->   
+    <parameter  name="Power Status"
+                description="Current asset power state" 
+                key="asset.power"
+                allowReset="false"                
+                resetValue=""
+                parameterType="ASSET_POWER"   
+                units=""
+                dataType="ENUMERATION"
+                trackChanges="true"
+                hasModuleProperty="Has-Power" >
+		<enumerations>
+                <enumeration ordinal="0" name="Off" instance="static" field="OFF" />
+                <enumeration ordinal="1" name="On"  instance="static" field="ON" />
+        </enumerations>
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getPower" javaType="com.amx.duet.devicesdk.type.PowerState" />
+        </currentValueLookup>
+        <listener addListenerMethod="addPowerComponentListener"
+                  removeListenerMethod="removePowerComponentListener"
+                  eventMethod="processPowerEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IPowerComponentListener</proxyInterface>
+                  </proxyInterfaces>
+        </listener>
+    </parameter> 
+    
+    <!--           Volume Component              -->
+    <parameter  name="Volume Mute"
+                description="The current volume mute state" 
+                key="volume.mute"
+                allowReset="false"                
+                resetValue=""
+                parameterType="NONE"   
+                units=""
+                dataType="BOOLEAN"
+                trackChanges="false"
+                hasModuleProperty="Has-Volume">
+        <enumerations />    
+        <currentValueLookup updateOperation="SET_VALUE">
+               <method name="isVolumeMuteOn" javaType="java.lang.Boolean" />
+        </currentValueLookup>
+        <listener addListenerMethod="addVolumeComponentListener"
+                  removeListenerMethod="removeVolumeComponentListener"
+                  eventMethod="processVolumeMuteEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IVolumeComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+   
+    <parameter  name="Volume Level"
+                description="Current volume level" 
+                key="volume.level"
+                allowReset="false"                
+                resetValue=""
+                dataType="LEVEL"
+                trackChanges="false"
+                parameterType="NONE"
+                units=""                
+                min="0"
+                max="255"
+                bargraphKey="volume.level"
+                hasModuleProperty="Has-Volume">
+        <enumerations />       
+        <currentValueLookup updateOperation="SET_VALUE">
+               <method name="getVolume" javaType="java.lang.Integer" />
+        </currentValueLookup>
+        <listener addListenerMethod="addVolumeComponentListener"
+                  removeListenerMethod="removeVolumeComponentListener"
+                  eventMethod="processVolumeEvent">
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IVolumeComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+         
+    </parameter> 
+    
+    <!--           PreAmp Component              -->   
+    <parameter  name="Balance Level"
+                description="Current balance level" 
+                key="preamp.balance"
+                allowReset="false"                
+                resetValue=""
+                dataType="LEVEL"
+                trackChanges="false"
+                parameterType="NONE"
+                units=""                
+                min="-128"
+                max="128"
+                bargraphKey="general"
+                hasModuleProperty="Has-Balance">
+        <enumerations />       
+        <currentValueLookup updateOperation="SET_VALUE">
+               <method name="getBalance" javaType="java.lang.Integer" />
+        </currentValueLookup>
+        <listener addListenerMethod="addPreAmpComponentListener"
+                  removeListenerMethod="removePreAmpComponentListener"
+                  eventMethod="processBalanceEvent">
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IPreAmpComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter> 
+           
+    <parameter  name="Loudness State"
+                description="The current loudness state" 
+                key="preamp.loudness"
+                allowReset="false"                
+                resetValue=""
+                parameterType="NONE"   
+                units=""
+                dataType="BOOLEAN"
+                trackChanges="false"
+                hasModuleProperty="Has-Loudness">
+        <enumerations />    
+        <currentValueLookup updateOperation="SET_VALUE">
+               <method name="isLoudnessOn" javaType="java.lang.Boolean" />
+        </currentValueLookup>
+        <listener addListenerMethod="addPreAmpComponentListener"
+                  removeListenerMethod="removePreAmpComponentListener"
+                  eventMethod="processLoudnessEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IPreAmpComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+    
+    <parameter  name="Treble Level"
+                description="Current treble level" 
+                key="preamp.treble"
+                allowReset="false"                
+                resetValue=""
+                dataType="LEVEL"
+                trackChanges="false"
+                parameterType="NONE"
+                units=""                
+                min="0"
+                max="255"
+                bargraphKey="general"
+                hasModuleProperty="Has-Treble">
+        <enumerations />       
+        <currentValueLookup updateOperation="SET_VALUE">
+               <method name="getTreble" javaType="java.lang.Integer" />
+        </currentValueLookup>
+        <listener addListenerMethod="addPreAmpComponentListener"
+                  removeListenerMethod="removePreAmpComponentListener"
+                  eventMethod="processTrebleEvent">
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IPreAmpComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter> 
+  
+    <parameter  name="Bass Level"
+                description="Current bass level" 
+                key="preamp.bass"
+                allowReset="false"                
+                resetValue=""
+                dataType="LEVEL"
+                trackChanges="false"
+                parameterType="NONE"
+                units=""                
+                min="0"
+                max="255"
+                bargraphKey="general"
+                hasModuleProperty="Has-Bass">
+        <enumerations />       
+        <currentValueLookup updateOperation="SET_VALUE">
+               <method name="getBass" javaType="java.lang.Integer" />
+        </currentValueLookup>
+        <listener addListenerMethod="addPreAmpComponentListener"
+                  removeListenerMethod="removePreAmpComponentListener"
+                  eventMethod="processBassEvent">
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IPreAmpComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>     
+    
+    <!--            Source Select Component              -->
+    <parameter  name="Input Source"
+                description="Current selected input source" 
+                key="source.input"
+                allowReset="false"                
+                resetValue=""
+                units=""
+                dataType="ENUMERATION"
+                trackChanges="true"
+                parameterType="SOURCE_STATE"  
+                hasModuleProperty="Has-Input-Select"              
+                >
+        <enumerations method="getInputProperties" 
+                      nameIndex="4"
+                      valueIndex="0" />
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getInputSelect" javaType="java.lang.Integer" />
+        </currentValueLookup>
+        <listener addListenerMethod="addSourceSelectComponentListener"
+                  removeListenerMethod="removeSourceSelectComponentListener"
+                  eventMethod="processInputSelectEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.ISourceSelectComponentListener</proxyInterface>
+                     <proxyInterface>com.amx.duet.devicesdk.component.ISourceSelectComponentListener2</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+    
+    <!--            Tuner Station Component              -->
+    
+    <!--  Tuner Band format: (index),(displayName),(tunerBandTSE) -->
+    <parameter  name="Tuner Band"
+                description="Current selected tuner band" 
+                key="tuner.band"
+                allowReset="false"                
+                resetValue=""
+                units=""
+                dataType="ENUMERATION"
+                trackChanges="false"
+                parameterType="NONE"  
+                hasModuleProperty="Has-Tuner-Band"              
+                >
+        <enumerations method="getTunerBandProperties" 
+                      nameIndex="1"
+                      valueIndex="0" />
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getTunerBandSelect" javaType="java.lang.Integer" />
+        </currentValueLookup>        
+        <listener addListenerMethod="addTunerStationComponentListener"
+                  removeListenerMethod="removeTunerStationComponentListener"
+                  eventMethod="processTunerBandSelectEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.ITunerStationComponentListener</proxyInterface>
+                     <proxyInterface>com.amx.duet.devicesdk.component.ITunerStationComponentListener2</proxyInterface>
+                     <proxyInterface>com.amx.duet.devicesdk.component.ITunerStationComponentListener3</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+    
+    <!--  station preset format: (index),(displayName),(station) -->
+    <parameter  name="Station"
+                description="Current station's name" 
+                key="tuner.station"
+                allowReset="false"                
+                resetValue=""
+                units=""
+                dataType="STRING"
+                trackChanges="false"
+                parameterType="NONE"  
+                hasModuleProperty="Has-Station"              
+                >
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getStation" javaType="java.lang.String" />
+        </currentValueLookup>      
+        <listener addListenerMethod="addTunerStationComponentListener"
+                  removeListenerMethod="removeTunerStationComponentListener"
+                  eventMethod="processStationEvent">
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.ITunerStationComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>            
+        
+  </parameters>
+  
+  <!--  *********************************************  -->
+  <!--              ASSET CONTROL METHODS              -->
+  <!--  *********************************************  -->
+  <methods>
+   	<!--           Power Component              -->   
+    <method name="Set Power"
+            description="Turn the asset/device ON or OFF" 
+            key="asset.power" 
+            invokeMethod="setPower"
+            hasModuleProperty="Has-Power" >
+       <arguments>
+         <argument ordinal="0"  
+                   name="Power State"
+                   description="Select the power state to apply"
+                   dataType="ENUMERATION"
+                   defaultValue="Off"
+                   javaType="com.amx.duet.devicesdk.type.PowerState" >
+            <enumerations>
+                <enumeration ordinal="0" name="Off" instance="static" field="OFF" />
+                <enumeration ordinal="1" name="On"  instance="static" field="ON" />
+            </enumerations>
+         </argument> 
+       </arguments>
+    </method>
+    
+    <!--          Volume Component          --> 
+    <method name="Set Volume Mute"
+            description="Turn the volume mute on or off" 
+            key="volume.mute" 
+            invokeMethod="setVolumeMuteOn"
+            hasModuleProperty="Has-Volume" >
+       <arguments>
+         <argument ordinal="0"  
+                   name="Volume Mute State"
+                   description="Select the volume mute state to apply"
+                   dataType="BOOLEAN"
+                   javaType="java.lang.Boolean" 
+                   defaultValue="false" />
+       </arguments>
+    </method>
+      
+    <method name="Set Volume Level"
+            description="Set the volume level" 
+            key="volume.level" 
+            invokeMethod="setVolume"
+            hasModuleProperty="Has-Volume" >
+       <arguments>
+         <argument ordinal="0"  
+                   name="Volume Level"
+                   description="Set the volume level in the range 0-255"
+                   dataType="LEVEL"
+                   defaultValue=""
+                   min="0"
+                   max="255"
+                   step="1"
+                   javaType="java.lang.Integer" />
+       </arguments>
+    </method>  
+  
+    <!--         PreAmp Component          --> 
+    <method name="Set Balance Level"
+            description="Set the current balance level"  
+            key="preamp.balance" 
+            invokeMethod="setBalance"
+            hasModuleProperty="Has-Balance" >
+       <arguments>
+         <argument ordinal="0"  
+                   name="Balance Level"
+                   description="Set the balance level in the range of -128 - 128"
+                   dataType="LEVEL"
+                   defaultValue=""
+                   min="-128"
+                   max="128"
+                   step="1"
+                   javaType="java.lang.Integer" />
+       </arguments>
+    </method>  
+    
+    <method name="Set Loudness State"
+            description="Turn the loudness state on or off" 
+            key="preamp.loudness" 
+            invokeMethod="setLoudnessOn" 
+            hasModuleProperty="Has-Loudness">
+       <arguments>
+         <argument ordinal="0"  
+                   name="Loudness State"
+                   description="Select the loudness state to apply"
+                   dataType="BOOLEAN"
+                   javaType="java.lang.Boolean" 
+                   defaultValue="false" />
+       </arguments>
+    </method>
+
+    <method name="Set Treble Level"
+            description="Set the current treble level" 
+            key="preamp.treble" 
+            invokeMethod="setTreble"
+            hasModuleProperty="Has-Treble" >
+       <arguments>
+         <argument ordinal="0"  
+                   name="Treble Level"
+                   description="Set the treble level in the range 0-255"
+                   dataType="LEVEL"
+                   defaultValue=""
+                   min="0"
+                   max="255"
+                   step="1"
+                   javaType="java.lang.Integer" />
+       </arguments>
+    </method>    
+    
+    <method name="Set Bass Level"
+            description="Set the current bass level" 
+            key="preamp.bass" 
+            invokeMethod="setBass" 
+            hasModuleProperty="Has-Bass">
+       <arguments>
+         <argument ordinal="0"  
+                   name="Bass Level"
+                   description="Set the bass level in the range 0-255"
+                   dataType="LEVEL"
+                   defaultValue=""
+                   min="0"
+                   max="255"
+                   step="1"
+                   javaType="java.lang.Integer" />
+       </arguments>
+    </method>  
+       
+    
+    <!--          Source Select Component          -->
+    <method name="Select Input Source"
+            description="Select the input source" 
+            key="source.input" 
+            invokeMethod="setInputSelect" 
+            hasModuleProperty="Has-Input-Select">
+       <arguments>
+         <argument ordinal="0"  
+                   name="Input Source"
+                   description="Select the input source to apply"
+                   dataType="ENUMERATION"
+                   defaultValue=""
+                   javaType="java.lang.Integer" >
+            <enumerations method="getInputProperties" 
+                          nameIndex="4" 
+                          valueIndex="0" />
+         </argument> 
+       </arguments>
+    </method>
+    
+    <!--            Tuner Component           -->
+    <!--  station preset format: (index),(displayName),(station) -->
+    <method name="Set Station"
+            description="Set the station" 
+            key="tuner.station" 
+            invokeMethod="setStation" 
+            hasModuleProperty="Has-Station">
+       <arguments>
+         <argument ordinal="0"  
+                   name="Set Station"
+                   description="Enter the station string such as '103.7'"
+                   dataType="STRING"
+                   defaultValue=""
+                   javaType="java.lang.String" >          
+         </argument> 
+       </arguments>
+    </method>
+    
+	<method name="Select Station Preset"
+            description="Set the station preset" 
+            key="tuner.station.preset" 
+            invokeMethod="setStationPreset" 
+            hasModuleProperty="Has-Station-Preset">
+       <arguments>
+         <argument ordinal="0"  
+                   name="Preset"
+                   description="Select the station preset to apply"
+                   dataType="NUMBER"
+                   defaultValue=""
+                   min="1"
+                   maxLookupMethod="getStationPresetCount"
+                   javaType="java.lang.Integer" >          
+         </argument> 
+       </arguments>
+    </method>
+ 
+ 
+    <!--  Tuner Band format: (index),(displayName),(tunerBandTSE) -->
+    <method name="Select Tuner Band"
+            description="Set the tuner band" 
+            key="tuner.band" 
+            invokeMethod="setTunerBandSelect" 
+            hasModuleProperty="Has-Tuner-Band">
+       <arguments>
+       
+         <argument ordinal="0"  
+                   name="Tuner Band"
+                   description="Select the band to apply"
+                   dataType="ENUMERATION"
+                   defaultValue=""
+                   javaType="java.lang.Integer" >
+            <enumerations method="getTunerBandProperties" 
+                          nameIndex="1" 
+                          valueIndex="0" />
+         </argument> 
+       </arguments>
+    </method>  
+  </methods>
+</asset>

@@ -1,0 +1,57 @@
+--- 
+macros: 
+  room1:
+    off: 
+      dxLink: []
+      macroItems: 
+        - "disp1|1|channel|28"
+        - "cam1|1|channel|28"
+    on: 
+      dxLink: []
+      macroItems: []
+  macro1:
+    dxLink: []
+    icon: icon-video-presence-off.png
+    iconPreview: icon-video-presence-off_LG.png
+    macroItems: 
+      - "disp1|1|channel|28"
+    name: Room PC - Off
+    room: 1
+    videoInp: "1"
+    videoPresenceState: "off|swt1|1|60"
+  macro2:
+    dxLink: []
+    icon: icon-video-presence-off.png
+    iconPreview: icon-video-presence-off_LG.png
+    macroItems: 
+      - "cam1|1|channel|28"
+      - "disp1|1|channel|28"
+    name: Camera - Off
+    room: 1
+    videoInp: "2"
+    videoPresenceState: "off|swt1|2|60"
+  macro3:
+    dxLink: []
+    icon: icon-video-presence-on.png
+    iconPreview: icon-video-presence-on_LG.png
+    macroItems: 
+      - "disp1|1|channel|27"
+      - "swt1|1|command|CI1O1"
+      - "disp1|1|command|INPUTSELECT-1"
+    name: Room PC - On
+    room: 1
+    videoInp: "1"
+    videoPresenceState: "on|swt1|1|1"
+  macro4:
+    dxLink: []
+    icon: icon-video-presence-on.png
+    iconPreview: icon-video-presence-on_LG.png
+    macroItems: 
+      - "cam1|1|channel|27"
+      - "disp1|1|channel|27"
+      - "swt1|1|command|CI2O1"
+      - "disp1|1|command|INPUTSELECT-1"
+    name: Camera - On
+    room: 1
+    videoInp: "2"
+    videoPresenceState: "on|swt1|2|1"

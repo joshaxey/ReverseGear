@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Export-Package: jregex,jregex.util.io
+AMX-Type: Duet
+Bundle-Version: 1.0.0
+Bundle-Name: jregex1.2_01-bundle
+Created-By: 1.7.0 (Oracle Corporation)
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: jregex1.2_01-bundle
+Bundle-RequiredExecutionEnvironment: J2SE-1.4
+

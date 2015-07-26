@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: 20.10-b01 (Sun Microsystems Inc.)
+Bundle-Vendor: AMX LLC 
+Bundle-Version: 1.1.1
+Bundle-Name: Apache Commons Logging
+Bundle-SymbolicName: commons-logging
+Bundle-Classpath: .
+DynamicImport-Package: *
+Export-Package:  org.apache.commons.logging;specification-version=1.1.
+ 1,  org.apache.commons.logging.impl;specification-version=1.1.1
+AMX-Type: Duet
+Device-Revision: 1.1.1
+

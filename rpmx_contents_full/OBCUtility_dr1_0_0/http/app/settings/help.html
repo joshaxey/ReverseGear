@@ -1,0 +1,28 @@
+<div class="container" data-ng-controller="helpCtrl as vm">
+    <h1>Help</h1>
+    <p>Modify these settings for the help system.</p>
+
+    <form method="post" editable-form name="appForm" onaftersave="vm.saveData()">
+        <div class="row">
+            <div class="col-md-12">
+                <fieldset>
+                    <legend><span>For Assistance</span></legend>
+                    <dl class="dl-horizontal">
+                        <dt>Help Desk</dt>      <dd><span href="#" editable-text="vm.data.helpDeskPhoneNumber" >{{ vm.data.helpDeskPhoneNumber || "empty" }}</span></dd>
+                        <dt>Installed By</dt>   <dd>{{ vm.data.installedBy    || "empty" }}</dd>
+                        <dt>Installer Phone</dt><dd>{{ vm.data.installerPhone || "empty" }}</dd>
+                    </dl>
+                </fieldset>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="btn-group pull-right">
+                    <button type="button" class="btn btn-default"        ng-show="!appForm.$visible" ng-click="appForm.$show()"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+                    <button type="button" class="btn btn-default cancel" ng-show=" appForm.$visible" ng-disabled="appForm.$waiting" ng-click="appForm.$cancel()"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                    <button type="submit" class="btn btn-success accept" ng-show=" appForm.$visible" ng-disabled="appForm.$waiting"><span class="glyphicon glyphicon-ok"></span> Accept</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

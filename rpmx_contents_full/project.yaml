@@ -1,0 +1,18 @@
+--- 
+project:
+  files: 
+    - macros.yaml
+    - disp1.yaml
+    - swt1.yaml
+    - cam1.yaml
+    - pdu1.yaml
+    - kpd1.yaml
+    - volume.yaml
+    - room.yaml
+    - auxSource.yaml
+    - rms4.yaml
+    - swtInputs.yaml
+    - panels.yaml
+    - obc.yaml
+  projectid: 17286
+  serverip: "http://199.27.112.67/RPM/rpmstats.do"

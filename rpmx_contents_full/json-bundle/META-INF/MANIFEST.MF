@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.8.2
+Created-By: 1.7.0-b147 (Oracle Corporation)
+AMX-Type: Duet
+Bundle-ManifestVersion: 2
+Bundle-Name: json-bundle
+Bundle-SymbolicName: json-bundle
+Bundle-Version: 1.0.0
+Export-Package: org.json
+

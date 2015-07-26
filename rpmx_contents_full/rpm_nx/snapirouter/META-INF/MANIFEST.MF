@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.6.5
+Created-By: AMX Corp.
+Bundle-Name: snapirouter
+Bundle-Description: SNAPI router for AMX
+Bundle-Vendor: AMX Corp.
+Bundle-Version: 1.15.0
+Bundle-Copyright: Copyright 2004-2009 AMX Corporation.  All Rights Res
+ erved.
+Bundle-Activator: com.amx.duet.routers.snapi.Activator
+Device-Service: com.amx.duet.routers.snapi.ISNAPIRouter
+Device-Model: AMX Router
+Device-Make: AMX Corp.
+Device-Revision: 1.0.2
+DynamicImport-Package: com.amx.* 
+Import-Package: com.amx.duet.core.osgi; specification-version=1.0.1, o
+ rg.osgi.service.http; specification-version=1.1,org.osgi.service.devi
+ ce; specification-version=1.0.1,com.amx.duet.devicesdk; specification
+ -version=1.15.0,com.amx.duet.devicesdk.base; specification-version=1.
+ 15.0, com.amx.duet.devicesdk.component; specification-version=1.15.0,
+ com.amx.duet.devicesdk.type; specification-version=1.15.0,com.amx.due
+ t.driver; specification-version=1.0.1,com.amx.duet.da; specification-
+ version=1.0.2,com.amx.duet.util.metadata; specification-version=1.0.1
+Export-Package: com.amx.duet.routers.snapi; specification-version=1.15.0
+AMX-Type: Duet
+

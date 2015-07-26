@@ -1,0 +1,575 @@
+<!--  *********************************************  -->
+<!--                                                 -->
+<!--        AMX Resource Management Suite            -->
+<!--         Duet Device Asset Template              -->
+<!--                                                 -->
+<!--           TYPE:  Document Camera                -->
+<!--                                                 -->
+<!--  *********************************************  -->
+<asset name="Document Camera" 
+       description="Document Camera"
+       assetTypeKey="DocumentCamera"
+       templateVersion="4.0.0" >
+
+  <!--  *********************************************  -->
+  <!--           ASSET METADATA PROPERTIES             -->
+  <!--  *********************************************  -->
+  <metadata>
+  
+    <!--            All Duet Modules           -->
+    <property name="Duet Device Category" key="duet.device.category" moduleProperty="Device-Category" />
+    <property name="Duet Device Channels" key="duet.device.channels" moduleProperty="Device-Channels"   dataType="NUMBER"  lowerBounds="0" />
+    <property name="Duet Device Levels" key="duet.device.levels" moduleProperty="Device-Levels"   dataType="NUMBER" lowerBounds="0" />
+    <property name="Duet Device Revision" key="duet.device.revision" moduleProperty="Device-Revision" />
+    <property name="Duet Module" key="duet.module.name" moduleProperty="Duet-Module" />
+    <property name="Duet Module Version" key="duet.module.version" method="getVersion" />
+    <property name="Physical Device (DPS)" key="duet.physical.dps" moduleProperty="Physical-Device" />
+
+    
+    <!--             Source Select Component              -->
+    <property name="Input Source Count" 
+              key="source.input.count" 
+              method="getInputCount"
+              dataType="NUMBER" 
+              lowerBounds="0" 
+              hasModuleProperty="Has-Input-Select"/>     	
+  </metadata>
+  
+
+  <!--  *********************************************  -->
+  <!--            ASSET MONITORED PARAMETERS           -->
+  <!--  *********************************************  -->
+    <parameters>
+    
+    <!--           All Duet Component              -->   
+    <parameter  name="Online Status"
+                description="Current asset online or offline state" 
+                key="asset.online"
+                allowReset="false"                
+                resetValue=""
+                parameterType="ASSET_ONLINE"   
+                units=""
+                dataType="ENUMERATION"
+                trackChanges="true" >
+        <thresholds>
+            <threshold name="Offline" 
+                       enabled="true" 
+                       compareOperator="EQUAL_TO"
+                       value="Offline" 
+                       statusTypeKey="ROOM_COMMUNICATION_ERROR"
+                       delayed="false"
+                       delayInterval=""
+                       notifyOnTrip="true"
+                       notifyOnRestore="true" />
+        </thresholds>                
+        <enumerations>
+                <enumeration ordinal="0" name="Offline" value="false" />
+                <enumeration ordinal="1" name="Online"  value="true" />
+        </enumerations>
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="isDeviceOnLine" javaType="java.lang.Boolean" />
+        </currentValueLookup>
+        <listener addListenerMethod="addModuleComponentListener"
+                  removeListenerMethod="removeModuleComponentListener"
+                  eventMethod="processDeviceOnLineEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.base.IModuleComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+
+    <parameter  name="Device Data Initialized"
+                description="Duet module data has been initialized" 
+                key="asset.data.initialized"
+                allowReset="false"                
+                resetValue=""
+                parameterType="NONE"   
+                units=""
+                dataType="BOOLEAN"
+                trackChanges="false" >
+        <enumerations />    
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="isDataInitialized" javaType="java.lang.Boolean" />
+        </currentValueLookup>
+        <listener addListenerMethod="addModuleComponentListener"
+                  removeListenerMethod="removeModuleComponentListener"
+                  eventMethod="processDataInitializedEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.base.IModuleComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+    
+    <parameter  name="Module Debug State"
+                description="Duet module's current debug level" 
+                key="asset.debug.level"
+                allowReset="false"                
+                resetValue=""
+                units=""
+                dataType="ENUMERATION"
+                trackChanges="true"
+                parameterType="NONE" >
+            <enumerations>
+                <enumeration ordinal="0" name="Error"   value="1" />
+                <enumeration ordinal="1" name="Warning" value="2" />
+                <enumeration ordinal="2" name="Info"    value="3" />
+                <enumeration ordinal="3" name="Debug"   value="4" />                
+            </enumerations>
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getDebugState" javaType="java.lang.Integer" />
+        </currentValueLookup>
+        <listener addListenerMethod="addModuleComponentListener"
+                  removeListenerMethod="removeModuleComponentListener"
+                  eventMethod="processDebugEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.base.IModuleComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+
+    <!--           Power Component              -->   
+    <parameter  name="Power Status"
+                description="Current asset power state" 
+                key="asset.power"
+                allowReset="false"                
+                resetValue=""
+                parameterType="ASSET_POWER"   
+                units=""
+                dataType="ENUMERATION"
+                trackChanges="true"
+                hasModuleProperty="Has-Power" >
+		<enumerations>
+                <enumeration ordinal="0" name="Off" instance="static" field="OFF" />
+                <enumeration ordinal="1" name="On"  instance="static" field="ON" />
+        </enumerations>
+        <currentValueLookup>
+            <method name="getPower" javaType="com.amx.duet.devicesdk.type.PowerState" />
+        </currentValueLookup>
+        <listener addListenerMethod="addPowerComponentListener"
+                  removeListenerMethod="removePowerComponentListener"
+                  eventMethod="processPowerEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IPowerComponentListener</proxyInterface>
+                  </proxyInterfaces>
+        </listener>
+    </parameter> 
+    
+    <!--            Source Select Component              -->
+    <parameter  name="Input Source"
+                description="Current selected input source" 
+                key="source.input"
+                allowReset="false"                
+                resetValue=""
+                units=""
+                dataType="ENUMERATION"
+                trackChanges="true"
+                parameterType="SOURCE_STATE"  
+                hasModuleProperty="Has-Input-Select"              
+                >
+        <enumerations method="getInputProperties" 
+                      nameIndex="4"
+                      valueIndex="0" />
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getInputSelect" javaType="java.lang.Integer" />
+        </currentValueLookup>
+        <listener addListenerMethod="addSourceSelectComponentListener"
+                  removeListenerMethod="removeSourceSelectComponentListener"
+                  eventMethod="processInputSelectEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.ISourceSelectComponentListener</proxyInterface>
+                     <proxyInterface>com.amx.duet.devicesdk.component.ISourceSelectComponentListener2</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+    
+
+    <!--            Document Camera Lamp Consumption           -->
+    
+    <parameter  name="Upper Light Hours"
+                description="Current usage of the upper light." 
+                key="lamp.consumption.upper"
+                allowReset="true"                
+                resetValue="0"
+                initialValue="0"
+                units="Hours"
+                dataType="DECIMAL"
+                trackChanges="true"
+                parameterType="LAMP_USAGE"
+                hasModuleProperty="Has-Upper-Light"                
+                min="0"
+                max="5000"
+                bargraphKey="lamp.consumption">
+        <thresholds>
+            <threshold name="Lamp Life" 
+                       enabled="true" 
+                       compareOperator="GREATER_THAN_EQUAL_TO"
+                       value="5000" 
+                       statusTypeKey="MAINTENANCE"
+                       delayed="false"
+                       delayInterval=""
+                       notifyOnTrip="true"
+                       notifyOnRestore="true" />
+        </thresholds>                                
+        <enumerations />       
+        <listener implementationClass="com.amx.rms.client.netlinx.platform.asset.duet.parameter.DocCamUpperLampTimeParameterListener" />
+    </parameter>
+
+    <parameter  name="Lower Light Hours"
+                description="Current usage of the lower light." 
+                key="lamp.consumption.lower"
+                allowReset="true"                
+                resetValue="0"
+                initialValue="0"
+                units="Hours"
+                dataType="DECIMAL"
+                trackChanges="true"
+                parameterType="LAMP_USAGE"
+                hasModuleProperty="Has-Lower-Light"                
+                min="0"
+                max="5000"
+                bargraphKey="lamp.consumption">
+        <thresholds>
+            <threshold name="Lamp Life" 
+                       enabled="true" 
+                       compareOperator="GREATER_THAN_EQUAL_TO"
+                       value="5000" 
+                       statusTypeKey="MAINTENANCE"
+                       delayed="false"
+                       delayInterval=""
+                       notifyOnTrip="true"
+                       notifyOnRestore="true" />
+        </thresholds>                                                
+        <enumerations />       
+        <listener implementationClass="com.amx.rms.client.netlinx.platform.asset.duet.parameter.DocCamLowerLampTimeParameterListener" />
+    </parameter>
+    
+        
+    <!--            Document Camera Component              -->
+    <parameter  name="Auto Focus"
+                description="The auto focus state" 
+                key="camera.focus.auto"
+                allowReset="false"                
+                resetValue=""
+                parameterType="NONE"   
+                units=""
+                dataType="BOOLEAN"
+                trackChanges="false"   
+                hasModuleProperty="Has-Auto-Focus"                
+               	>
+        <enumerations />  
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="isAutoFocusOn" javaType="java.lang.Boolean" />
+        </currentValueLookup>
+        <listener addListenerMethod="addDocumentCameraComponentListener"
+                  removeListenerMethod="removeDocumentCameraComponentListener"
+                  eventMethod="processAutoFocusEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IDocumentCameraComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+    
+    <parameter  name="Auto Iris"
+                description="The auto iris state" 
+                key="camera.iris.auto"
+                allowReset="false"                
+                resetValue=""
+                parameterType="NONE"   
+                units=""
+                dataType="BOOLEAN"
+                trackChanges="false"    
+                hasModuleProperty="Has-Auto-Iris"                  
+               	>
+        <enumerations />    
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="isAutoIrisOn" javaType="java.lang.Boolean" />
+        </currentValueLookup>    
+        <listener addListenerMethod="addDocumentCameraComponentListener"
+                  removeListenerMethod="removeDocumentCameraComponentListener"
+                  eventMethod="processAutoIrisEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IDocumentCameraComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+  
+    <parameter  name="Focus Level"
+                description="The current focus level" 
+                key="camera.focus.level"
+                allowReset="false"                
+                resetValue=""
+                dataType="LEVEL"
+                trackChanges="false"
+                parameterType="NONE"
+                units=""                
+                min="0"
+                max="255"
+                bargraphKey="general"
+                hasModuleProperty="Has-Focus">
+        <enumerations />        
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getFocus" javaType="java.lang.Integer" />
+        </currentValueLookup>    
+        <listener addListenerMethod="addDocumentCameraComponentListener"
+                  removeListenerMethod="removeDocumentCameraComponentListener"
+                  eventMethod="processFocusEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IDocumentCameraComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+        
+    <parameter  name="Iris Level"
+                description="The current iris level" 
+                key="camera.iris.level"
+                allowReset="false"                
+                resetValue=""
+                dataType="LEVEL"
+                trackChanges="false"
+                parameterType="NONE"
+                units=""                
+                min="0"
+                max="255"
+                bargraphKey="general"
+                hasModuleProperty="Has-Iris">
+        <enumerations />        
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getIris" javaType="java.lang.Integer" />
+        </currentValueLookup>     
+        <listener addListenerMethod="addDocumentCameraComponentListener"
+                  removeListenerMethod="removeDocumentCameraComponentListener"
+                  eventMethod="processIrisEvent">
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IDocumentCameraComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+    
+    <parameter  name="Zoom Level"
+                description="The current zoom level" 
+                key="camera.zoom.level"
+                allowReset="false"                
+                resetValue=""
+                dataType="LEVEL"
+                trackChanges="false"
+                parameterType="NONE"
+                units=""                
+                min="0"
+                max="255"
+                bargraphKey="general"
+                hasModuleProperty="Has-Zoom">
+        <enumerations />        
+         <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getZoom" javaType="java.lang.Integer" />
+        </currentValueLookup>     
+        <listener addListenerMethod="addDocumentCameraComponentListener"
+                  removeListenerMethod="removeDocumentCameraComponentListener"
+                  eventMethod="processZoomEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IDocumentCameraComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+        
+    <parameter  name="Focus Speed"
+                description="The focus speed" 
+                key="camera.focus.speed"
+                allowReset="false"                
+                resetValue=""
+                dataType="LEVEL"
+                trackChanges="false"
+                parameterType="NONE"
+                units=""                
+                min="0"
+                max="255"
+                bargraphKey="general"
+                hasModuleProperty="Has-Focus-Speed">
+        <enumerations />        
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getFocusSpeed" javaType="java.lang.Integer" />
+        </currentValueLookup>     
+        <listener addListenerMethod="addDocumentCameraComponentListener"
+                  removeListenerMethod="removeDocumentCameraComponentListener"
+                  eventMethod="processFocusSpeedEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IDocumentCameraComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+    
+    <parameter  name="Iris Speed"
+                description="The irs speed" 
+                key="camera.iris.speed"
+                allowReset="false"                
+                resetValue=""
+                dataType="LEVEL"
+                trackChanges="false"
+                parameterType="NONE"
+                units=""                
+                min="0"
+                max="255"
+                bargraphKey="general"
+                hasModuleProperty="Has-Iris-Speed">
+        <enumerations />        
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getIrisSpeed" javaType="java.lang.Integer" />
+        </currentValueLookup>  
+        <listener addListenerMethod="addDocumentCameraComponentListener"
+                  removeListenerMethod="removeDocumentCameraComponentListener"
+                  eventMethod="processIrisSpeedEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IDocumentCameraComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+    
+    <parameter  name="Zoom Speed"
+                description="The zoom speed of the doc camera" 
+                key="camera.zoom.speed"
+                allowReset="false"                
+                resetValue=""
+                dataType="LEVEL"
+                trackChanges="false"
+                parameterType="NONE"
+                units=""                
+                min="0"
+                max="255"
+                bargraphKey="general"
+                hasModuleProperty="Has-Zoom-Speed">
+        <enumerations />        
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="getZoomSpeed" javaType="java.lang.Integer" />
+        </currentValueLookup>  
+        <listener addListenerMethod="addDocumentCameraComponentListener"
+                  removeListenerMethod="removeDocumentCameraComponentListener"
+                  eventMethod="processZoomSpeedEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IDocumentCameraComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+    
+    <parameter  name="Upper Light"
+                description="The on/off state of the doc camera's upper light" 
+                key="document.camera.light.upper.power"
+                allowReset="false"                
+                resetValue=""
+                parameterType="NONE"   
+                units=""
+                dataType="BOOLEAN"
+                trackChanges="false"  
+                hasModuleProperty="Has-Upper-Light"            
+               	>
+        <enumerations />    
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="isUpperLightOn" javaType="java.lang.Boolean" />
+        </currentValueLookup>     
+        <listener addListenerMethod="addDocumentCameraComponentListener"
+                  removeListenerMethod="removeDocumentCameraComponentListener"
+                  eventMethod="processUpperLightEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IDocumentCameraComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+    
+    <parameter  name="Lower Light"
+                description="The on/off state of the doc camera's lower light" 
+                key="document.camera.light.lower.power"
+                allowReset="false"                
+                resetValue=""
+                parameterType="NONE"   
+                units=""
+                dataType="BOOLEAN"
+                trackChanges="false"   
+                hasModuleProperty="Has-Lower-Light"                
+               	>
+        <enumerations />    
+        <currentValueLookup updateOperation="SET_VALUE">
+            <method name="isLowerLightOn" javaType="java.lang.Boolean" />
+        </currentValueLookup>      
+        <listener addListenerMethod="addDocumentCameraComponentListener"
+                  removeListenerMethod="removeDocumentCameraComponentListener"
+                  eventMethod="processLowerLightEvent" >
+                  <proxyInterfaces>
+                     <proxyInterface>com.amx.duet.devicesdk.component.IDocumentCameraComponentListener</proxyInterface>
+                  </proxyInterfaces>
+         </listener>
+    </parameter>
+  </parameters>  
+    
+   <!--  *********************************************  -->
+  <!--              ASSET CONTROL METHODS              -->
+  <!--  *********************************************  -->
+  <methods>
+ 	 <!--            Power Component          -->
+    <method name="Set Power"
+            description="Turn the asset/device ON or OFF" 
+            key="asset.power" 
+            invokeMethod="setPower"
+            hasModuleProperty="Has-Power" >
+       <arguments>
+         <argument ordinal="0"  
+                   name="Power State"
+                   description="Select the power state to apply"
+                   dataType="ENUMERATION"
+                   defaultValue=""
+                   javaType="com.amx.duet.devicesdk.type.PowerState" >
+            <enumerations>
+                <enumeration ordinal="0" name="Off" instance="static" field="OFF" />
+                <enumeration ordinal="1" name="On"  instance="static" field="ON" />
+            </enumerations>
+         </argument> 
+       </arguments>
+    </method>
+    
+    <!--            Source Select Component           -->
+    <method name="Select Input Source"
+            description="Set the input source" 
+            key="source.input" 
+            invokeMethod="setInputSelect" 
+            hasModuleProperty="Has-Input-Select">
+       <arguments>
+         <argument ordinal="0"  
+                   name="Input Source"
+                   description="Select the input source to apply"
+                   dataType="ENUMERATION"
+                   defaultValue=""
+                   javaType="java.lang.Integer" >
+            <enumerations method="getInputProperties" nameIndex="4" valueIndex="0" />
+         </argument> 
+       </arguments>
+    </method>
+  
+    <method name="Set Upper Light"
+            description="Turn the upper light on or off" 
+            key="document.camera.light.upper.power" 
+            invokeMethod="setUpperLightOn" 
+            hasModuleProperty="Has-Upper-Light">
+       <arguments>
+         <argument ordinal="0"  
+                   name="Upper Light State"
+                   description="Enable upper light power"
+                   dataType="BOOLEAN"
+                   javaType="java.lang.Boolean" 
+                   defaultValue="true" />
+       </arguments>
+    </method>     
+     
+    <method name="Set Lower Light"
+            description="Turn the lower light on or off" 
+            key="document.camera.light.lower.power" 
+            invokeMethod="setLowerLightOn" 
+            hasModuleProperty="Has-Lower-Light">
+       <arguments>
+         <argument ordinal="0"  
+                   name="Lower Light State"
+                   description="Enable lower light power"
+                   dataType="BOOLEAN"
+                   javaType="java.lang.Boolean" 
+                   defaultValue="true" />
+       </arguments>
+    </method> 
+    
+  </methods>
+</asset>

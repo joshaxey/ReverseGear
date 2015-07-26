@@ -1,0 +1,19 @@
+--- 
+swtInputs: 
+  input1:
+    dxLink: []
+    icon: icon-pc_MED.png
+    macroItems: 
+      - "swt1|1|command|CI1O?"
+    name: Room PC
+    tpUsed: ""
+    videoInp: "1"
+  input2:
+    dxLink: []
+    icon: icon-camera_MED.png
+    macroItems: 
+      - "cam1|1|channel|27"
+      - "swt1|1|command|CI2O?"
+    name: Camera
+    tpUsed: ""
+    videoInp: "2"

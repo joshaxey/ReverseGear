@@ -1,0 +1,19 @@
+--- 
+room:
+  atc1DialInPhoneNumber: ""
+  helpDeskPhoneNumber: "04111111"
+  installedBy: Person
+  installerPhoneNumber: "12345678"
+  room1: 
+    assigned: 
+      devices: 
+        - cam1
+        - kpd1
+        - pc1
+        - schPnl1
+    name: Dummy Room
+    supportPhoneNumber: "04123456"
+  vtc1DialInH320: ""
+  vtc1DialInH323: ""
+  vtc2DialInH320: ""
+  vtc2DialInH323: ""

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="SNAPI2Standards">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Component" minOccurs="1" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Channel" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="Chan" minOccurs="1" maxOccurs="1" />
+										<xs:element name="OnAPI" type="xs:string" minOccurs="0" />
+										<xs:element name="OffAPI" type="xs:string" minOccurs="0" />
+										<xs:element ref="Notes" minOccurs="1" maxOccurs="1" />
+									</xs:sequence>
+									<xs:attribute name="id" type="xs:string" use="required" />
+									<xs:attribute name="type" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string" />
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Level" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence minOccurs="1" maxOccurs="1">
+										<xs:element ref="Lvl" minOccurs="1" maxOccurs="1" />
+										<xs:element ref="API" minOccurs="0" maxOccurs="1" />
+										<xs:element ref="Notes" minOccurs="1" />
+										<xs:element name="Range" minOccurs="1" maxOccurs="1">
+											<xs:complexType>
+												<xs:all>
+													<xs:element name="Min" type="xs:string" minOccurs="1" maxOccurs="1" />
+													<xs:element name="Max" type="xs:string" minOccurs="1" maxOccurs="1" />
+												</xs:all>
+												<xs:attribute name="dataType" use="required">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:enumeration value="integer" />
+															<xs:enumeration value="sinteger" />
+															<xs:enumeration value="float" />
+															<xs:enumeration value="double" />
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="id" type="xs:string" use="required" />
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Command" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Cmd" type="xs:string" minOccurs="1" />
+										<xs:element ref="API" minOccurs="0" maxOccurs="1" />
+										<xs:element ref="Notes" minOccurs="1" />
+										<xs:element name="CmdResponse" type="xs:string" minOccurs="0" maxOccurs="1" />
+									</xs:sequence>
+									<xs:attribute name="id" type="xs:string" use="required" />
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Event" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Evt" type="xs:string" minOccurs="1" />
+										<xs:element ref="Notes" minOccurs="1" />
+										<xs:element name="EventResponse" minOccurs="0" maxOccurs="1">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Parameters" minOccurs="0" maxOccurs="1">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="Parameter" minOccurs="1" maxOccurs="unbounded">
+																	<xs:complexType>
+																		<xs:attribute name="type" type="xs:string" use="required" />
+																		<xs:attribute name="description" type="xs:string" use="optional" />
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="resp" type="xs:string" />
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Channels" minOccurs="0" maxOccurs="1">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="EvtChan" minOccurs="1" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:simpleContent>
+																<xs:extension base="xs:integer">
+																	<xs:attribute name="type" type="xs:string" use="optional" />
+																	<xs:attribute name="description" type="xs:string" use="optional" />
+																</xs:extension>
+															</xs:simpleContent>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Levels" minOccurs="0" maxOccurs="1">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="EvtLevel" minOccurs="1" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:simpleContent>
+																<xs:extension base="xs:int">
+																	<xs:attribute name="type" type="xs:string" use="optional" />
+																	<xs:attribute name="description" type="xs:string" use="optional" />
+																</xs:extension>
+															</xs:simpleContent>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="id" type="xs:string" use="required" />
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Constant" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="id" type="xs:string" use="required" />
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Pattern" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="id" type="xs:string" use="required" />
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="MessageFormat" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="id" type="xs:string" use="required" />
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Set" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="item" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
+									</xs:sequence>
+									<xs:attribute name="id" type="xs:string" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="id" type="xs:string" use="required" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:key name="id">
+			<xs:selector xpath="*" />
+			<xs:field xpath="@id" />
+		</xs:key>
+	</xs:element>
+	<xs:element name="Chan">
+		<xs:simpleType>
+			<xs:restriction base="xs:int">
+				<xs:minInclusive value="1" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="Lvl">
+		<xs:simpleType>
+			<xs:restriction base="xs:int">
+				<xs:minInclusive value="1" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="API" type="xs:string" />
+	<xs:element name="Notes" type="xs:string" />
+</xs:schema>

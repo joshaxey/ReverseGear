@@ -1,0 +1,245 @@
+/* Responsive
+-------------------------------------------------- */
+@media (max-width: 979px) {
+  body {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    padding-top: 0;
+  }
+}
+
+
+/* Page Header
+-------------------------------------------------- */
+.page-header {
+  display: inline;
+}
+
+.page-header > h3 {
+  font-size: 16px;
+  letter-spacing: 4px;
+  padding-left: 40px;
+  margin: 10px 0px 0px 0px;
+  line-height: 50px;
+}
+
+
+/* Navigation Bar
+-------------------------------------------------- */
+.navbar {
+  min-height: 40px;
+  box-shadow: 3px 3px 3px #323232;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.navbar .nav > li > a {
+  line-height: 10px;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #777;
+}
+
+.navbar-inverse .nav .active > a {
+  color: #FFEF84 !important;
+  background: transparent;
+}
+
+ul.navbar-nav > li:hover {
+  background: #323232;
+}
+
+.navbar-inverse .nav .active > a:hover,
+.navbar-inverse .nav .active > a:focus {
+  background: #323232;
+}
+
+
+/*----- Branding -----*/
+.navbar-brand {
+  padding: 0px;
+  height: 20px;
+}
+
+.navbar-brand > img {
+  height: 20px;
+  margin: 10px;
+}
+
+
+/*----- Dropdown -----*/
+ul.dropdown-menu {
+  color: #FFFFFF;
+  background-color: #323232;
+}
+
+ul.dropdown-menu > li > a {
+  color: #FFFFFF;
+  background-color: #323232;
+}
+
+ul.dropdown-menu > li > a:hover,
+ul.dropdown-menu > li > a:focus {
+  color: #FFFFFF;
+  background-color: #222;
+}
+
+ul.dropdown-menu > li.nav-header {
+  color: #999;
+  padding-left: 3px;
+}
+
+a.dropdown-toggle {
+  cursor: pointer;
+}
+
+
+/*----- Dropdown with hover (exclude non-mobile devices) -----*/
+@media (min-width: 768px) {
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  nav > .container {
+    float: left !important;
+  }
+}
+
+
+/* Content
+-------------------------------------------------- */
+.nav > .active > a,
+.nav > .active > a:hover,
+.nav > .active > a:focus {
+  color: #FFF;
+  background-color: #0D5087;
+}
+
+/*----- Nav-Pills -----*/
+.nav-pills > li > a {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+  background: #606060;
+}
+
+/*----- Fieldset and Legend -----*/
+fieldset {
+  margin: 10px;
+  position: relative;
+  padding: 20px 10px 10px 10px;
+  border: 1px solid #323232;
+  border-radius: 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.5);
+}
+
+legend {
+  float: left;
+}
+
+@-moz-document url-prefix() { /* Mozilla hack for legend bug */
+  .a legend span {
+    top: -30px !important;
+    left: 0 !important;
+  }
+}
+
+legend span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: 14px;
+  color: #FFF;
+  background: #323232;
+  padding: 5px 10px;
+}
+
+
+/* Footer
+-------------------------------------------------- */
+body {
+  margin-bottom: 40px;
+}
+
+.footer {
+  margin: 0px;
+  padding-left: 20px;
+  background-color: #323232;
+  font-weight: bold;
+}
+
+
+/* Splash
+-------------------------------------------------- */
+#splash-page {
+  z-index: 99999 !important;
+}
+
+#splash-page .bar {
+  width: 100%;
+}
+
+.page-splash {
+  z-index: 99999 !important;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  opacity: .9;
+  pointer-events: auto;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: opacity 0.3s linear;
+  -moz-transition: opacity 0.3s linear;
+  -o-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
+}
+
+.page-splash-message {
+  text-align: center;
+  margin: 20% auto 0 auto;
+  font-size: 400%;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  -webkit-text-shadow: 2px 2px #000000;
+  text-shadow: 2px 2px #000000;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.15);
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #F58A00;
+  padding: 0;
+}
+
+
+/* Misc
+-------------------------------------------------- */
+h1, h2, h3 {
+  margin-top: 0;
+}
+
+.dl-horizontal > dd:after {   /* Allow empty dd tags */
+  display: table;
+  content: "";
+  clear: both;
+}
+
+dd > a {
+  cursor: pointer;
+}

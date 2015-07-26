@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.6.5
+Created-By: 1.4.2_08-b03 (Sun Microsystems Inc.)
+Sealed: true
+AMX-Type: Duet
+Bundle-Activator: com.amx.duet.devicesdk.base.Activator
+Bundle-Copyright: Copyright 2004-2009 AMX Corporation.  All Rights Res
+ erved.
+Bundle-Description: Device SDK providing base classes and interfaces
+Bundle-Name: devicesdk
+Bundle-Vendor: AMX Corporation
+Bundle-Version: 1.15.0
+Device-Make: AMX Corporation
+Device-Model: DeviceSDK
+Device-Revision: 1.0.2
+DynamicImport-Package: com.amx.* 
+Import-Package: org.osgi.service.http; specification-version=1.1,  org
+ .osgi.service.device; specification-version=1.0.1, com.amx.duet.core.
+ osgi; specification-version=1.0.1,  com.amx.duet.da; specification-ve
+ rsion=1.0.2, com.amx.duet.util; specification-version=1.0.1 
+Export-Package: com.amx.duet.devicesdk; specification-version=1.15.0, 
+  com.amx.duet.devicesdk.base; specification-version=1.15.0,  com.amx.
+ duet.devicesdk.component; specification-version=1.15.0, com.amx.duet.
+ devicesdk.type; specification-version=1.15.0, com.amx.duet.devicesdk.
+ utilities; specification-version=1.15.0
+

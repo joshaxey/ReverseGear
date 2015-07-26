@@ -1,0 +1,16 @@
+<div class="container" data-ng-controller="ltsCtrl as vm">
+
+    <ul class="nav nav-pills">
+        <li data-ng-repeat="nav in vm.subNavList" data-ng-class="{active: vm.subNavSelected.manifestID === nav.manifestID}"><a href="#/{{nav.url}}">{{nav.label}}</a></li>
+    </ul>
+
+    <div data-ng-switch on="vm.data.lightSystem">
+        <div data-ng-switch-when="AMX_CLEAR_CONNECT"><div data-ng-include="'app/environment/lts_amx_clear_connect.html'"></div></div>
+        <div data-ng-switch-when="AMX_RADIA">        <div data-ng-include="'app/environment/lts_amx_radia.html'">        </div></div>
+        <div data-ng-switch-when="CLIPSAL_CBUS">     <div data-ng-include="'app/environment/lts_clipsal_cbus.html'">     </div></div>
+        <div data-ng-switch-when="DYNALITE_DYNET">   <div data-ng-include="'app/environment/lts_dynalite_dynet.html'">   </div></div>
+        <div data-ng-switch-when="LUTRON_GFX">       <div data-ng-include="'app/environment/lts_lutron_gfx.html'">       </div></div>
+        <div data-ng-switch-when="LUTRON_GFX_QS">    <div data-ng-include="'app/environment/lts_lutron_gfx_qs.html'">    </div></div>
+        <div data-ng-switch-default>                 <div data-ng-include="'app/environment/lts_generic.html'">          </div></div>
+    </div>
+</div>

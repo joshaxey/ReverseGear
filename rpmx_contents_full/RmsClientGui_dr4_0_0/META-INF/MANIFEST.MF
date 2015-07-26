@@ -1,0 +1,40 @@
+Manifest-Version: 1.0.0
+Bundle-Name: RmsClientGui_dr4_0_0
+Device-Make: AMX
+Duet-Firmware-Version: v3.21.343
+Device-Channels: 255
+Device-Levels: 8
+Device-Model: RMS-Client-Gui
+Device-Category: other
+Device-SDKClass: com.amx.duet.devicesdk.Utility
+Device-SDKInterface: com.amx.duet.devicesdk.IUtility
+Device-Class: com.amx.rms.client.gui.RmsClientGui
+Device-Revision: 4.0.0
+Router-Service: com.amx.duet.routers.snapi.ISNAPIRouter
+Bundle-Activator: com.amx.rms.client.gui.osgi.Activator
+Bundle-Version: 4.4.5
+Bundle-Vendor: AMX LLC
+Bundle-Copyright: (C) Copyright AMX LLC. 2004-2014. All Rights Reserve
+ d.
+DynamicImport-Package: org.osgi.util.tracker
+Import-Package: org.osgi.framework;version="1.3",org.osgi.service.http
+ ;version="1.2",org.osgi.service.device;version="1.1",com.amx.duet.dri
+ ver;version="1.0.1",com.amx.duet.core.osgi;version="1.0.1",com.amx.du
+ et.da;version="1.0.2",com.amx.duet.util.metadata;version="1.0.1",com.
+ amx.duet.util;version="1.0.1",com.amx.duet.devicesdk;version="1.16.0"
+ ,com.amx.duet.devicesdk.base;version="1.16.0",com.amx.duet.devicesdk.
+ component;version="1.16.0",com.amx.duet.devicesdk.type;version="1.16.
+ 0",com.amx.rms.client;version=4.4.5,com.amx.rms.client.event;version=
+ 4.4.5,com.amx.rms.client.exception;version=4.4.5,com.amx.rms.client.l
+ ogging;version=4.4.5,com.amx.rms.client.model;version=4.4.5,com.amx.r
+ ms.client.service;version=4.4.5,com.amx.rms.client.service.result;ver
+ sion=4.4.5,com.amx.rms.client.management;version=4.4.5,com.amx.rms.cl
+ ient.util;version=4.4.5,com.amx.rms.client.osgi;version=4.4.5,com.amx
+ .rms.client.netlinx.platform.util;version=4.4.5,com.amx.rms.client.ne
+ tlinx.platform.service;version=4.4.5,com.amx.rms.client.netlinx.platf
+ orm.event;version=4.4.5
+Export-Package: com.amx.rms.client.gui;version=4.4.5
+File-Dependencies: devicesdkrt.jar;version="1.16.0", snapirouter.jar;v
+ ersion="1.16.0", rmsnlplatform.jar;version="4.4.5", rmsclient.jar;ver
+ sion="4.4.5", rmsclient-osgi.jar;version="4.4.5"
+

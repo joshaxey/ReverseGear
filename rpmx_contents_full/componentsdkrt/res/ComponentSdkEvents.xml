@@ -1,0 +1,2271 @@
+<?xml version='1.0' ?>
+<ComponentSdkEvents  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:ComponentSdkEvents.xsd">
+	<Component id="AudioConferencer">
+		<ComponentEvent>
+			<Alias>AUDIOCONFERENCER_PRIVACYON_EVENT</Alias>
+			<UniqueId>AudioConferencer.PrivacyOnEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="AudioMixer">
+		<ComponentEvent>
+			<Alias>AUDIOMIXER_AUDIOMIXERPRESETCOUNT_EVENT</Alias>
+			<UniqueId>AudioMixer.AudioMixerPresetCountEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>AUDIOMIXER_AUDIOMIXERPRESET_EVENT</Alias>
+			<UniqueId>AudioMixer.AudioMixerPresetEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>AUDIOMIXER_AUDIOMIXERCROSSPOINTMUTEON_EVENT</Alias>
+			<UniqueId>AudioMixer.AudioMixerCrosspointMuteOnEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+				<Parameter type="Int" />
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>AUDIOMIXER_AUDIOMIXERCROSSPOINT_EVENT</Alias>
+			<UniqueId>AudioMixer.AudioMixerCrosspointEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+				<Parameter type="Int" />
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>AUDIOMIXER_AUDIOMIXERINPUTCOUNT_EVENT</Alias>
+			<UniqueId>AudioMixer.AudioMixerInputCountEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>AUDIOMIXER_AUDIOMIXEROUTPUTCOUNT_EVENT</Alias>
+			<UniqueId>AudioMixer.AudioMixerOutputCountEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="AudioProcessor">
+		<ComponentEvent>
+			<Alias>AUDIOPROCESSOR_AUDIOPROCESSORCROSSPOINT_EVENT</Alias>
+			<UniqueId>AudioProcessor.AudioProcessorCrosspointEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+				<Parameter type="Int" />
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>AUDIOPROCESSOR_AUDIOPROCESSORINPUTCOUNT_EVENT</Alias>
+			<UniqueId>AudioProcessor.AudioProcessorInputCountEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>AUDIOPROCESSOR_AUDIOPROCESSOROUTPUTCOUNT_EVENT</Alias>
+			<UniqueId>AudioProcessor.AudioProcessorOutputCountEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>AUDIOPROCESSOR_AUDIOPROCESSORADDRESS_EVENT</Alias>
+			<UniqueId>AudioProcessor.AudioProcessorAddressEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>AUDIOPROCESSOR_AUDIOPROCESSORCROSSPOINTMUTEON_EVENT</Alias>
+			<UniqueId>AudioProcessor.AudioProcessorCrosspointMuteOnEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+				<Parameter type="Int" />
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>AUDIOPROCESSOR_AUDIOPROCESSORINPUTOUTPUT_EVENT</Alias>
+			<UniqueId>AudioProcessor.AudioProcessorInputOutputEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+				<Parameter type="StringArray" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>AUDIOPROCESSOR_AUDIOPROCESSORLEVEL_EVENT</Alias>
+			<UniqueId>AudioProcessor.AudioProcessorLevelEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>AUDIOPROCESSOR_AUDIOPROCESSORSTATEON_EVENT</Alias>
+			<UniqueId>AudioProcessor.AudioProcessorStateOnEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>AUDIOPROCESSOR_AUDIOPROCESSORPRESET_EVENT</Alias>
+			<UniqueId>AudioProcessor.AudioProcessorPresetEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>AUDIOPROCESSOR_AUDIOPROCESSORPRESETCOUNT_EVENT</Alias>
+			<UniqueId>AudioProcessor.AudioProcessorPresetCountEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="AudioTape">
+		<ComponentEvent>
+			<Alias>AUDIOTAPE_AUDIOTAPERECORDMUTE_EVENT</Alias>
+			<UniqueId>AudioTape.AudioTapeRecordMuteEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>AUDIOTAPE_MEDIASIDE_EVENT</Alias>
+			<UniqueId>AudioTape.MediaSideEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="Camera">
+		<ComponentEvent>
+			<Alias>CAMERA_AUTOFOCUS_EVENT</Alias>
+			<UniqueId>Camera.AutoFocusEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>CAMERA_AUTOIRIS_EVENT</Alias>
+			<UniqueId>Camera.AutoIrisEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>CAMERA_CAMERAPRESET_EVENT</Alias>
+			<UniqueId>Camera.CameraPresetEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>CAMERA_CAMERAPRESETCOUNT_EVENT</Alias>
+			<UniqueId>Camera.CameraPresetCountEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>CAMERA_FOCUS_EVENT</Alias>
+			<UniqueId>Camera.FocusEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>CAMERA_FOCUSRAMP_EVENT</Alias>
+			<UniqueId>Camera.FocusRampEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>CAMERA_FOCUSSPEED_EVENT</Alias>
+			<UniqueId>Camera.FocusSpeedEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>CAMERA_IRIS_EVENT</Alias>
+			<UniqueId>Camera.IrisEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>CAMERA_IRISRAMP_EVENT</Alias>
+			<UniqueId>Camera.IrisRampEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>CAMERA_IRISSPEED_EVENT</Alias>
+			<UniqueId>Camera.IrisSpeedEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>CAMERA_PAN_EVENT</Alias>
+			<UniqueId>Camera.PanEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>CAMERA_PANRAMP_EVENT</Alias>
+			<UniqueId>Camera.PanRampEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>CAMERA_PANSPEED_EVENT</Alias>
+			<UniqueId>Camera.PanSpeedEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>CAMERA_TILT_EVENT</Alias>
+			<UniqueId>Camera.TiltEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>CAMERA_TILTRAMP_EVENT</Alias>
+			<UniqueId>Camera.TiltRampEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>CAMERA_TILTSPEED_EVENT</Alias>
+			<UniqueId>Camera.TiltSpeedEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>CAMERA_ZOOM_EVENT</Alias>
+			<UniqueId>Camera.ZoomEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>CAMERA_ZOOMRAMP_EVENT</Alias>
+			<UniqueId>Camera.ZoomRampEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>CAMERA_ZOOMSPEED_EVENT</Alias>
+			<UniqueId>Camera.ZoomSpeedEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>CAMERA_CAMERAPRESETPROPERTY_EVENT</Alias>
+			<UniqueId>Camera.CameraPresetPropertyEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>CAMERA_CAMERAPRESETPROPERTIES_EVENT</Alias>
+			<UniqueId>Camera.CameraPresetPropertiesEvent</UniqueId>
+			<Parameters>
+				<Parameter type="StringArray" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="Custom">
+		<ComponentEvent>
+			<Alias>CUSTOM_FEEDBACK_EVENT</Alias>
+			<UniqueId>Custom.FeedbackEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="Dialer">
+		<ComponentEvent>
+			<Alias>DIALER_AUDIBLERING_EVENT</Alias>
+			<UniqueId>Dialer.AudibleRingEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>DIALER_AUTOANSWER_EVENT</Alias>
+			<UniqueId>Dialer.AutoAnswerEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>DIALER_INCOMINGCALL_EVENT</Alias>
+			<UniqueId>Dialer.IncomingCallEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>DIALER_OFFHOOK_EVENT</Alias>
+			<UniqueId>Dialer.OffHookEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>DIALER_DIALERSTATUS_EVENT</Alias>
+			<UniqueId>Dialer.DialerStatusEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>DIALER_LASTNUMBERDIALED_EVENT</Alias>
+			<UniqueId>Dialer.LastNumberDialedEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="DiscDevice">
+		<ComponentEvent>
+			<Alias>DISCDEVICE_DISCPROPERTIES_EVENT</Alias>
+			<UniqueId>DiscDevice.DiscPropertiesEvent</UniqueId>
+			<Parameters>
+				<Parameter type="StringArray"
+					description="Represents the property information for all discs." />
+			</Parameters>
+			<Notes>DISCPROP     DISCPROP-&lt;key&gt;,&lt;value&gt;  Disc properties query changed, responds with multiple DISCPROP-&lt;key&gt;,&lt;value&gt; commands, one for each key</Notes>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>DISCDEVICE_RANDOMSTATE_EVENT</Alias>
+			<UniqueId>DiscDevice.RandomStateEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>DISCDEVICE_REPEATSTATE_EVENT</Alias>
+			<UniqueId>DiscDevice.RepeatStateEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>DISCDEVICE_DISCCAPACITY_EVENT</Alias>
+			<UniqueId>DiscDevice.DiscCapacityEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>DISCDEVICE_DISCINFO_EVENT</Alias>
+			<UniqueId>DiscDevice.DiscInfoEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+			<Notes>DISCINFO   DISCINFO-&lt;num&gt;,&lt;duration&gt;,&lt;total&#173;Titles&gt;,&lt;totalTracks&gt;,&lt;disc&#173;Type&gt;,&lt;id&gt;  Disc info changed, where &lt;num&gt; is disc number, &lt;duration&gt; is a disc duration String in the format [-]hh:mm:ss.ff, &lt;# of tracks&gt; is the number of titles in this disc, &lt;# of tracks&gt; is the number of tracks in this disc, &lt;disctype&gt; is the disc type (AUDIO_ONLY, VIDEO_ONLY, AUDIOVIDEO) and &lt;id&gt; is the disc database id.</Notes>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>DISCDEVICE_TITLEINFO_EVENT</Alias>
+			<UniqueId>DiscDevice.TitleInfoEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+			<Notes>TITLEINFO   TITLEINFO-&lt;num&gt;,&lt;duration&gt;,&lt;# of tracks&gt;,&lt;discNumber&gt;  Title info changed, where &lt;num&gt; is title number, &lt;duration&gt; is a title duration String in the format [-]hh:mm:ss.ff, &lt;# of tracks&gt; is the number of tracks in this title and &lt;disc&#173;Number&gt; is the disc number the title belongs to.</Notes>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>DISCDEVICE_TITLECOUNTERNOTIFICATION_EVENT</Alias>
+			<UniqueId>DiscDevice.TitleCounterNotificationEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>DISCDEVICE_TITLECOUNTER_EVENT</Alias>
+			<UniqueId>DiscDevice.TitleCounterEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+			<Notes>TITLECOUNTERNOTIFY-&amp;lt;state&amp;gt;   Turn title counter notification on or off, where &amp;lt;state&amp;gt; is 1 or 0</Notes>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>DISCDEVICE_TITLEPROPERTIES_EVENT</Alias>
+			<UniqueId>DiscDevice.TitlePropertiesEvent</UniqueId>
+			<Parameters>
+				<Parameter type="StringArray"
+					description="Represents the property information for all titles." />
+			</Parameters>
+			<Notes>TITLEPROP   TITLEPROP-&lt;key&gt;,&lt;value&gt;  Title properties query response, responds with multiple TITLEPROP-&lt;key&gt;,&lt;value&gt; commands, one for each key</Notes>
+		</ComponentEvent>
+	</Component>
+	<Component id="Display">
+		<ComponentEvent>
+			<Alias>DISPLAY_ASPECTRATIO_EVENT</Alias>
+			<UniqueId>Display.AspectRatioEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" description="Represents the current aspect ratio" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>DISPLAY_ASPECTRATIOCOUNT_EVENT</Alias>
+			<UniqueId>Display.AspectRatioCountEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" description="Represents the number of aspect ratios" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>DISPLAY_ASPECTRATIOPROPERTY_EVENT</Alias>
+			<UniqueId>Display.AspectRatioPropertyEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String"
+					description="Represents the property information for the selected aspect ratio" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>DISPLAY_ASPECTRATIOPROPERTIES_EVENT</Alias>
+			<UniqueId>Display.AspectRatioPropertiesEvent</UniqueId>
+			<Parameters>
+				<Parameter type="StringArray"
+					description="Represents the property information for all aspect ratios." />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>DISPLAY_ASPECTRATIOSELECT_EVENT</Alias>
+			<UniqueId>Display.AspectRatioSelectEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int"
+					description="Represents the index of the currently selected aspect ratio." />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>DISPLAY_BRIGHTNESS_EVENT</Alias>
+			<UniqueId>Display.BrightnessEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" description="Represents the current brightness level" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>DISPLAY_COLOR_EVENT</Alias>
+			<UniqueId>Display.ColorEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" description="Represents the current color level" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>DISPLAY_CONTRAST_EVENT</Alias>
+			<UniqueId>Display.ContrastEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" description="Represents the current contrast level" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>DISPLAY_SHARPNESS_EVENT</Alias>
+			<UniqueId>Display.SharpnessEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" description="Represents the current sharpness level" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>DISPLAY_TINT_EVENT</Alias>
+			<UniqueId>Display.TintEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" description="Represents the current tint level" />
+			</Parameters>
+		</ComponentEvent>
+		<!-- <ComponentEvent>
+			<Alias>DISPLAY_VIDEOTYPE_EVENT</Alias>
+			<UniqueId>Display.VideoTypeEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" description="Represents the current video type" />
+			</Parameters>
+		</ComponentEvent> -->
+		<!-- <ComponentEvent>
+			<Alias>DISPLAY_ACTIVEWINDOW_EVENT</Alias>
+			<UniqueId>Display.ActiveWindowEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String"
+					description="Represents the current mult-screen select status" />
+			</Parameters>
+		</ComponentEvent> -->
+		<ComponentEvent>
+			<Alias>DISPLAY_PICTUREMUTE_EVENT</Alias>
+			<UniqueId>Display.PictureMuteEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean"
+					description="Represents the current picture mute status" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>DISPLAY_FREEZE_EVENT</Alias>
+			<UniqueId>Display.FreezeEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" description="Represents the current freeze status" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>DISPLAY_PIP_EVENT</Alias>
+			<UniqueId>Display.PIPEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" description="Represents the current PIP status" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="DocumentCamera">
+		<ComponentEvent>
+			<Alias>DOCUMENTCAMERA_LOWERLIGHT_EVENT</Alias>
+			<UniqueId>DocumentCamera.LowerLightEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>DOCUMENTCAMERA_UPPERLIGHT_EVENT</Alias>
+			<UniqueId>DocumentCamera.UpperLightEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="Gain">
+		<ComponentEvent>
+			<Alias>GAIN_GAINMUTE_EVENT</Alias>
+			<UniqueId>Gain.GainMuteEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>GAIN_GAINRAMP_EVENT</Alias>
+			<UniqueId>Gain.GainRampEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>GAIN_GAIN_EVENT</Alias>
+			<UniqueId>Gain.GainEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="HVAC">
+		<ComponentEvent>
+			<Alias>HVAC_FANSTATE_EVENT</Alias>
+			<UniqueId>HVAC.FanStateEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>HVAC_HUMIDIFYSTATE_EVENT</Alias>
+			<UniqueId>HVAC.HumidifyStateEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>HVAC_HVACSTATE_EVENT</Alias>
+			<UniqueId>HVAC.HVACStateEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>HVAC_COOLSETPOINT_EVENT</Alias>
+			<UniqueId>HVAC.CoolSetpointEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>HVAC_DEHUMIDIFYSETPOINT_EVENT</Alias>
+			<UniqueId>HVAC.DehumidifySetpointEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>HVAC_HEATSETPOINT_EVENT</Alias>
+			<UniqueId>HVAC.HeatSetpointEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>HVAC_HUMIDIFYSETPOINT_EVENT</Alias>
+			<UniqueId>HVAC.HumidifySetpointEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>HVAC_FANSTATUS_EVENT</Alias>
+			<UniqueId>HVAC.FanStatusEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>HVAC_HUMIDIFYSTATUS_EVENT</Alias>
+			<UniqueId>HVAC.HumidifyStatusEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>HVAC_HVACSTATUS_EVENT</Alias>
+			<UniqueId>HVAC.HVACStatusEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>HVAC_INDOORHUMIDITY_EVENT</Alias>
+			<UniqueId>HVAC.IndoorHumidityEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Float" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>HVAC_INDOORTEMPERATURE_EVENT</Alias>
+			<UniqueId>HVAC.IndoorTemperatureEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Float" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>HVAC_OUTDOORHUMIDITY_EVENT</Alias>
+			<UniqueId>HVAC.OutdoorHumidityEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Float" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>HVAC_OUTDOORTEMPERATURE_EVENT</Alias>
+			<UniqueId>HVAC.OutdoorTemperatureEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Float" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>HVAC_TEMPERATURESCALE_EVENT</Alias>
+			<UniqueId>HVAC.TemperatureScaleEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>HVAC_TEMPERATURESCALE_EVENT</Alias>
+			<UniqueId>HVAC.TemperatureScaleEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+				<Parameter type="Int" />
+				<Parameter type="Int" />
+				<Parameter type="Int" />
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>HVAC_HOLDON_EVENT</Alias>
+			<UniqueId>HVAC.HoldOnEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>HVAC_LOCKON_EVENT</Alias>
+			<UniqueId>HVAC.LockOnEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>HVAC_HEATSETPOINTRANGE_EVENT</Alias>
+			<UniqueId>HVAC.HeatSetpointRangeEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>HVAC_COOLSETPOINTRANGE_EVENT</Alias>
+			<UniqueId>HVAC.CoolSetpointRangeEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="IODevice">
+		<ComponentEvent>
+			<Alias>IODEVICE_IOCHANNELSTATE_EVENT</Alias>
+			<UniqueId>IODevice.IOChannelStateEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>IODEVICE_IOCHANNELCOUNT_EVENT</Alias>
+			<UniqueId>IODevice.IOChannelCountEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>IODEVICE_IOCHANNELDIRECTION_EVENT</Alias>
+			<UniqueId>IODevice.IOChannelDirectionEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>IODEVICE_IOCHANNELINPUTSENSE_EVENT</Alias>
+			<UniqueId>IODevice.IOChannelInputSenseEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="KeypadSystem">
+		<ComponentEvent>
+			<Alias>KEYPADSYSTEM_KEYPADSYSTEMBUTTONSTATE_EVENT</Alias>
+			<UniqueId>KeypadSystem.KeypadSystemButtonStateEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>KEYPADSYSTEM_KEYPADSYSTEMBUTTONSTATUS_EVENT</Alias>
+			<UniqueId>KeypadSystem.KeypadSystemButtonStatusEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<!-- <Component id="Lamp">
+		<ComponentEvent>
+			<Alias>LAMP_COOLDOWNCOUNTER_EVENT</Alias>
+			<UniqueId>Lamp.CoolDownCounterEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int"
+					description="Represents the remaining cool down time in seconds" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>LAMP_WARMUPCOUNTER_EVENT</Alias>
+			<UniqueId>Lamp.WarmUpCounterEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int"
+					description="Represents the remaining warm up time in seconds" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>LAMP_COOLDOWNEXPIRE_EVENT</Alias>
+			<UniqueId>Lamp.CoolDownExpireEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int"
+					description="Represents the cool down time expire" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>LAMP_WARMUPEXPIRE_EVENT</Alias>
+			<UniqueId>Lamp.WarmUpExpireEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int"
+					description="Represents the warm up time expire" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>LAMP_LAMPTIME_EVENT</Alias>
+			<UniqueId>Lamp.LampTimeEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" description="Represents the lamp time in hours" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>LAMP_LAMP_STATE_EVENT</Alias>
+			<UniqueId>Lamp.LampStateEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" description="Represents the current lamp power state" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>LAMP_LAMP_STATUS_EVENT</Alias>
+			<UniqueId>Lamp.LampStatusEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" description="Represents the current lamp power status" />
+			</Parameters>
+		</ComponentEvent>
+	</Component> -->
+	<Component id="Lens">
+		<ComponentEvent>
+			<Alias>LENS_AUTOFOCUS_EVENT</Alias>
+			<UniqueId>Lens.AutoFocusEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" description="Represents the current Auto Focus status" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>LENS_AUTOIRIS_EVENT</Alias>
+			<UniqueId>Lens.AutoIrisEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" description="Represents the current Auto Iris status" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>LENS_FOCUS_EVENT</Alias>
+			<UniqueId>Lens.FocusEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int"
+					description="Represents the current focus setting where 0 represents near focus and 255 represents far focus" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>LENS_FOCUSRAMP_EVENT</Alias>
+			<UniqueId>Lens.FocusRampEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String"
+					description="Represents the current Focus Ramp direction" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>LENS_FOCUSSPEED_EVENT</Alias>
+			<UniqueId>Lens.FocusSpeedEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int"
+					description="Represents the focus speed, where 0=slowest speed and 255=fastest speed" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>LENS_IRIS_EVENT</Alias>
+			<UniqueId>Lens.IrisEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int"
+					description="Represents the current iris setting, where 0 represents a fully closed iris and 255 represents a fully open iris" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>LENS_IRISRAMP_EVENT</Alias>
+			<UniqueId>Lens.IrisRampEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String"
+					description="Represents the current Iris Ramp direction" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>LENS_IRISSPEED_EVENT</Alias>
+			<UniqueId>Lens.IrisSpeedEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int"
+					description="Represents the iris speed, where 0=slowest speed and 255=fastest speed" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>LENS_ZOOM_EVENT</Alias>
+			<UniqueId>Lens.ZoomEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int"
+					description="Represents the current zoom setting, where 0 represents the widest zoom the camera supports and 255 represents the nearest zoom the camera supports (telephoto)" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>LENS_ZOOMRAMP_EVENT</Alias>
+			<UniqueId>Lens.ZoomRampEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String"
+					description="Represents the current Zoom Ramp direction" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>LENS_ZOOMSPEED_EVENT</Alias>
+			<UniqueId>Lens.ZoomSpeedEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int"
+					description="Represents the zoom speed, where 0=slowest speed and 255=fastest speed" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="LightSystem">
+		<ComponentEvent>
+			<Alias>LIGHTSYSTEM_LIGHTSTATE_EVENT</Alias>
+			<UniqueId>LightSystem.LightStateEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>LIGHTSYSTEM_LIGHTLEVEL_EVENT</Alias>
+			<UniqueId>LightSystem.LightLevelEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>LIGHTSYSTEM_LIGHTLEVEL_EVENT</Alias>
+			<UniqueId>LightSystem.LightLevelEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+				<Parameter type="Int" />
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>LIGHTSYSTEM_LIGHTLEVELRAMP_EVENT</Alias>
+			<UniqueId>LightSystem.LightLevelRampEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="MediaDB">
+		<ComponentEvent>
+			<Alias>MEDIADB_RECORD_EVENT</Alias>
+			<UniqueId>MediaDB.RecordEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="MediaDevice">
+		<ComponentEvent>
+			<Alias>MEDIADEVICE_TITLECOUNTER_EVENT</Alias>
+			<UniqueId>MediaDevice.TitleCounterEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>MEDIADEVICE_MEDIADEVICEDISCTRANSPORTCOMPONENT_EVENT</Alias>
+			<UniqueId>MediaDevice.MediaDeviceDiscTransportComponentEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>MEDIADEVICE_MEDIADEVICESOURCEINFO_EVENT</Alias>
+			<UniqueId>MediaDevice.MediaDeviceSourceInfoEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>MEDIADEVICE_RANDOMSTATE_EVENT</Alias>
+			<UniqueId>MediaDevice.RandomStateEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>MEDIADEVICE_REPEATSTATE_EVENT</Alias>
+			<UniqueId>MediaDevice.RepeatStateEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>MEDIADEVICE_MEDIADEVICECOUNTERNOTIFICATION_EVENT</Alias>
+			<UniqueId>MediaDevice.MediaDeviceCounterNotificationEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="MediaTransport">
+		<ComponentEvent>
+			<Alias>MEDIATRANSPORT_TRACKPROPERTIES_EVENT</Alias>
+			<UniqueId>MediaTransport.TrackPropertiesEvent</UniqueId>
+			<Parameters>
+				<Parameter type="StringArray"
+					description="Represents the property information for all media." />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>MEDIATRANSPORT_TRACKPROPERTY_EVENT</Alias>
+			<UniqueId>MediaTransport.TrackPropertyEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String"
+					description="Represents the property information for media." />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>MEDIATRANSPORT_MEDIACOUNTER_EVENT</Alias>
+			<UniqueId>MediaTransport.MediaCounterEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>MEDIATRANSPORT_TRACKINFO_EVENT</Alias>
+			<UniqueId>MEDIATransport.MediaInfoEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>MEDIATRANSPORT_MEDIATRANSPORT_EVENT</Alias>
+			<UniqueId>MediaTransport.MediaTransportEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>MEDIATRANSPORT_TRACKCOUNTERNOTIFICATION_EVENT</Alias>
+			<UniqueId>MediaTransport.TrackCounterNotificationEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="Module">
+		<ComponentEvent>
+			<Alias>MODULE_DATAINITIALIZED_EVENT</Alias>
+			<UniqueId>Module.DataInitializedEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>MODULE_DEVICEONLINE_EVENT</Alias>
+			<UniqueId>Module.DeviceOnlineEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>MODULE_DIAGNOSTICMODE_EVENT</Alias>
+			<UniqueId>Module.DiagnosticModeEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>MODULE_PASSBACK_EVENT</Alias>
+			<UniqueId>Module.PassbackEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>MODULE_PASSBACKSTATE_EVENT</Alias>
+			<UniqueId>Module.PassbackStateEvent</UniqueId>
+			<Parameters>
+				<Parameter type="boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>MODULE_DEBUGSTATE_EVENT</Alias>
+			<UniqueId>Module.DebugStateEvent</UniqueId>
+			<Parameters>
+				<Parameter type="int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>MODULE_CHANNEL_EVENT</Alias>
+			<UniqueId>Module.ChannelEvent</UniqueId>
+			<Parameters>
+				<Parameter type="int,boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>MODULE_LEVEL_EVENT</Alias>
+			<UniqueId>Module.LevelEvent</UniqueId>
+			<Parameters>
+				<Parameter type="int[level,value]" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>MODULE_PUSH_EVENT</Alias>
+			<UniqueId>Module.PushEvent</UniqueId>
+			<Parameters>
+				<Parameter type="int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>MODULE_RELEASE_EVENT</Alias>
+			<UniqueId>Module.ReleaseEvent</UniqueId>
+			<Parameters>
+				<Parameter type="int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>MODULE_STRING_EVENT</Alias>
+			<UniqueId>Module.StringEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>MODULE_COMMAND_EVENT</Alias>
+			<UniqueId>Module.CommandEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>MODULE_MODULEONLINE_EVENT</Alias>
+			<UniqueId>Module.ModuleOnlineEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="Motor">
+		<ComponentEvent>
+			<Alias>MOTOR_MOTORDIRECTION_EVENT</Alias>
+			<UniqueId>Motor.MotorDirectionEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>MOTOR_MOTORPRESETCOUNT_EVENT</Alias>
+			<UniqueId>Motor.MotorPresetCountEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>MOTOR_MOTORPOSITION_EVENT</Alias>
+			<UniqueId>Motor.MotorPositionEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>MOTOR_MOTORPRESET_EVENT</Alias>
+			<UniqueId>Motor.MotorPresetEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="OutputStream">
+		<ComponentEvent>
+			<Alias>OUTPUTSTREAM_OUTPUTSTREAMDISCTRANSPORTCOMPONENT_EVENT</Alias>
+			<UniqueId>OutputStream.OutputStreamDiscTransportComponentEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>OUTPUTSTREAM_OUTPUTSTREAMSOURCE_EVENT</Alias>
+			<UniqueId>OutputStream.OutputStreamSourceEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="Phonebook">
+		<ComponentEvent>
+			<Alias>PHONEBOOK_RECORD_EVENT</Alias>
+			<UniqueId>Phonebook.RecordEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>PHONEBOOK_PHONEBOOKCAPACITY_EVENT</Alias>
+			<UniqueId>Phonebook.PhonebookCapacityEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="PoolSpa">
+		<ComponentEvent>
+			<Alias>POOLSPA_POOLHEATSTATE_EVENT</Alias>
+			<UniqueId>PoolSpa.PoolHeatStateEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>POOLSPA_SPAHEATSTATE_EVENT</Alias>
+			<UniqueId>PoolSpa.SpaHeatStateEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>POOLSPA_POOLSPAJETLEVEL_EVENT</Alias>
+			<UniqueId>PoolSpa.PoolSpaJetLevelEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>POOLSPA_POOLSETPOINT_EVENT</Alias>
+			<UniqueId>PoolSpa.PoolSetpointEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>POOLSPA_SPASETPOINT_EVENT</Alias>
+			<UniqueId>PoolSpa.SpaSetpointEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>POOLSPA_POOLHEATSTATUS_EVENT</Alias>
+			<UniqueId>PoolSpa.PoolHeatStatusEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>POOLSPA_SPAHEATSTATUS_EVENT</Alias>
+			<UniqueId>PoolSpa.SpaHeatStatusEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>POOLSPA_POOLSPAOUTDOORTEMPERATURE_EVENT</Alias>
+			<UniqueId>PoolSpa.PoolSpaOutdoorTemperatureEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Float" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>POOLSPA_POOLSPATEMPERATURESCALE_EVENT</Alias>
+			<UniqueId>PoolSpa.PoolSpaTemperatureScaleEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>POOLSPA_POOLTEMPERATURE_EVENT</Alias>
+			<UniqueId>PoolSpa.PoolTemperatureEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Float" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>POOLSPA_SPATEMPERATURE_EVENT</Alias>
+			<UniqueId>PoolSpa.SpaTemperatureEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Float" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>POOLSPA_POOLLIGHTON_EVENT</Alias>
+			<UniqueId>PoolSpa.PoolLightOnEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>POOLSPA_POOLPUMPON_EVENT</Alias>
+			<UniqueId>PoolSpa.PoolPumpOnEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>POOLSPA_POOLSPAAUX_EVENT</Alias>
+			<UniqueId>PoolSpa.PoolSpaAuxEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>POOLSPA_SPABLOWERON_EVENT</Alias>
+			<UniqueId>PoolSpa.SpaBlowerOnEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>POOLSPA_SPALIGHTON_EVENT</Alias>
+			<UniqueId>PoolSpa.SpaLightOnEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>POOLSPA_SPAPUMPON_EVENT</Alias>
+			<UniqueId>PoolSpa.SpaPumpOnEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>POOLSPA_SPASETPOINTRANGE_EVENT</Alias>
+			<UniqueId>PoolSpa.SpaSetpointRangeEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>POOLSPA_POOLSETPOINTRANGE_EVENT</Alias>
+			<UniqueId>PoolSpa.PoolSetpointRangeEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>POOLSPA_POOLSPATEMPERATURESCALE_EVENT</Alias>
+			<UniqueId>PoolSpa.PoolSpaTemperatureScaleEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+				<Parameter type="Int" />
+				<Parameter type="Int" />
+				<Parameter type="Int" />
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="Power">
+		<ComponentEvent>
+			<Alias>POWER_SHUTDOWNCOUNTER_EVENT</Alias>
+			<UniqueId>Power.ShutDownCounterEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int"
+					description="Represents the remaining shutdown time in seconds" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>POWER_POWER_STATE_EVENT</Alias>
+			<UniqueId>Power.PowerStateEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" description="Represents the current power state" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>POWER_POWER_STATUS_EVENT</Alias>
+			<UniqueId>Power.PowerStatusEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" description="Represents the current power status" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>POWER_STARTUPCOUNTER_EVENT</Alias>
+			<UniqueId>Power.StartUpCounterEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int"
+					description="Represents the remaining startup time in seconds" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>POWER_SHUTDOWNEXPIRE_EVENT</Alias>
+			<UniqueId>Power.ShutDownExpireEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int"
+					description="Represents the shutdown time expire" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>POWER_STARTUPEXPIRE_EVENT</Alias>
+			<UniqueId>Power.StartUpExpireEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int"
+					description="Represents the startup time expire" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>POWER_LAMPTIME_EVENT</Alias>
+			<UniqueId>Power.LampTimeEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" description="Represents the lamp time in hours" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>POWER_FILTERTIME_EVENT</Alias>
+			<UniqueId>Power.FilterTimeEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" description="Represents the filter time in hours" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="PowerDevice" />
+	<Component id="PreAmp">
+		<ComponentEvent>
+			<Alias>PREAMP_BALANCE_EVENT</Alias>
+			<UniqueId>PreAmp.BalanceEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" description="Represents the balance value" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>PREAMP_BASS_EVENT</Alias>
+			<UniqueId>PreAmp.BassEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" description="Represents the bass value" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>PREAMP_LOUDNESS_EVENT</Alias>
+			<UniqueId>PreAmp.LoudnessEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" description="Represents the current loudness status" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>PREAMP_SURROUNDMODE_EVENT</Alias>
+			<UniqueId>PreAmp.SurroundModeEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String"
+					description="Represents the current surround mode status" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>PREAMP_TREBLE_EVENT</Alias>
+			<UniqueId>PreAmp.TrebleEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" description="Represents the treble value" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>PREAMP_EQUALIZER_EVENT</Alias>
+			<UniqueId>PreAmp.EqualizerEvent</UniqueId>
+			<Parameters>
+				<Parameter type="IntArray" description="int[1][2] band gain" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="Preset">
+		<ComponentEvent>
+			<Alias>PRESET_PRESET_EVENT</Alias>
+			<UniqueId>Preset.PresetEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" description="Represents the current preset value" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>PRESET_PRESETCOUNT_EVENT</Alias>
+			<UniqueId>Preset.PresetCountEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" description="Represents the current number of presets" />
+			</Parameters>
+		</ComponentEvent>
+		<!-- <ComponentEvent>
+			<Alias>PRESET_PRESETPROPERTIES_EVENT</Alias>
+			<UniqueId>Preset.PresetPropertiesEvent</UniqueId>
+			<Parameters>
+				<Parameter type="StringArray" description="Represents the preset properties" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>PRESET_PRESETPROPERTY_EVENT</Alias>
+			<UniqueId>Preset.PresetPropertyEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" description="Represents the preset property" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>PRESET_PRESETSELECT_EVENT</Alias>
+			<UniqueId>Preset.PresetSelectEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" description="Represents the preset index" />
+			</Parameters>
+		</ComponentEvent> -->
+	</Component>
+	<Component id="RelayDevice">
+		<ComponentEvent>
+			<Alias>RELAYDEVICE_RELAYCHANNELSTATE_EVENT</Alias>
+			<UniqueId>RelayDevice.RelayChannelStateEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>RELAYDEVICE_RELAYCHANNELCOUNT_EVENT</Alias>
+			<UniqueId>RelayDevice.RelayChannelCountEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="RFIDSystem" />
+	<Component id="SecuritySystem">
+		<ComponentEvent>
+			<Alias>SECURITYSYSTEM_OKTOARM_EVENT</Alias>
+			<UniqueId>SecuritySystem.OKToArmEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>SECURITYSYSTEM_SECURITYSTATUS_EVENT</Alias>
+			<UniqueId>SecuritySystem.SecurityStatusEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>SECURITYSYSTEM_SECURITYSTATE_EVENT</Alias>
+			<UniqueId>SecuritySystem.SecurityStateEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>SECURITYSYSTEM_POINTSTATE_EVENT</Alias>
+			<UniqueId>SecuritySystem.PointStateEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>SECURITYSYSTEM_POINTSTATUS_EVENT</Alias>
+			<UniqueId>SecuritySystem.PointStatusEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="Sensor">
+		<ComponentEvent>
+			<Alias>SENSOR_SENSORSTATE_EVENT</Alias>
+			<UniqueId>Sensor.SensorStateEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>SENSOR_SENSORVALUE_EVENT</Alias>
+			<UniqueId>Sensor.SensorValueEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>SENSOR_SENSORANALOG_EVENT</Alias>
+			<UniqueId>Sensor.SensorAnalogEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="SourceSelect">
+		<ComponentEvent>
+			<Alias>SOURCESELECT_INPUTCOUNT_EVENT</Alias>
+			<UniqueId>SourceSelect.InputCountEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" description="Represents the number of inputs" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>SOURCESELECT_INPUTGROUPSELECT_EVENT</Alias>
+			<UniqueId>SourceSelect.InputGroupSelectEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int"
+					description="Represents the index of the currently selected group" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>SOURCESELECT_INPUTPROPERTIES_EVENT</Alias>
+			<UniqueId>SourceSelect.InputPropertiesEvent</UniqueId>
+			<Parameters>
+				<Parameter type="StringArray"
+					description="String[] String (index),(inputGroup),(signalType),(deviceLabel),(displayName) for each input select" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>SOURCESELECT_INPUTPROPERTY_EVENT</Alias>
+			<UniqueId>SourceSelect.InputPropertyEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String"
+					description="String (index),(inputGroup),(signalType),(deviceLabel),(displayName) for the input selected" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>SOURCESELECT_INPUTSELECT_EVENT</Alias>
+			<UniqueId>SourceSelect.InputSelectEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" description="Represents the input selected" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>SOURCESELECT_INPUTSOURCE_EVENT</Alias>
+			<UniqueId>SourceSelect.InputSourceEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String"
+					description="Represents the current input source selected" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="Switcher">
+		<ComponentEvent>
+			<Alias>SWITCHER_SWITCHERINPUTOUTPUT_EVENT</Alias>
+			<UniqueId>Switcher.SwitcherInputOutputEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+				<Parameter type="Int" />
+				<Parameter type="StringArray" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>SWITCHER_SWITCHERPRESET_EVENT</Alias>
+			<UniqueId>Switcher.SwitcherPresetEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>SWITCHER_SWITCHERPRESETCOUNT_EVENT</Alias>
+			<UniqueId>Switcher.SwitcherPresetCountEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>SWITCHER_INPUTCOUNT_EVENT</Alias>
+			<UniqueId>Switcher.InputCountEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>SWITCHER_OUTPUTCOUNT_EVENT</Alias>
+			<UniqueId>Switcher.OutputCountEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>SWITCHER_SWITCHLEVELLIST_EVENT</Alias>
+			<UniqueId>Switcher.SwitchLevelListEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>SWITCHER_BREAKAWAYSUPPORTED_EVENT</Alias>
+			<UniqueId>Switcher.BreakAwaySupportedEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="TextDisplay">
+		<ComponentEvent>
+			<Alias>TEXTKEYPAD_COLUMNSIZE_EVENT</Alias>
+			<UniqueId>TextKeypad.ColumnSizeEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>TEXTKEYPAD_LINESIZE_EVENT</Alias>
+			<UniqueId>TextKeypad.LineSizeEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="Tuner">
+		<ComponentEvent>
+			<Alias>TUNER_BAND_EVENT</Alias>
+			<UniqueId>Tuner.BandEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" description="Represents the currently selected band" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>TUNER_BANDPROPERTIES_EVENT</Alias>
+			<UniqueId>Tuner.BandPropertiesEvent</UniqueId>
+			<Parameters>
+				<Parameter type="StringArray" description="Represents the band properties" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>TUNER_BANDPROPERTYCOUNT_EVENT</Alias>
+			<UniqueId>Tuner.BandPropertyCountEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" description="Represents the band count" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>TUNER_BANDPROPERTY_EVENT</Alias>
+			<UniqueId>Tuner.BandPropertyEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" description="Represents the band property" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>TUNER_BANDSELECT_EVENT</Alias>
+			<UniqueId>Tuner.BandSelectEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" description="Represents the tuner band selected" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>TUNER_STATION_EVENT</Alias>
+			<UniqueId>Tuner.StationEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" description="Represents the station value" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>TUNER_STATIONPRESETCOUNT_EVENT</Alias>
+			<UniqueId>Tuner.StationPresetCountEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" description="Represents the preset count" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>TUNER_STATIONPRESET_EVENT</Alias>
+			<UniqueId>Tuner.StationPresetEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" description="Represents the current preset" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="UPS">
+		<ComponentEvent>
+			<Alias>UPS_OUTLETCOUNT_EVENT</Alias>
+			<UniqueId>UPS.OutletCountEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>UPS_OUTLETSTATE_EVENT</Alias>
+			<UniqueId>UPS.OutletStateEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>UPS_STATE_EVENT</Alias>
+			<UniqueId>UPS.StateEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>UPS_STATE_EVENT</Alias>
+			<UniqueId>UPS.StateEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>UPS_STATUS_EVENT</Alias>
+			<UniqueId>UPS.StatusEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>UPS_BACKUPSUPPORTEDEVENT_EVENT</Alias>
+			<UniqueId>UPS.BackupSupportedEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>UPS_BACKUPSTATUS_EVENT</Alias>
+			<UniqueId>UPS.BackupStatusEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>UPS_BACKUPTIMER_EVENT</Alias>
+			<UniqueId>UPS.BackupTimerEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>UPS_BACKUPPROPERTY_EVENT</Alias>
+			<UniqueId>UPS.BackupPropertyEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>UPS_TEMPERATURESCALE_EVENT</Alias>
+			<UniqueId>UPS.TemperatureScaleEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>UPS_OUTLETPROPERTY_EVENT</Alias>
+			<UniqueId>UPS.OutletPropertyEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+				<Parameter type="String" />
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>UPS_OUTLETPROPERTIES_EVENT</Alias>
+			<UniqueId>UPS.OutletPropertiesEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+				<Parameter type="StringArray" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>UPS_INPUTPROPERTY_EVENT</Alias>
+			<UniqueId>UPS.InputPropertyEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>UPS_ALARMS_EVENT</Alias>
+			<UniqueId>UPS.AlarmsEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>UPS_TESTSSUPPORTED_EVENT</Alias>
+			<UniqueId>UPS.TestsSupportedEvent</UniqueId>
+			<Parameters>
+				<Parameter type="StringArray" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>UPS_TEST_EVENT</Alias>
+			<UniqueId>UPS.TestEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>UPS_TESTRESULT_EVENT</Alias>
+			<UniqueId>UPS.TestResultEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="VideoConferencer">
+		<ComponentEvent>
+			<Alias>VIDEOCONFERENCER_VIDEODIALERCOMPONENT_EVENT</Alias>
+			<UniqueId>VideoConferencer.VideoDialerComponentEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>VIDEOCONFERENCER_NEARENDCAMERA_EVENT</Alias>
+			<UniqueId>VideoConferencer.NearEndCameraEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>VIDEOCONFERENCER_AUDIODIALER_EVENT</Alias>
+			<UniqueId>VideoConferencer.AudioDialerEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>VIDEOCONFERENCER_FARENDCAMERA_EVENT</Alias>
+			<UniqueId>VideoConferencer.FarEndCameraEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>VIDEOCONFERENCER_PIPON_EVENT</Alias>
+			<UniqueId>VideoConferencer.PIPOnEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>VIDEOCONFERENCER_PRIVACY_EVENT</Alias>
+			<UniqueId>VideoConferencer.PrivacyEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>VIDEOCONFERENCER_PREVIEWSOURCESELECTCOMPONENT_EVENT</Alias>
+			<UniqueId>VideoConferencer.PreviewSourceSelectComponentEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="Volume">
+		<ComponentEvent>
+			<Alias>VOLUME_VOLUME_EVENT</Alias>
+			<UniqueId>Volume.VolumeEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" description="Represents the current volume level" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>VOLUME_VOLUMEPRESET_EVENT</Alias>
+			<UniqueId>Volume.VolumePresetEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int"
+					description="represents the preset value for the volume" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>VOLUME_VOLUMEMUTE_EVENT</Alias>
+			<UniqueId>Volume.VolumeMuteEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int"
+					description="Represents the mute state for the volume mute" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>VOLUME_VOLUMERAMP_EVENT</Alias>
+			<UniqueId>Volume.VolumeRampEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" description="Represents the current ramp level state" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>VOLUME_VOLUMERAMPDETAIL_EVENT</Alias>
+			<UniqueId>Volume.VolumeRampDetailEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" description="Represents the current ramp level state" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="Weather">
+		<ComponentEvent>
+			<Alias>WEATHER_BAROMETRICPRESSURE_EVENT</Alias>
+			<UniqueId>Weather.BarometricPressureEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Float" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WEATHER_BAROMETRICTREND_EVENT</Alias>
+			<UniqueId>Weather.BarometricTrendEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WEATHER_CHANCEOFPRECIPITATION_EVENT</Alias>
+			<UniqueId>Weather.ChanceOfPrecipitationEvent</UniqueId>
+			<Parameters>
+				<Parameter type="StringArray" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WEATHER_CURRENTCONDITION_EVENT</Alias>
+			<UniqueId>Weather.CurrentConditionEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WEATHER_DEWPOINT_EVENT</Alias>
+			<UniqueId>Weather.DewpointEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Float" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WEATHER_FORECASTHIGHTEMPERATURE_EVENT</Alias>
+			<UniqueId>Weather.ForecastHighTemperatureEvent</UniqueId>
+			<Parameters>
+				<Parameter type="StringArray" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WEATHER_FORECASTLOWTEMPERATURE_EVENT</Alias>
+			<UniqueId>Weather.ForecastLowTemperatureEvent</UniqueId>
+			<Parameters>
+				<Parameter type="StringArray" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WEATHER_HEATINDEX_EVENT</Alias>
+			<UniqueId>Weather.HeatIndexEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Float" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WEATHER_HIGHTEMPERATURE_EVENT</Alias>
+			<UniqueId>Weather.HighTemperatureEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Float" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WEATHER_LOWTEMPERATURE_EVENT</Alias>
+			<UniqueId>Weather.LowTemperatureEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Float" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WEATHER_INDOORHUMIDITY_EVENT</Alias>
+			<UniqueId>Weather.IndoorHumidityEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Float" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WEATHER_OUTDOORHUMIDITY_EVENT</Alias>
+			<UniqueId>Weather.OutdoorHumidityEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Float" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WEATHER_INDOORTEMPERATURE_EVENT</Alias>
+			<UniqueId>Weather.IndoorTemperatureEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Float" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WEATHER_OUTDOORTEMPERATURE_EVENT</Alias>
+			<UniqueId>Weather.OutdoorTemperatureEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Float" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WEATHER_WEATHERALERT_EVENT</Alias>
+			<UniqueId>Weather.WeatherAlertEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WEATHER_WEATHERCONDITIONS_EVENT</Alias>
+			<UniqueId>Weather.WeatherConditionsEvent</UniqueId>
+			<Parameters>
+				<Parameter type="StringArray" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WEATHER_WEATHERSCALE_EVENT</Alias>
+			<UniqueId>Weather.WeatherScaleEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WEATHER_WINDCHILL_EVENT</Alias>
+			<UniqueId>Weather.WindchillEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Float" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WEATHER_WINDINFO_EVENT</Alias>
+			<UniqueId>Weather.WindInfoEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WEATHER_RAINING_EVENT</Alias>
+			<UniqueId>Weather.RainingEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WEATHER_FREEZING_EVENT</Alias>
+			<UniqueId>Weather.FreezingEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WEATHER_RAINFALLDURATION_EVENT</Alias>
+			<UniqueId>Weather.RainFallDurationEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+				<Parameter type="Float" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WEATHER_RAINFALLDURATIONLIST_EVENT</Alias>
+			<UniqueId>Weather.RainFallDurationListEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+	<Component id="Window">
+		<ComponentEvent>
+			<Alias>WINDOW_WINDOWSSUPPORTED_EVENT</Alias>
+			<UniqueId>Window.WindowsSupportedEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WINDOW_ZORDER_EVENT</Alias>
+			<UniqueId>Window.ZOrderEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WINDOW_FREEZE_EVENT</Alias>
+			<UniqueId>Window.FreezeEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WINDOW_PICTUREMUTE_EVENT</Alias>
+			<UniqueId>Window.PictureMuteEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Boolean" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WINDOW_BRIGHTNESS_EVENT</Alias>
+			<UniqueId>Window.BrightnessEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WINDOW_COLOR_EVENT</Alias>
+			<UniqueId>Window.ColorEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WINDOW_CONTRAST_EVENT</Alias>
+			<UniqueId>Window.ContrastEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WINDOW_IMAGEPOSITION_EVENT</Alias>
+			<UniqueId>Window.ImagePositionEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WINDOW_IMAGESIZE_EVENT</Alias>
+			<UniqueId>Window.ImageSizeEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WINDOW_IMAGEPOSITIONSIZE_EVENT</Alias>
+			<UniqueId>Window.ImagePositionSizeEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WINDOW_IMAGESOURCE_EVENT</Alias>
+			<UniqueId>Window.ImageSourceEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WINDOW_IMAGESOURCEPOSITIONSIZE_EVENT</Alias>
+			<UniqueId>Window.ImageSourcePositionSizeEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+				<Parameter type="String" />
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WINDOW_SHARPNESS_EVENT</Alias>
+			<UniqueId>Window.SharpnessEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WINDOW_TINT_EVENT</Alias>
+			<UniqueId>Window.TintEvent</UniqueId>
+			<Parameters>
+				<Parameter type="Int" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WINDOW_WINDOWPOSITION_EVENT</Alias>
+			<UniqueId>Window.WindowPositionEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WINDOW_WINDOWSIZE_EVENT</Alias>
+			<UniqueId>Window.WindowSizeEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+		<ComponentEvent>
+			<Alias>WINDOW_WINDOWPOSITIONSIZE_EVENT</Alias>
+			<UniqueId>Window.WindowPositionSizeEvent</UniqueId>
+			<Parameters>
+				<Parameter type="String" />
+				<Parameter type="String" />
+			</Parameters>
+		</ComponentEvent>
+	</Component>
+</ComponentSdkEvents>

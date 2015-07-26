@@ -1,0 +1,7 @@
+--- 
+pdu1:
+  outlets: 
+    outlet3: pc1
+    outlet2: disp1
+    outlet1: cam1
+  physicalDevice: "192:1:0"

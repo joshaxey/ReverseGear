@@ -1,0 +1,409 @@
+/** master.css
+ *  Legal Notice :
+ *     Copyright, AMX LLC, 2013-2014
+ *     Private, proprietary information, the sole property of AMX LLC.  The
+ *     contents, ideas, and concepts expressed herein are not to be disclosed
+ *     except within the confines of a confidential relationship and only
+ *     then on a need to know basis.
+ *
+ *     Any entity in possession of this AMX Software shall not, and shall not
+ *     permit any other person to, disclose, display, loan, publish, transfer
+ *     (whether by sale, assignment, exchange, gift, operation of law or
+ *     otherwise), license, sublicense, copy, or otherwise disseminate this
+ *     AMX Software.
+ *
+ *     This AMX Software is owned by AMX and is protected by United States
+ *     copyright laws, patent laws, international treaty provisions, and/or
+ *     state of Texas trade secret laws.
+ *
+ *     Portions of this AMX Software may, from time to time, include
+ *     pre-release code and such code may not be at the level of performance,
+ *     compatibility and functionality of the final code. The pre-release code
+ *     may not operate correctly and may be substantially modified prior to
+ *     final release or certain features may not be generally released. AMX is
+ *     not obligated to make or support any pre-release code. All pre-release
+ *     code is provided "as is" with no warranties.
+ *
+ *     This AMX Software is provided with restricted rights. Use, duplication,
+ *     or disclosure by the Government is subject to restrictions as set forth
+ *     in subparagraph (1)(ii) of The Rights in Technical Data and Computer
+ *     Software clause at DFARS 252.227-7013 or subparagraphs (1) and (2) of
+ *     the Commercial Computer Software Restricted Rights at 48 CFR 52.227-19,
+ *     as applicable.
+ **/
+
+body {
+    background-color: #ffffff;
+}
+#page {
+    min-width:600px;
+    max-width:99%;
+    padding:10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 12px;
+}
+
+.login-page#page {
+    min-width:350px;
+}
+
+#page .banner {
+    margin-top:30px;
+}
+
+#page .page-header {
+    margin-top:0px;
+    margin-bottom:0;
+    border: none;
+    display:none;
+    padding:0;
+}
+
+#page .page-container {
+    padding:10px;
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom:10px;
+}
+
+#page .loading {
+    text-align: center;
+}
+
+#page .nav-pills {
+    margin-top:5px;
+    margin-bottom: 5px;
+}
+
+#page .nav-pills>li>a {
+    padding: 5px 10px;
+}
+
+#page .nav-pills .active>a {
+    background: #606060;
+}
+
+#page #logo {
+    margin:10px;
+}
+
+#page #navigation {
+    margin-bottom: 0px;
+    box-shadow: 3px 3px 3px #323232;
+    min-height:40px;
+}
+
+#page #header-container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#page #header-container h3 {
+    position:relative;
+    left:20px;
+    font-size: 16px;
+    line-height:50px;
+    display:inline;
+    letter-spacing: 4px;
+}
+
+#page #header-container #header-login {
+    height:50px;
+    position: relative;
+    right:495px;
+    float:right;
+}
+
+#page #header-container #header-logout {
+    height:50px;
+    position: relative;
+    right:10px;
+    float:right;
+    padding-top:10px;
+}
+
+#page #header-container #header-login button {
+    position: absolute;
+    bottom: 14px;
+    left: 420px;
+}
+
+#page #header-container #header-logout button {
+    margin-left: 10px;
+}
+
+#page #header-container  h5 {
+    font-size: 10px;
+}
+
+#page #header-container  .amx-container {
+    width:200px;
+    position: absolute;
+    bottom:0px;
+}
+
+#page #header-container  .amx-container input {
+    height:25px;
+    line-height: 10px;
+    padding: 0;
+    padding-left:5px;
+}
+
+#page #header-container  .username {
+    position: absolute;
+}
+
+#page #header-container  .password {
+    left: 210px;
+}
+
+@keyframes tabFadeIn
+{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-webkit-keyframes tabFadeIn /* Safari and Chrome */
+{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+/* show hover dropdown menu only for non-mobile menu*/
+@media (min-width: 768px) {
+
+    #page #navigation .navbar-header {
+        height:10px;
+    }
+
+    #page #navigation .navbar-nav>li>a {
+        line-height:10px;
+    }
+
+    #page #navigation ul.nav li.dropdown-toggle > ul.dropdown-menu {
+        background: #323232;
+    }
+
+    #page #navigation ul.nav li.dropdown-toggle > ul.dropdown-menu a {
+        color: #FFFFFF;
+    }
+
+    #page #navigation ul.nav li.dropdown-toggle:hover {
+        background: #323232;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    #navigation .toggle-label {
+        display:none;
+    }
+}
+
+@media (max-width: 768px) {
+    #page .page-container {
+        min-height:700px;
+    }
+    #page #logo {
+        margin:15px;
+    }
+}
+
+#page #navigation .active > a, #page #navigation .active > a:visited {
+    color: #ffef84 !important;
+    background: transparent;
+}
+
+#page #navigation .navbar-toggle {
+    float:left;
+    margin-left:15px;
+    margin-right: 0px;
+}
+
+#page #navigation ul.nav li.dropdown-toggle > ul.dropdown-menu a:hover {
+    background: #111111 !important;
+}
+
+#page #navigation ul.nav li.dropdown-toggle > ul.dropdown-menu a:hover {
+    background: #FFFFFF;
+}
+
+#page .modal-dialog {
+    width:95%;
+    min-width: 400px;
+    max-width:900px;
+}
+
+#page .app-icons {
+    min-height:160px;
+    display:block;
+    float:left;
+}
+
+#page .app-icons a {
+    padding: 5px;
+    margin:10px;
+    text-align:center;
+    display:block;
+    border: 1px solid #a0a0a0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: #ebebeb;
+    width:150px;
+    min-height: 120px;
+    position:relative;
+    box-shadow: 2px 3px 3px #A0A0A0;
+}
+
+#page .app-icons a:hover {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: #d2d2d2;
+    color:#323232;
+    box-shadow: 0px 0px 0px #A0A0A0;
+}
+
+#page .app-icons img {
+    max-height:60px;
+    max-width:100px;
+    margin-top:5px;
+    margin-bottom:0px;
+    box-shadow: 2px 3px 3px #A0A0A0;
+}
+
+#page .app-icons label {
+    max-width: 150px;
+    display:block;
+    text-align:center;
+    margin-top:5px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size:12px;
+    font-weight:normal;
+    cursor:pointer;
+    word-break:break-all;
+}
+
+#page table th, #page table td {
+    vertical-align: middle;
+    padding:2px;
+}
+
+#page table .middle {
+    text-align: center;
+}
+
+#page .page-container .clock {
+    width:150px;
+    text-align:center;
+    margin-bottom:0;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 12px;
+    padding-left:15px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    color: #ffffff;
+    font-size:30px;
+    background: #606060;
+}
+
+#websocketmsg {
+    display:none;
+    position:fixed;
+    left: 0;
+    top:10px;
+    width:600px;
+    z-index:1000;
+}
+
+#websocketmsg .popover {
+    display:block;
+}
+
+#websocketmsg .popover .popover-title {
+    background-color: #fcf8e3;
+}
+
+#page #copyright {
+    display:block;
+    clear:both;
+}
+
+#page .page-header, #page .nav-pills {
+    font-size: 14px;
+    margin-bottom:10px;
+}
+
+#page .devices-summary .panel {
+    box-shadow: none;
+}
+
+.devices-summary .panel-body {
+    padding:5px;
+}
+
+.devices-summary, .devices-detail {
+    overflow-x:hidden;
+    overflow-y:auto;
+    padding:10px;
+}
+
+.devices-summary {
+    font-size: 12px;
+    padding-top:0;
+    padding-left:0px;
+    max-height:700px;
+}
+
+.devices-summary a {
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.devices-detail {
+    padding-left:5px;
+    padding-top:0;
+    padding-right:15px;
+    border-left: solid 1px #d2d2d2;
+    max-height:730px;
+}
+
+.devices-detail .row {
+    margin: 0;
+}
+
+.devices-detail .panel {
+    margin-bottom: 10px;
+}
+
+.devices-detail div[class*='col-xs-'], .devices-detail div[class*='col-sm-'], .devices-detail div[class*='col-md-'], .devices-detail div[class*='col-lg-'] {
+    padding:5px;
+    padding-top:0;
+}
+
+.scroll-icon {
+    padding:5px;
+    margin-left:50%;
+    opacity:0.6;
+}
+
+.modal-backdrop.in {
+    opacity: 0.2;
+}
+
+.embedded iframe {
+    width:101%;
+    border: none;
+}
+
+
+

@@ -1,0 +1,19 @@
+<div class="container" data-ng-controller="homeCtrl as vm">
+  <h1>Details</h1>
+  <p>Details of this RPM system.</p>
+
+  <div class="row">
+    <div class="col-md-12">
+      <fieldset>
+        <legend><span>Versions</span></legend>
+        <dl class="dl-horizontal">
+          <dt>OBC</dt>                 <dd>{{ vm.data.obc       }}</dd>
+          <dt>RPM Netlinx</dt>         <dd>{{ vm.data.netlinx   }}</dd>
+          <dt>Master Firmware</dt>     <dd>{{ vm.data.masterFW  }}</dd>
+          <dt>Master Serial Number</dt><dd>{{ vm.data.masterSN  }}</dd>
+          <dt>Master MAC Address</dt>  <dd>{{ vm.data.masterMAC }}</dd>
+        </dl>
+      </fieldset>
+    </div>
+  </div>
+</div>

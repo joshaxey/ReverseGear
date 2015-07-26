@@ -1,0 +1,33 @@
+<?xml version='1.0' ?>
+<runtimedata module_name="Samsung_DB55D_Comm_dr1_0_0">
+  <runtime_property name="setAspectRatio">
+    <property_value>1,16:9,ASPECT16_9</property_value>
+    <property_value>2,Zoom,ZOOM</property_value>
+    <property_value>3,Zoom1,ZOOM1</property_value>
+    <property_value>4,Zoom2,ZOOM2</property_value>
+    <property_value>5,Just_Scan,JUST_SCAN</property_value>
+    <property_value>6,Wide,WIDE_ZOOM</property_value>
+    <property_value>7,4:3,ASPECT4_3</property_value>
+    <property_value>8,Wide Fit,WIDE_FIT</property_value>
+    <property_value>9,Custom,CUSTOM</property_value>
+    <property_value>10,Smart_View1,SMART_VIEW_1</property_value>
+    <property_value>11,Smart_View2,SMART_VIEW_2</property_value>
+  </runtime_property>
+  <runtime_property name="setInputSelect">
+    <property_value>1,1,VGA,RGB,PC</property_value>
+    <property_value>2,1,LINE_SGNL,AUDIO,RGB</property_value>
+    <property_value>3,2,DVI,DVI,DVI</property_value>
+    <property_value>4,2,LINE_SGNL,AUDIO,DVI</property_value>
+    <property_value>5,3,COMPOSITE,AV,AV</property_value>
+    <property_value>6,3,LINE_SGNL,AUDIO,AV</property_value>
+    <property_value>7,4,COMPONENT,COMPONENT,COMPONENT</property_value>
+    <property_value>8,4,LINE_SGNL,AUDIO,COMPONENT</property_value>
+    <property_value>9,5,MAGIC_INFO,MagicInfo,MagicInfo</property_value>
+    <property_value>10,6,RF_COAX,TV,TV</property_value>
+    <property_value>11,7,RF_COAX,DTV,DTV</property_value>
+    <property_value>12,8,HDMI,HDMI 1,HDMI 1</property_value>
+  </runtime_property>
+  <runtime_property name="setStationPreset">
+    <property_value>0</property_value>
+  </runtime_property>
+</runtimedata>

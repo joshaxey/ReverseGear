@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: 20.10-b01 (Sun Microsystems Inc.)
+Bundle-Vendor: AMX LLC
+Bundle-Version: 1.4.0
+Bundle-Name: Apache Commons Codec
+Bundle-SymbolicName: commons-codec
+Bundle-Classpath: .
+Export-Package:  org.apache.commons.codec;specification-version=1.4.0,
+  org.apache.commons.codec.binary;specification-version=1.4.0;uses:=or
+ g.apache.commons.codec, org.apache.commons.codec.digest;specification
+ -version=1.4.0, org.apache.commons.codec.language;specification-versi
+ on=1.4.0;uses:=org.apache.commons.codec, org.apache.commons.codec.net
+ ;specification-version=1.4.0;uses:=org.apache.commons.codec
+AMX-Type: Duet
+Device-Revision: 1.4.0
+

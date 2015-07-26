@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: 20.10-b01 (Sun Microsystems Inc.)
+Bundle-Vendor: AMX LLC 
+Bundle-Version: 2.5.0
+Bundle-Name: Apache Commons Lang
+Bundle-SymbolicName: commons-lang
+Bundle-Classpath: .
+Export-Package:  org.apache.commons.lang;specification-version=2.5.0, 
+  org.apache.commons.lang.builder;specification-version=2.5.0,  org.ap
+ ache.commons.lang.enum;specification-version=2.5.0,  org.apache.commo
+ ns.lang.enums;specification-version=2.5.0,  org.apache.commons.lang.e
+ xception;specification-version=2.5.0,  org.apache.commons.lang.math;s
+ pecification-version=2.5.0,  org.apache.commons.lang.mutable;specific
+ ation-version=2.5.0,  org.apache.commons.lang.reflect;specification-v
+ ersion=2.5.0,  org.apache.commons.lang.text;specification-version=2.5
+ .0,  org.apache.commons.lang.time;specification-version=2.5.0
+AMX-Type: Duet
+Device-Revision: 2.5.0
+

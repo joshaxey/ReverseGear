@@ -1,0 +1,6 @@
+<?xml version='1.0' ?>
+<runtimedata module_name="Panasonic_AWHE50_IP_Comm_dr1_0_0">
+  <runtime_property name="setCameraPreset">
+    <property_value>100</property_value>
+  </runtime_property>
+</runtimedata>

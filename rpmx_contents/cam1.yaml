@@ -1,0 +1,27 @@
+--- 
+cam1:
+  duetModule: 
+    manifest: 
+      Duet-Module: Panasonic_AWHE50_IP_Comm_dr1_0_0
+      Device-SDKClass: com.amx.duet.devicesdk.Camera
+      Device-Make: Panasonic
+      Device-Category: IP
+      Device-Revision: 1.0.0
+      Bundle-Version: 1.0.5
+      Device-GUID: ""
+      Device-Model: AW-HE60
+    properties: 
+      - "1|command|PROPERTY-IP_Address,192.168.0.55"
+  fileName: Panasonic_AWHE50_IP_Comm_dr1_0_0.jar
+  friendlyName: Camera
+  guiMappings: 
+    lensFocusAuto: "1|channel|172"
+    lensFocusFar: "1|channel|161|to"
+    ptTiltUp: "1|channel|132|to"
+    lensZoomOut: "1|channel|158|to"
+    lensZoomIn: "1|channel|159|to"
+    ptTiltDown: "1|channel|133|to"
+    lensFocusNear: "1|channel|160|to"
+    ptPanRight: "1|channel|135|to"
+    ptPanLeft: "1|channel|134|to"
+  physicalDevice: "0:3:0"

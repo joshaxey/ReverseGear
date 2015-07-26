@@ -1,0 +1,271 @@
+/* CSS File         // Cross-browser consistent styles
+   Purpose:         Morpheus Common Stylesheet
+   Created-Date:    10.07
+   Created-By:      Mike Mankin
+   
+   Sections
+   ------------------
+   1.0  Common Colors
+   1.1  Font Sizes
+   1.2  Reset
+   1.3  Formatting
+   1.4  Header
+   1.5  Lists
+   1.6  Links
+   1.7  Forms
+   1.8  Tables
+   1.9  Containers/Classes
+*/
+
+/* 1.0 Common Colors
+----------------------------------------------- 
+*/
+.primary {}
+.secondary {}
+.tertary {}
+.white  {color:#FFF}
+.black  {color:#000}
+.blue {color: #003366}
+.green {color: #006633}
+.red {color: #ff0000}
+.dkgrey {color:#333}
+.mdgrey {color:#666}
+.ltgrey {color:#ccc}
+.ltblue {color:#ccffff}
+.statusRed, .statusBlue, .statusGreen, .statusGray {font-size:12px;font-weight:bold}
+.statusRed, .statusBlue, .statusGreen, .statusGray {font-size:12px;font-weight:bold}
+.statusRed   {color:#ff0000}
+.statusBlue  {color:#ccffff}
+.statusGreen {color:#66ff66}
+.statusGray  {color:#ccc}
+.msgAlert, .msgStd {font-size:12px;color:#ff0000}
+.msgStd {color:#006633}
+
+/* 1.1 Font sizes
+----------------------------------------------- 
+Fonts use em for size,
+for font sizes in pixels use:
+Pixels    Use this %      Pixels     Use this %
+10        77              19         144
+11        85              20         152
+12        92              21         159
+13        100             22         167
+14        107             23         174
+15        114             24         182
+16        122             25         189
+17        129             26         197
+18        136             
+*/
+.x-small  { font-size: .8em;  }
+.small    { font-size: .9em;  }
+.medium   { font-size: 1em;   }
+.large    { font-size: 1.3em; }
+.x-large  { font-size: 1.6em; }
+.xx-large { font-size: 2em;   }
+
+/* OLD WAY BELOW - USE FONT-SIZE:##% */
+/* T Y P E   S I Z E S */
+.type8 {font-size: 8px}
+.type9 {font-size: 9px}
+.type10 {font-size: 10px}
+.type11 {font-size: 11px}
+.type12 {font-size: 12px}
+.type13 {font-size: 13px}
+.type14 {font-size: 14px}
+.type15 {font-size: 15px}
+.type16 {font-size: 16px}
+.type17 {font-size: 17px}
+.type18 {font-size: 18px}
+.type19 {font-size: 19px}
+.type20 {font-size: 20px}
+
+/* 1.2 Reset // Resets all browser properties so all styles are intentional
+----------------------------------------------- 
+*/
+* {padding:0;margin:0}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,p,blockquote,th,td{margin:0;padding:0}
+table{border-collapse:collapse;border-spacing:0}
+fieldset,img{border:0}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}
+ol,ul {list-style:none}
+caption,th {text-align:left}
+h1,h2,h3,h4,h5,h6{font-size:100%}
+q:before,q:after{content:''}
+h1,h2,h3,h4,h5,h6,p,blockquote,form,label,ul,ol,dl,fieldset,address {margin-bottom: 0em}
+abbr,acronym {border:0}
+
+/* 1.3 Formatting
+----------------------------------------------- 
+*/
+.bold {font-weight:bold; }
+.normal {font-weight:normal}
+.italic {font-style: italic; }
+.blink {text-decoration:blink}
+.nowrap {white-space:nowrap}
+.left {text-align:left}
+.center {text-align: center}
+.right {text-align:right}
+.top {vertical-align:top}
+.middle {vertical-align:middle}
+.bottom {vertical-align:bottom}
+.fontSizeKiller {font-size:1px}
+.disabled { color:#999999; }
+p {font-size:90%;line-height:16px}
+.block {display:block}
+img {vertical-align:middle}
+
+/* 1.4 Header
+----------------------------------------------- 
+*/
+html {height:100%;min-height:100%}
+body#gradient {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:76.1%;
+    text-align:center;
+    color:#003366;
+    line-height:1.3em;
+    background:url(assets/images/bkg_tile.jpg) repeat-x top left}
+
+/* 1.5 Lists
+----------------------------------------------- 
+*/
+ul {padding-left:1em;list-style:disc;margin-left:0;-moz-padding-start:40px;-moz-counter-reset:-html-counter 0}
+
+/* 1.6 Links
+----------------------------------------------- 
+*/
+a {color:#003366;text-decoration:none;font-size:12px}
+a:hover {color:#006633;text-decoration:none;border-bottom:1px solid #003366}
+a.menu {color:#003366;font-size:12px;font-weight:bold;line-height:18px;text-decoration:none;white-space:nowrap}
+a.menu:link {text-decoration:none}
+a.menu:hover {color:#3366cc;text-decoration:none;border-bottom:1px solid #003366}
+a.logout {color:white;font-size:11px;font-weight:normal;text-decoration:none;border-bottom:1px solid #e9eff5}
+a.logout:hover {color:#e9eff5}
+a.descriptionMenuOn, a.descriptionMenuOff {font-size:11px;text-decoration:none;margin-left:10px}
+a.descriptionMenuOn {color:#006633;border-bottom:1px solid #006633}
+a.descriptionMenuOn:hover {}
+a.descriptionMenuOff {color:#003366;text-decoration:none;border-bottom:0px}
+a.descriptionMenuOff:hover {border-bottom:1px dashed #003366}
+.handCursor {cursor:hand;cursor:pointer}
+#flashMsgContainer {margin-left:12px;color:#ff0000;text-decoration:blink}
+
+/* 1.7 Forms
+----------------------------------------------- 
+*/
+select {min-width:35px;margin:2px 10px 2px 2px;font-size:88%;border:1px solid #7f9db9}
+checkbox {cursor:hand;cursor:pointer}
+radio {cursor:hand;cursor:pointer}
+select:disabled {background:#eee;border:1px solid #ccc}
+label, .label, .labelLeft, .labelRight {font-size:12px;color:#333;text-align:left;padding:2px;margin:0px 4px 0px 0px;white-space:nowrap}
+.labelLeft {text-align:left;width:100%}
+.labelContent {font-size:12px;color:#003366;width:100%;text-align:left}
+.labelRight {text-align:right}
+.cbox, .cboxText {border-bottom:2px solid #e9eff5;padding:2px 4px 4px 4px}
+.cbox {background:#ccc;width:17px}
+.cboxText {font-size:12px;background:#fff;width:100%;padding-left:4px;white-space:nowrap}
+.smallSelect {font-size:10px;height:15px;color:#003366;background:#D5E0EA;margin:1px}
+input[type=text], input[type=password] {border:1px solid #7f9db9;padding:2px 1px 0px 2px;margin:1px 4px 0px 0px;font-size:12px;height:16px}
+#ssb1 img {padding:3px 0px 3px 8px}
+div.fileinputs {position:relative;height:21px;width:100%;white-space:nowrap}
+div.fakefile {position:absolute;top:0px;left:0px;margin:0px;z-index:1;white-space:nowrap}
+input.file {position:relative;width:235px;margin:0px;text-align:left;-moz-opacity:0;filter:alpha(opacity:0);opacity:0;z-index:2}
+.fileUploadBrowseBtn {margin:0px 5px;cursor:hand;cursor:pointer}
+.fileUploadSubmitBtn {margin:4px 0px 0px 0px;cursor:hand;cursor:pointer}
+input:disabled {border:1px solid #ccc;color:#666;background:#ccc}
+select.device {margin-left:-5px;width:190px;color:#003366;font-size:11px}
+.radioText {font-size:10px;color:#666;padding-left:5px}
+.outputArea {font-size:12px;font-weight:bold;background:white;width:55px;height:20px;margin:0px 0px 2px 5px;padding:4px 0px 0px 0px;color:#003366;text-align:center}
+textarea#messages {height:355px;margin-bottom:10px}
+
+/* 1.8 Tables
+----------------------------------------------- 
+*/
+table {border-collapse:collapse;border-spacing:0px}
+th {font-weight:bold;background:#ccc;padding:2px 3px}
+.oddRow {background:#d8e3ec}
+.evenRow {background:#eff4f7}
+.sectionTable {width:98%;margin:5px;border-spacing:1px;border-collapse:separate}
+.table-layout {width:95%;margin:8px;border-spacing:1px;border-collapse:separate}
+.sectionTable td {padding:4px}
+.tableLeft {position:relative;width:350px}
+.tableRight {position:absolute;top:0px;left:350px;width:315px}
+.rowsCombined {background:#789ab6;color:white;font-size:12px;font-weight:bold;text-align:center;white-space:nowrap}
+.rowHeader, .rowText {color:#000;font-size:11px;padding-left:4px}
+.rowHeader {font-weight:bold;background:#b1c7d9;white-space:nowrap}
+.cellPadder {margin:10px -10px 10px 10px}
+
+/* 1.9 Containers/Classes
+----------------------------------------------- 
+*/
+.contentBody {background:white;text-align:center}
+#bodyContainer {position:relative;width:760px;height:100%;text-align:center;margin:0px auto;z-index:1}
+#logoContainer {position:absolute;top:22px;left:18px;width:136px;height:44px}
+#playStopContainer {position:absolute;top:19px;left:175px;width:44px;height:40px}
+#titleContainer {position:absolute;top:78px;left:18px;width:245px;height:18px}
+#statusContainer {position:absolute;top:10px;left:413px;width:230px;height:55px}
+#logoutContainer {position:absolute;top:30px;left:170px;width:63px;height:22px}
+#userMessage {font-size:11px;color:white;position:absolute;top:0px;left:68px;width:175px;height:40px;padding-top:3px;text-align:left}
+#navContainer {position:absolute;top:70px;left:405px;width:335px;height:23px;white-space:nowrap}
+#rebootContainer {width:250px;text-align:left;white-space:nowrap}
+#securitySubMenu, #systemSubMenu {position:relative;white-space:nowrap;display:block;height:19px}
+iframe#contentIframe {border:0px;width:100%;height:450px;overflow:auto}
+#iframeProc, #iframeSystem {position:absolute;top:0px;left:0px;width:0px;height:0px;visibility:hidden}
+iframe#proc, iframe#iSysFrame {width:0px;height:0px;border:0px;margin:0px}
+td.navMenuContentTD {background:url(assets/images/cnr_bkg_tile.jpg) repeat top left;vertical-align:top;padding:0px 5px}
+#navMenuContainer {position:absolute;z-index:2;top:23px;left:-9999px;width:10%;height:32px;opacity:.75;filter:alpha(opacity=75)}
+#contentContainer {position:absolute;z-index:1;width:716px;top:100px;left:16px;text-align:center}
+.contentHeader, .sectionHeader, .subSectionHeader {text-align:left;font-size:12px;font-weight:bold;width:100%}
+.contentHeader {background:#b1c1cf url(assets/images/chdr_tile.gif) repeat top left;color:#fff;margin:6px 0px 0px 0px;padding:0px}
+.sectionContainer {position:relative;padding:4px 10px 0px 10px}
+.sectionHeader, .subSectionHeader {background:#D5E0EA url(assets/images/shdr_tile.gif) repeat top left;color:#333;margin:0px 0px 0px 0px}
+.subSectionHeader {text-align:left}
+.contentHeaderText, .sectionHeaderText, .subSectionHeaderText {padding:2px 0px 2px 7px;font-size:12px;font-weight:bold;text-align:left}
+.contentHeaderText {color:white}
+.sectionHeaderText {color:#333}
+.subSectionHeaderText {color:#333;font-weight:normal;font-size:12px}
+.subPageHeader, .pageDescription {color:#333;text-align:left;width:600px;white-space:nowrap;margin:0px}
+.subPageHeader {display:block;font-size:16px;font-weight:bold;margin-top:10px;padding:5px 0px 10px 12px}
+#messageContainer {font-size:11px;color:#ff0000;padding:5px 0px 3px 12px;white-space:nowrap}
+.pageDescription {color:#666;font-size:11px;font-weight:normal;padding-left:1px}
+.contentWell, .sectionWell {background:#fff;color:#003366;font-size:12px;margin:0px 0px 0px 0px;padding:0px}
+.contentWell {padding:3px;text-align:left}
+.sectionWell{margin:0px 0px 10px 0px;position:relative;background:#e9eff5;text-align:left}
+.sectionHeader, .sectionWell, .subSectionWell {width:100%}
+.subSectionWell {color:#333;background:#fff;font-size:12px;padding:0px;text-align:left}
+.content {font-size:13px;margin:0px;padding:2px 0px 4px 6px}
+#statusContent {text-align:left}
+#actionButtonsContainer {text-align:right;width:100%;height:26px;margin:5px 0px 2px 0px}
+#footerContainer {position:relative;width:100%;text-align:center;color:#336699;font-size:85%}
+div#webControlArea {position:relative;border:1px solid #ccc;background:#eee;width:650px;min-height:200px;margin:10px;text-align:left;vertical-align:top;padding:7px 7px 7px 7px}
+div#webControlAreaTemplates {position:relative;height:200px}
+div#webControlAreaControl {position:relative;text-align:center;width:100%;white-space:nowrap;font-size:11px;color:#666;line-height:12px}
+#descriptionActionButton {position:absolute;top:53px;left:290px;width:400px;height:19px}
+#floatingActionButtons {position:relative;text-align:right;vertical-align:middle;height:25px;width:675px;white-space:nowrap}
+#descriptionMenu {position:absolute;top:53px;left:270px;width:420px;height:19px;text-align:right;white-space:nowrap}
+#popUp {position:absolute;top:15px;left:15px;width:365px;height:400px;margin:0px;padding:4px;background:#d5e0ea;border:1px solid #000;display:none;z-index:99}
+iframe#popUpIframe {width:365px;height:379px;margin:0px;padding:0px;border:0px;background-color:#fff;border-top:1px solid #003366}
+
+/* B U T T O N S P E C I F I C */
+.btnSend {vertical-align:middle}
+
+/* Cert Menu */
+.certMenuOn, .certMenuOff {cursor:pointer;cursor:hand;font-size:11px;font-weight:normal;padding:3px;border-bottom:1px solid #003366;white-space:nowrap;text-align:center}
+#cert1Menu, #cert2Menu {border-right:1px solid #003366}
+.certMenuOn {background:#e9eff5;color:#003366;border-bottom:1px solid #d5e0ea}
+.certMenuOff {background:#fff;color:#003366}
+
+/* Device Tree Pop-up */
+a.deviceTree, a.deviceTree:hover {color:#003366;text-decoration:none;font-size:12px}
+a.deviceTree:hover {}
+#deviceTreeContainer {display:none;position:absolute;top:0px;left:0px;z-index:998;border:1px solid #003366;background:#fff;width:245px;height:333px}
+#deviceTreeIframe {width:243px;height:300px;margin-bottom:-3px;z-index:999}
+#deviceTreeLoader {display:block;position:absolute;z-index:1000;top:105px;left:105px;width:32px;height:32px}
+#showDeviceTreeTD {padding-top:5px}
+.titleBar {background:#003366;padding:3px;margin:1px;color:white;font-weight:bold;font-size:12px}
+.ipsec-cert-2 {position:relative;background:#e9eff5;text-align:left}
+#ipsec-delFileBtn {position:absolute;z-index:99;top:107px;left:230px}
+#refreshInterval {padding-top:10px}
+#diag-table {width:97%;border-collapse:separate;border-spacing:1px;margin:5px}
+#diag-table td {padding:2px}
+#diag-sec {padding:10px}
+#diag-sec table {padding:5px}

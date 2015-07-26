@@ -1,0 +1,24 @@
+<div data-ng-controller="layoutCtrl as layout">
+  <div id="splash-page" data-ng-show="layout.showSplash" class="dissolve-animation">
+    <div class="page-splash">
+      <div class="page-splash-message">
+        <strong>{{ layout.title }}</strong> is loading...
+      </div>
+    </div>
+  </div>
+
+  <div data-ng-include="'app/layout/layout-header.html'"></div>
+  <div class="text-center" ng-show="layout.isLoading">
+    <h5>Synchronizing...</h5>
+    <img src="content/images/ajax-loader.gif">
+  </div>
+  <div class="container">
+    <div class="row alert alert-danger text-center" ng-show="layout.loadingError">
+      <div class="col-md-12">
+        <strong>Error:</strong> Failed to load data from RPM...
+      </div>
+    </div>
+  </div>
+  <div data-ng-view></div>
+  <div data-ng-include="'app/layout/layout-footer.html'"></div>
+</div>

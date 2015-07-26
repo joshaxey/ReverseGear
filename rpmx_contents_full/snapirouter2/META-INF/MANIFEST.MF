@@ -1,0 +1,34 @@
+Manifest-Version: 2.0
+Ant-Version: Apache Ant 1.8.2
+Created-By: AMX Corp.
+AMX-Type: Duet
+Bundle-Name: SNAPI Router 2
+Bundle-SymbolicName: com.amx.duet.routers.snapirouter2
+Bundle-Description: SNAPI router for AMX
+Bundle-Vendor: AMX LLC
+Bundle-Version: 2.0.42.20140220-0455
+Bundle-Copyright: Copyright 2004-2011 AMX LLC.  All Rights Reserved.
+Bundle-Activator: com.amx.duet.routers.snapi2.Activator
+Device-Service: com.amx.duet.routers.snapi2.ISNAPIRouter
+Device-Model: AMX Router
+Device-Make: AMX Corp.
+Device-Revision: 1.0.2
+Import-Package: com.amx.duet.componentsdk.base;version="[1.0.0,1.1.0)"
+ ,com.amx.duet.componentsdk.datatype;version="[1.0.0,1.1.0)",com.amx.d
+ uet.componentsdk.event;version="[1.0.0,1.1.0)",com.amx.duet.component
+ sdk.instance;version="[1.0.0,1.1.0)",com.amx.duet.componentsdk.interf
+ aces;version="[1.0.0,1.1.0)",com.amx.duet.componentsdk.standards;vers
+ ion="[1.0.0,1.1.0)",com.amx.duet.componentsdk.utilities;version="[1.0
+ .0,1.1.0)",com.amx.duet.componentsdk.xsd.componentsdk;version="[1.0.0
+ ,1.1.0)",com.amx.duet.core.master,com.amx.duet.core.master.netlinx,co
+ m.amx.duet.core.osgi,com.amx.duet.da,com.amx.duet.driver,com.amx.duet
+ .util.metadata,jregex,org.kxml2.io,org.kxml2.kdom,org.osgi.framework,
+ org.osgi.service.device,org.xmlpull.v1
+DynamicImport-Package: *
+Export-Package: com.amx.duet.routers.snapi2;version=2.0.0,com.amx.duet
+ .routers.snapi2.controllers.duet2;version=2.0.0,com.amx.duet.routers.
+ snapi2.standards;version=2.0.0,com.amx.duet.routers.snapi2.tools;vers
+ ion=2.0.0,com.amx.duet.routers.snapi2.xsd.snapi2;version=2.0.0
+Bundle-ManifestVersion: 2
+Bundle-ClassPath: .
+

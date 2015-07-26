@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: 20.10-b01 (Sun Microsystems Inc.)
+Bundle-Vendor: AMX LLC
+Bundle-Version: 3.1.0
+Bundle-Name: Apache Commons HTTP Client
+Bundle-SymbolicName: commons-httpclient
+Bundle-Classpath: .
+DynamicImport-Package: *
+Export-Package:  org.apache.commons.httpclient;specification-version=3
+ .1.0,  org.apache.commons.httpclient.auth;specification-version=3.1.0
+ ,  org.apache.commons.httpclient.cookie;specification-version=3.1.0, 
+  org.apache.commons.httpclient.methods;specification-version=3.1.0,  
+ org.apache.commons.httpclient.methods.multipart;specification-version
+ =3.1.0,  org.apache.commons.httpclient.params;specification-version=3
+ .1.0,  org.apache.commons.httpclient.protocol;specification-version=3
+ .1.0,  org.apache.commons.httpclient.util;specification-version=3.1.0
+AMX-Type: Duet
+Device-Revision: 3.1.0
+

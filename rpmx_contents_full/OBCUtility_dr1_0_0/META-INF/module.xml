@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE module [<!ENTITY components SYSTEM "components.xml">]>
+<dev:module xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dev="http://www.amx.com/duet/devicesdk"  xsi:schemaLocation="http://www.amx.com/duet/devicesdk/module.xsd">
+	<dev:header>
+		<dev:manifest-version>1.0.0</dev:manifest-version>
+		<dev:amx-type>Duet</dev:amx-type>
+		<dev:bundle-name>OBCUtility_dr1_0_0</dev:bundle-name>
+		<dev:device-make>AMX</dev:device-make>
+		<dev:duet-firmware-version>v3.21.343</dev:duet-firmware-version>
+		<dev:device-channels>255</dev:device-channels>
+		<dev:device-levels>8</dev:device-levels>
+		<dev:device-models>
+			<dev:device-model>OBCUtility</dev:device-model>
+		</dev:device-models>
+		<dev:device-category>other</dev:device-category>
+		<dev:device-sdkclass>com.amx.duet.devicesdk.Utility</dev:device-sdkclass>
+		<dev:device-sdkinterface>com.amx.duet.devicesdk.IUtility</dev:device-sdkinterface>
+		<dev:device-class>com.amx.obcutility.dr1_0_0.AMXOBCUtility</dev:device-class>
+		<dev:device-revision>1.0.0</dev:device-revision>
+		<dev:router-service>com.amx.duet.routers.snapi.ISNAPIRouter</dev:router-service>
+		<dev:bundle-activator>com.amx.obcutility.dr1_0_0.Activator</dev:bundle-activator>
+		<dev:bundle-version>1.0.3</dev:bundle-version>
+		<dev:bundle-vendor>AMX Corporation</dev:bundle-vendor>
+		<dev:bundle-copyright>(C) Copyright AMX Corp. 2014. All Rights Reserved.</dev:bundle-copyright>
+		<dev:import-packages>
+			<dev:import-package version="1.1">org.osgi.service.http</dev:import-package>
+			<dev:import-package version="1.0.1">org.osgi.service.device</dev:import-package>
+			<dev:import-package version="1.0.1">com.amx.duet.driver</dev:import-package>
+			<dev:import-package version="1.0.1">com.amx.duet.core.osgi</dev:import-package>
+			<dev:import-package version="1.0.2">com.amx.duet.da</dev:import-package>
+			<dev:import-package version="1.0.1">com.amx.duet.util.metadata</dev:import-package>
+			<dev:import-package version="1.0.1">com.amx.duet.util</dev:import-package>
+			<dev:import-package version="1.15.0">com.amx.duet.devicesdk</dev:import-package>
+			<dev:import-package version="1.15.0">com.amx.duet.devicesdk.base</dev:import-package>
+			<dev:import-package version="1.15.0">com.amx.duet.devicesdk.component</dev:import-package>
+			<dev:import-package version="1.15.0">com.amx.duet.devicesdk.type</dev:import-package>
+		</dev:import-packages>
+		<dev:export-packages>
+			<dev:export-package version="1.0.3">com.amx.obcutility.dr1_0_0</dev:export-package>
+		</dev:export-packages>
+		<dev:file-dependencies>
+			<dev:file-dependency>json-bundle.jar</dev:file-dependency>
+			<dev:file-dependency version="1.15.0">snapirouter.jar</dev:file-dependency>
+			<dev:file-dependency version="1.15.0">devicesdkrt.jar</dev:file-dependency>
+		</dev:file-dependencies>
+		<dev:user-defined-entries>
+			<dev:user-defined-entry>
+				<dev:user-defined-entry-name>DynamicImport-Package</dev:user-defined-entry-name>
+				<dev:user-defined-entry-value>*</dev:user-defined-entry-value>
+			</dev:user-defined-entry>
+		</dev:user-defined-entries>
+		<dev:module-init-entries></dev:module-init-entries>
+	</dev:header>
+	<dev:type-info>
+	<dev:class superclass="com.amx.duet.devicesdk.Utility" serializable="true" name="com.amx.obcutility.dr1_0_0.AMXOBCUtility">
+		<dev:fields>
+			<dev:field visibility="public" fulltype="com.amx.obcutility.dr1_0_0.KeyValues" type="KeyValues" name="keys"></dev:field>
+			<dev:field visibility="public" fulltype="java.util.ArrayList" type="ArrayList" name="manifest"></dev:field>
+		</dev:fields>
+		<dev:methods>
+			<dev:constructor visibility="public" name="AMXOBCUtility">
+				<dev:params>
+					<dev:param type="org.osgi.framework.BundleContext" name="bctxt"></dev:param>
+					<dev:param type="com.amx.duet.da.NetLinxDevice" name="nd"></dev:param>
+					<dev:param type="java.util.Properties" name="props"></dev:param>
+				</dev:params>
+			</dev:constructor>
+			<dev:method visibility="public" type="boolean" name="isDeviceOnLine"></dev:method>
+			<dev:method visibility="public" type="boolean" name="isDataInitialized"></dev:method>
+		</dev:methods>
+	</dev:class>
+	<dev:class superclass="java.lang.Object" name="com.amx.obcutility.dr1_0_0.StringUtil">
+		<dev:methods>
+			<dev:constructor visibility="public" name="StringUtil"></dev:constructor>
+			<dev:method visibility="public" type="java.lang.String" final="true" name="getSnapiHeader" static="true">
+				<dev:params>
+					<dev:param type="java.lang.String" name="data"></dev:param>
+				</dev:params>
+			</dev:method>
+			<dev:method visibility="public" type="java.util.ArrayList" final="true" name="getSnapiParams" static="true">
+				<dev:params>
+					<dev:param type="java.lang.String" name="data"></dev:param>
+				</dev:params>
+			</dev:method>
+			<dev:method visibility="public" type="java.util.ArrayList" final="true" name="unescapeParameters" static="true">
+				<dev:params>
+					<dev:param type="java.lang.String" name="value"></dev:param>
+				</dev:params>
+			</dev:method>
+			<dev:method visibility="public" type="java.lang.String" final="true" name="escapeParameter" static="true">
+				<dev:params>
+					<dev:param type="java.lang.String" name="strValue"></dev:param>
+				</dev:params>
+			</dev:method>
+			<dev:method visibility="public" type="java.lang.String[]" final="true" name="parse" static="true">
+				<dev:params>
+					<dev:param type="java.lang.String" name="data"></dev:param>
+					<dev:param type="java.lang.String" name="delim"></dev:param>
+				</dev:params>
+			</dev:method>
+			<dev:method visibility="public" type="java.lang.String" final="true" name="getRightString" static="true">
+				<dev:params>
+					<dev:param type="java.lang.String" name="str"></dev:param>
+					<dev:param type="java.lang.String" name="search"></dev:param>
+				</dev:params>
+			</dev:method>
+			<dev:method visibility="public" type="java.lang.String" final="true" name="rightString" static="true">
+				<dev:params>
+					<dev:param type="java.lang.String" name="str"></dev:param>
+					<dev:param type="int" name="count"></dev:param>
+				</dev:params>
+			</dev:method>
+		</dev:methods>
+	</dev:class>
+	<dev:class superclass="java.lang.Object" name="com.amx.obcutility.dr1_0_0.KeyValues">
+		<dev:methods>
+			<dev:constructor visibility="public" name="KeyValues"></dev:constructor>
+			<dev:method visibility="public" type="void" name="add">
+				<dev:params>
+					<dev:param type="java.lang.String" name="key"></dev:param>
+					<dev:param type="java.lang.String" name="value"></dev:param>
+				</dev:params>
+			</dev:method>
+			<dev:method visibility="public" type="void" name="remove">
+				<dev:params>
+					<dev:param type="java.lang.String" name="key"></dev:param>
+				</dev:params>
+			</dev:method>
+			<dev:method visibility="public" type="boolean" name="contains">
+				<dev:params>
+					<dev:param type="java.lang.String" name="key"></dev:param>
+				</dev:params>
+			</dev:method>
+			<dev:method visibility="public" type="java.lang.String" name="get">
+				<dev:params>
+					<dev:param type="java.lang.String" name="key"></dev:param>
+				</dev:params>
+			</dev:method>
+			<dev:method visibility="public" type="java.lang.Integer" name="getInt">
+				<dev:params>
+					<dev:param type="java.lang.String" name="key"></dev:param>
+				</dev:params>
+			</dev:method>
+			<dev:method visibility="public" type="java.lang.Double" name="getDouble">
+				<dev:params>
+					<dev:param type="java.lang.String" name="key"></dev:param>
+				</dev:params>
+			</dev:method>
+			<dev:method visibility="public" type="boolean" name="getBoolean">
+				<dev:params>
+					<dev:param type="java.lang.String" name="key"></dev:param>
+				</dev:params>
+			</dev:method>
+		</dev:methods>
+	</dev:class>
+	<dev:class superclass="java.lang.Object" name="com.amx.obcutility.dr1_0_0.FileUtil">
+		<dev:methods>
+			<dev:constructor visibility="public" name="FileUtil"></dev:constructor>
+			<dev:method visibility="public" type="void" name="copyAndClose" static="true">
+				<dev:params>
+					<dev:param type="java.io.InputStream" comment="the &lt;code&gt;InputStream&lt;/code&gt; to copy from" name="in"></dev:param>
+					<dev:param type="java.io.OutputStream" comment="the &lt;code&gt;OutputStream&lt;/code&gt; to copy to" name="out"></dev:param>
+				</dev:params>
+			</dev:method>
+			<dev:method visibility="public" type="void" name="delete" static="true">
+				<dev:params>
+					<dev:param type="java.io.File" name="file"></dev:param>
+				</dev:params>
+			</dev:method>
+		</dev:methods>
+	</dev:class>
+	<dev:class superclass="com.amx.duet.devicesdk.base.TypeSafeEnumBase" name="com.amx.obcutility.dr1_0_0.CustomAdvancedEvent">
+		<dev:fields>
+			<dev:field visibility="public" fulltype="com.amx.obcutility.dr1_0_0.CustomAdvancedEvent" type="CustomAdvancedEvent" final="true" name="MSG" static="true"></dev:field>
+		</dev:fields>
+	</dev:class>
+	<dev:class superclass="com.amx.duet.devicesdk.base.ModuleActivator" name="com.amx.obcutility.dr1_0_0.Activator"></dev:class>
+	</dev:type-info>
+	&components;
+</dev:module>

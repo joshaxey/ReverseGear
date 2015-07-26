@@ -1,0 +1,70 @@
+Manifest-Version: 1.0.0
+Bundle-Name: RmsNetLinxAdapter_dr4_0_0
+Device-Make: AMX
+Duet-Firmware-Version: v3.21.343
+Device-Channels: 255
+Device-Levels: 8
+Device-Model: RMS-NetLinx-Adapter
+Device-Category: other
+Device-SDKClass: com.amx.duet.devicesdk.Utility
+Device-SDKInterface: com.amx.duet.devicesdk.IUtility
+Device-Class: com.amx.rms.client.netlinx.adapter.RmsNetLinxAdapter
+Device-Revision: 4.0.0
+Bundle-Activator: com.amx.rms.client.netlinx.adapter.osgi.Activator
+Bundle-Version: 4.4.5
+Bundle-Vendor: AMX LLC
+Bundle-Copyright: (C) Copyright AMX LLC. 2004-2014. All Rights Reserve
+ d.
+DynamicImport-Package: org.osgi.util.tracker
+Import-Package: org.osgi.framework;version="1.3", org.osgi.service.htt
+ p;version="1.2", org.osgi.service.device;version="1.1", com.amx.duet.
+ driver;version="1.0.1", com.amx.duet.da;version="1.0.2", com.amx.duet
+ .core.osgi;version="1.0.1", com.amx.duet.devicesdk;version="1.16.0", 
+ com.amx.duet.devicesdk.base;version="1.16.0", com.amx.duet.devicesdk.
+ component;version="1.16.0", com.amx.duet.devicesdk.type;version="1.16
+ .0", com.amx.duet.util.metadata;version="1.0.1", com.amx.duet.util;ve
+ rsion="1.0.1", com.amx.rms.client;version=4.4.5, com.amx.rms.client.e
+ vent;version=4.4.5, com.amx.rms.client.exception;version=4.4.5, com.a
+ mx.rms.client.logging;version=4.4.5, com.amx.rms.client.model;version
+ =4.4.5, com.amx.rms.client.service;version=4.4.5, com.amx.rms.client.
+ service.impl;version=4.4.5, com.amx.rms.client.service.result;version
+ =4.4.5, com.amx.rms.client.management;version=4.4.5, com.amx.rms.clie
+ nt.util;version=4.4.5, com.amx.rms.client.netlinx.platform;version=4.
+ 4.5, com.amx.rms.client.netlinx.platform.osgi;version=4.4.5, com.amx.
+ rms.client.netlinx.platform.event;version=4.4.5, com.amx.rms.client.n
+ etlinx.platform.asset;version=4.4.5, com.amx.rms.client.netlinx.platf
+ orm.util;version=4.4.5, com.amx.rms.client.netlinx.platform.asset.due
+ t;version=4.4.5, com.amx.rms.client.netlinx.platform.asset.duet.param
+ eter;version=4.4.5, com.amx.rms.client.netlinx.platform.asset.templat
+ e;version=4.4.5, com.amx.rms.client.netlinx.platform.manager.impl;ver
+ sion=4.4.5, com.amx.rms.client.netlinx.platform.service;version=4.4.5
+ , com.amx.rms.client.netlinx.platform.service.impl;version=4.4.5, com
+ .amx.rms.client.netlinx.platform.model;version=4.4.5, com.amx.rms.cli
+ ent.netlinx.platform.model.duet;version=4.4.5, com.amx.rms.client.osg
+ i;version=4.4.5, com.amx.rms.client.osgi.util;version=4.4.5, org.apac
+ he.commons.lang;version="2.5.0",  org.apache.commons.lang.builder;ver
+ sion="2.5.0",  org.apache.commons.lang.enum;version="2.5.0",  org.apa
+ che.commons.lang.enums;version="2.5.0",  org.apache.commons.lang.exce
+ ption;version="2.5.0",  org.apache.commons.lang.math;version="2.5.0",
+   org.apache.commons.lang.mutable;version="2.5.0",  org.apache.common
+ s.lang.reflect;version="2.5.0",  org.apache.commons.lang.text;version
+ ="2.5.0",  org.apache.commons.lang.time;version="2.5.0", com.amx.duet
+ .componentsdk.base;version="1.0.0",  com.amx.duet.componentsdk.dataty
+ pe;version="1.0.0", com.amx.duet.componentsdk.event;version="1.0.0", 
+ com.amx.duet.componentsdk.instance;version="1.0.0", com.amx.duet.comp
+ onentsdk.interfaces;version="1.0.0", com.amx.duet.componentsdk.standa
+ rds;version="1.0.0", com.amx.duet.componentsdk.utilities;version="1.0
+ .0", com.amx.duet.componentsdk.xsd.componentsdk;version="1.0.0"
+Export-Package: com.amx.rms.client.netlinx.adapter;version=4.4.5, com.
+ amx.rms.client.netlinx.adapter.command;version=4.4.5, com.amx.rms.cli
+ ent.netlinx.adapter.event;version=4.4.5
+File-Dependencies: commons-codec-1.4-AMX-01.jar;version="1.4.0", commo
+ ns-httpclient-3.1-AMX-01.jar;version="3.1.0", commons-lang-2.5-AMX-01
+ .jar;version="2.5.0", commons-logging-1.1.1-AMX-01.jar;version="1.1.1
+ ", devicesdkrt.jar;version="1.16.0", snapirouter.jar;version="1.16.0"
+ , jregex1.2_01-bundle.jar, componentsdkrt.jar, snapirouter2.jar, rmsd
+ deadapter.jar;version="4.4.5", devicedescriptorengine.jar;version="4.
+ 4.5", rmsnlplatform.jar;version="4.4.5", rmsclient.jar;version="4.4.5
+ ", rmsclient-osgi.jar;version="4.4.5", rms-client-netlinx-web.jar;ver
+ sion="4.4.5"
+
