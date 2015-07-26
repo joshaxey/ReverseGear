@@ -38,7 +38,6 @@ Untampered contents of an RPMX file (in this example: dummy.rpmx).
     snapirouter2.jar
     swt1.yaml
     swtInputs.yaml
-    TREE.TXT
     volume.yaml
 </pre>
 No subfolders exist
