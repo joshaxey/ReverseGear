@@ -1,6 +1,7 @@
 # RPMX Level 1 Contents
 Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 
+<pre>
 |   480x800-Scheduling.TP4
 |   auxSource.yaml
 |   cam1.yaml
@@ -26,16 +27,16 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |   |   MANIFEST.MF
 |   |   |   NOTICE.txt
 |   |   |   
-|   |   \---maven
-|   |       \---commons-codec
-|   |           \---commons-codec
+|   |   +---maven
+|   |       +---commons-codec
+|   |           +---commons-codec
 |   |                   pom.properties
 |   |                   pom.xml
 |   |                   
-|   \---org
-|       \---apache
-|           \---commons
-|               \---codec
+|   +---org
+|       +---apache
+|           +---commons
+|               +---codec
 |                   |   BinaryDecoder.class
 |                   |   BinaryEncoder.class
 |                   |   CharEncoding.class
@@ -67,7 +68,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |                   |       Soundex.class
 |                   |       SoundexUtils.class
 |                   |       
-|                   \---net
+|                   +---net
 |                           BCodec.class
 |                           QCodec.class
 |                           QuotedPrintableCodec.class
@@ -82,10 +83,10 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |       NOTICE.txt
 |   |       README.txt
 |   |       
-|   \---org
-|       \---apache
-|           \---commons
-|               \---httpclient
+|   +---org
+|       +---apache
+|           +---commons
+|               +---httpclient
 |                   |   AutoCloseInputStream.class
 |                   |   ChunkedInputStream.class
 |                   |   ChunkedOutputStream.class
@@ -219,7 +220,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |                   |   |   StringRequestEntity.class
 |                   |   |   TraceMethod.class
 |                   |   |   
-|                   |   \---multipart
+|                   |   +---multipart
 |                   |           ByteArrayPartSource.class
 |                   |           FilePart.class
 |                   |           FilePartSource.class
@@ -251,7 +252,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |                   |       SecureProtocolSocketFactory.class
 |                   |       SSLProtocolSocketFactory.class
 |                   |       
-|                   \---util
+|                   +---util
 |                           DateParseException.class
 |                           DateParser.class
 |                           DateUtil.class
@@ -274,16 +275,16 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |   |   MANIFEST.MF
 |   |   |   NOTICE.txt
 |   |   |   
-|   |   \---maven
-|   |       \---commons-lang
-|   |           \---commons-lang
+|   |   +---maven
+|   |       +---commons-lang
+|   |           +---commons-lang
 |   |                   pom.properties
 |   |                   pom.xml
 |   |                   
-|   \---org
-|       \---apache
-|           \---commons
-|               \---lang
+|   +---org
+|       +---apache
+|           +---commons
+|               +---lang
 |                   |   ArrayUtils.class
 |                   |   BitField.class
 |                   |   BooleanUtils.class
@@ -409,7 +410,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |                   |       StrSubstitutor.class
 |                   |       StrTokenizer.class
 |                   |       
-|                   \---time
+|                   +---time
 |                           DateFormatUtils.class
 |                           DateUtils$DateIterator.class
 |                           DateUtils.class
@@ -441,16 +442,16 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |   |   MANIFEST.MF
 |   |   |   NOTICE
 |   |   |   
-|   |   \---maven
-|   |       \---commons-logging
-|   |           \---commons-logging
+|   |   +---maven
+|   |       +---commons-logging
+|   |           +---commons-logging
 |   |                   pom.properties
 |   |                   pom.xml
 |   |                   
-|   \---org
-|       \---apache
-|           \---commons
-|               \---logging
+|   +---org
+|       +---apache
+|           +---commons
+|               +---logging
 |                   |   Log.class
 |                   |   LogConfigurationException.class
 |                   |   LogFactory$1.class
@@ -462,7 +463,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |                   |   LogFactory.class
 |                   |   LogSource.class
 |                   |   
-|                   \---impl
+|                   +---impl
 |                           AvalonLogger.class
 |                           Jdk13LumberjackLogger.class
 |                           Jdk14Logger.class
@@ -484,9 +485,9 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |                           
 +---componentsdkrt
 |   +---com
-|   |   \---amx
-|   |       \---duet
-|   |           \---componentsdk
+|   |   +---amx
+|   |       +---duet
+|   |           +---componentsdk
 |   |               +---base
 |   |               |       Activator.class
 |   |               |       ApiProxy.class
@@ -1054,7 +1055,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |               |       Timer$TimerWheelImpl.class
 |   |               |       Timer.class
 |   |               |       
-|   |               \---xsd
+|   |               +---xsd
 |   |                   +---componentsdk
 |   |                   |       AmxCDATASectionUtility.class
 |   |                   |       ComponentSdkStandards.class
@@ -1063,7 +1064,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |                   |       StandardsType.class
 |   |                   |       StandardType.class
 |   |                   |       
-|   |                   \---componentsdkevents
+|   |                   +---componentsdkevents
 |   |                           AmxCDATASectionUtility.class
 |   |                           Component.class
 |   |                           ComponentEvent.class
@@ -1076,7 +1077,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   +---META-INF
 |   |       MANIFEST.MF
 |   |       
-|   \---res
+|   +---res
 |           ComponentSdkEvents.xml
 |           ComponentSdkEvents.xsd
 |           ComponentSdkStandards.xml
@@ -1084,12 +1085,12 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |           
 +---devicedescriptorengine
 |   +---com
-|   |   \---amx
-|   |       \---netlinx
-|   |           \---devicedescriptor
-|   |               \---engine
+|   |   +---amx
+|   |       +---netlinx
+|   |           +---devicedescriptor
+|   |               +---engine
 |   |                   +---device
-|   |                   |   \---discovery
+|   |                   |   +---discovery
 |   |                   |       +---model
 |   |                   |       |       Device$1.class
 |   |                   |       |       Device.class
@@ -1106,14 +1107,14 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |                   |       |       DeviceScannerEventType.class
 |   |                   |       |       DeviceScannerListener.class
 |   |                   |       |       
-|   |                   |       \---service
+|   |                   |       +---service
 |   |                   |           |   DeviceScannerService.class
 |   |                   |           |   
-|   |                   |           \---impl
+|   |                   |           +---impl
 |   |                   |                   DeviceScannerServiceImpl$1.class
 |   |                   |                   DeviceScannerServiceImpl.class
 |   |                   |                   
-|   |                   \---osgi
+|   |                   +---osgi
 |   |                           Activator.class
 |   |                           DdeOsgiServiceTracker$1.class
 |   |                           DdeOsgiServiceTracker$DeviceScannerServiceServiceListener.class
@@ -1124,7 +1125,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   +---device-templates
 |   |       dxlink-rx-381.xml
 |   |       
-|   \---META-INF
+|   +---META-INF
 |           MANIFEST.MF
 |           
 +---jregex1.2_01-bundle
@@ -1185,8 +1186,8 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |   |   WildcardPattern$1.class
 |   |   |   WildcardPattern.class
 |   |   |   
-|   |   \---util
-|   |       \---io
+|   |   +---util
+|   |       +---io
 |   |               AnyFile$1.class
 |   |               AnyFile.class
 |   |               AnyPath$1.class
@@ -1220,7 +1221,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |               WildcardFilter$1.class
 |   |               WildcardFilter.class
 |   |               
-|   \---META-INF
+|   +---META-INF
 |           MANIFEST.MF
 |           
 +---json-bundle
@@ -1237,8 +1238,8 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   +---META-INF
 |   |       MANIFEST.MF
 |   |       
-|   \---org
-|       \---json
+|   +---org
+|       +---json
 |               CDL.class
 |               Cookie.class
 |               CookieList.class
@@ -1261,9 +1262,9 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |   OBCUtility_dr1_0_0.tko
 |   |   
 |   +---com
-|   |   \---amx
-|   |       \---obcutility
-|   |           \---dr1_0_0
+|   |   +---amx
+|   |       +---obcutility
+|   |           +---dr1_0_0
 |   |                   Activator.class
 |   |                   AMXOBCUtility$1.class
 |   |                   AMXOBCUtility.class
@@ -1283,7 +1284,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |   |   |   app.routes.js
 |   |   |   |   
 |   |   |   +---blocks
-|   |   |   |   \---logger
+|   |   |   |   +---logger
 |   |   |   |           logger-module.js
 |   |   |   |           
 |   |   |   +---core
@@ -1311,7 +1312,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |   |   |   +---controllers
 |   |   |   |   |       rpmControllers.js
 |   |   |   |   |       
-|   |   |   |   \---services
+|   |   |   |   +---services
 |   |   |   |           rpmServices.js
 |   |   |   |           
 |   |   |   +---layout
@@ -1325,7 +1326,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |   |   |       diagnostics.html
 |   |   |   |       list.html
 |   |   |   |       
-|   |   |   \---settings
+|   |   |   +---settings
 |   |   |           help.html
 |   |   |           ir.html
 |   |   |           room.html
@@ -1336,7 +1337,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |   |   |       app.css
 |   |   |   |       master.css
 |   |   |   |       
-|   |   |   \---images
+|   |   |   +---images
 |   |   |           ajax-loader.gif
 |   |   |           amx-logo.png
 |   |   |           amx_logo.gif
@@ -1347,7 +1348,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |   +---test
 |   |   |       appDev.js
 |   |   |       
-|   |   \---vendors
+|   |   +---vendors
 |   |       +---angular
 |   |       |   +---v1.2.13
 |   |       |   |       angular-animate.js
@@ -1360,7 +1361,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |       |   |       angular.min.js
 |   |       |   |       angular.min.js.map
 |   |       |   |       
-|   |       |   \---v1.3.1
+|   |       |   +---v1.3.1
 |   |       |           angular-animate.js
 |   |       |           angular-animate.min.js
 |   |       |           angular-mocks.js
@@ -1378,7 +1379,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |       |   +---css
 |   |       |   |       xeditable.css
 |   |       |   |       
-|   |       |   \---js
+|   |       |   +---js
 |   |       |           xeditable.js
 |   |       |           xeditable.min.js
 |   |       |           
@@ -1397,17 +1398,17 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |       |   |       glyphicons-halflings-regular.ttf
 |   |       |   |       glyphicons-halflings-regular.woff
 |   |       |   |       
-|   |       |   \---js
+|   |       |   +---js
 |   |       |           bootstrap.js
 |   |       |           bootstrap.min.js
 |   |       |           
 |   |       +---jquery
 |   |       |       jquery-1.11.0.min.js
 |   |       |       
-|   |       \---modernizr
+|   |       +---modernizr
 |   |               modernizr-2.6.2-respond-1.1.0.min.js
 |   |               
-|   \---META-INF
+|   +---META-INF
 |           components.xml
 |           manifest.duetmf
 |           MANIFEST.MF
@@ -1418,12 +1419,12 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |   runtimedata.xml
 |   |   
 |   +---com
-|   |   \---amx
-|   |       \---duet
+|   |   +---amx
+|   |       +---duet
 |   |           +---impl
-|   |           |   \---Panasonic
-|   |           |       \---AWHE50
-|   |           |           \---dr1_0_0
+|   |           |   +---Panasonic
+|   |           |       +---AWHE50
+|   |           |           +---dr1_0_0
 |   |           |                   Activator.class
 |   |           |                   IPanasonicCamera.class
 |   |           |                   PanasonicAdvancedEventType.class
@@ -1437,8 +1438,8 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |           |                   SuperCamera.class
 |   |           |                   
 |   |           +---Panasonic
-|   |           |   \---AWHE50
-|   |           |       \---dr1_0_0
+|   |           |   +---AWHE50
+|   |           |       +---dr1_0_0
 |   |           |               Bits.class
 |   |           |               ByteBuffer.class
 |   |           |               CommManager$Property.class
@@ -1455,20 +1456,20 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |           |               ValidateUtil.class
 |   |           |               
 |   |           +---tools
-|   |           |   \---Panasonic
-|   |           |       \---AWHE50
-|   |           |           \---net
-|   |           |               \---http
-|   |           |                   \---dr1_0_0
+|   |           |   +---Panasonic
+|   |           |       +---AWHE50
+|   |           |           +---net
+|   |           |               +---http
+|   |           |                   +---dr1_0_0
 |   |           |                           HttpPostWrapper.class
 |   |           |                           IHttpPostWrapper.class
 |   |           |                           package.html
 |   |           |                           
-|   |           \---util
+|   |           +---util
 |   |               +---regexp
-|   |               |   \---Panasonic
-|   |               |       \---AWHE50
-|   |               |           \---dr1_0_0
+|   |               |   +---Panasonic
+|   |               |       +---AWHE50
+|   |               |           +---dr1_0_0
 |   |               |                   CharacterIterator.class
 |   |               |                   RE.class
 |   |               |                   RECompiler$RERange.class
@@ -1477,10 +1478,10 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |               |                   RESyntaxException.class
 |   |               |                   StringCharacterIterator.class
 |   |               |                   
-|   |               \---tools
-|   |                   \---Panasonic
-|   |                       \---AWHE50
-|   |                           \---dr1_0_0
+|   |               +---tools
+|   |                   +---Panasonic
+|   |                       +---AWHE50
+|   |                           +---dr1_0_0
 |   |                                   ArrayUtil.class
 |   |                                   Math.class
 |   |                                   StringUtil.class
@@ -1491,12 +1492,12 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |       MANIFEST.MF
 |   |       module.xml
 |   |       
-|   \---org
-|       \---apache
-|           \---commons
+|   +---org
+|       +---apache
+|           +---commons
 |               +---codec
 |               |   +---binary
-|               |   |   \---dr1_0_0
+|               |   |   +---dr1_0_0
 |               |   |           Base32.class
 |               |   |           Base32InputStream.class
 |               |   |           Base32OutputStream.class
@@ -1511,7 +1512,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |               |   |           StringUtils.class
 |               |   |           
 |               |   +---digest
-|               |   |   \---dr1_0_0
+|               |   |   +---dr1_0_0
 |               |   |           DigestUtils.class
 |               |   |           
 |               |   +---dr1_0_0
@@ -1527,7 +1528,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |               |   |       StringEncoderComparator.class
 |               |   |       
 |               |   +---language
-|               |   |   \---dr1_0_0
+|               |   |   +---dr1_0_0
 |               |   |           AbstractCaverphone.class
 |               |   |           Caverphone.class
 |               |   |           Caverphone1.class
@@ -1543,8 +1544,8 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |               |   |           Soundex.class
 |               |   |           SoundexUtils.class
 |               |   |           
-|               |   \---net
-|               |       \---dr1_0_0
+|               |   +---net
+|               |       +---dr1_0_0
 |               |               BCodec.class
 |               |               QCodec.class
 |               |               QuotedPrintableCodec.class
@@ -1554,7 +1555,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |               |               
 |               +---httpclient
 |               |   +---auth
-|               |   |   \---dr1_0_0
+|               |   |   +---dr1_0_0
 |               |   |           AuthChallengeException.class
 |               |   |           AuthChallengeParser.class
 |               |   |           AuthChallengeProcessor.class
@@ -1575,7 +1576,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |               |   |           RFC2617Scheme.class
 |               |   |           
 |               |   +---cookie
-|               |   |   \---dr1_0_0
+|               |   |   +---dr1_0_0
 |               |   |           Cookie2.class
 |               |   |           CookieAttributeHandler.class
 |               |   |           CookieOrigin.class
@@ -1685,8 +1686,8 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |               |   |   |       StringRequestEntity.class
 |               |   |   |       TraceMethod.class
 |               |   |   |       
-|               |   |   \---multipart
-|               |   |       \---dr1_0_0
+|               |   |   +---multipart
+|               |   |       +---dr1_0_0
 |               |   |               ByteArrayPartSource.class
 |               |   |               FilePart.class
 |               |   |               FilePartSource.class
@@ -1697,7 +1698,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |               |   |               StringPart.class
 |               |   |               
 |               |   +---params
-|               |   |   \---dr1_0_0
+|               |   |   +---dr1_0_0
 |               |   |           DefaultHttpParams.class
 |               |   |           DefaultHttpParamsFactory.class
 |               |   |           HostParams.class
@@ -1709,7 +1710,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |               |   |           HttpParamsFactory.class
 |               |   |           
 |               |   +---protocol
-|               |   |   \---dr1_0_0
+|               |   |   +---dr1_0_0
 |               |   |           ControllerThreadSocketFactory$1.class
 |               |   |           ControllerThreadSocketFactory$SocketTask.class
 |               |   |           ControllerThreadSocketFactory.class
@@ -1720,8 +1721,8 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |               |   |           SecureProtocolSocketFactory.class
 |               |   |           SSLProtocolSocketFactory.class
 |               |   |           
-|               |   \---util
-|               |       \---dr1_0_0
+|               |   +---util
+|               |       +---dr1_0_0
 |               |               DateParseException.class
 |               |               DateParser.class
 |               |               DateUtil.class
@@ -1738,7 +1739,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |               |               URIUtil$Coder.class
 |               |               URIUtil.class
 |               |               
-|               \---logging
+|               +---logging
 |                   +---dr1_0_0
 |                   |       Log.class
 |                   |       LogConfigurationException.class
@@ -1750,8 +1751,8 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |                   |       LogFactory.class
 |                   |       LogSource.class
 |                   |       
-|                   \---impl
-|                       \---dr1_0_0
+|                   +---impl
+|                       +---dr1_0_0
 |                               LogFactoryImpl.class
 |                               NoOpLog.class
 |                               ServletContextCleaner.class
@@ -1765,11 +1766,11 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |                               
 +---rms-client-netlinx-web
 |   +---com
-|   |   \---amx
-|   |       \---rms
-|   |           \---client
-|   |               \---netlinx
-|   |                   \---web
+|   |   +---amx
+|   |       +---rms
+|   |           +---client
+|   |               +---netlinx
+|   |                   +---web
 |   |                       |   ClientRestController.class
 |   |                       |   ConfigurationHttpContext.class
 |   |                       |   ConfigurationHttpServlet.class
@@ -1798,7 +1799,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |                       |       XML.class
 |   |                       |       XMLTokener.class
 |   |                       |       
-|   |                       \---osgi
+|   |                       +---osgi
 |   |                               Activator.class
 |   |                               
 |   +---http
@@ -1808,7 +1809,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |   |   RMSWebConfig.xml
 |   |   |   RMSWebConfig.xsl
 |   |   |   
-|   |   \---assets
+|   |   +---assets
 |   |       +---images
 |   |       |       amx_logo.gif
 |   |       |       anim_loader_sm.gif
@@ -1835,19 +1836,19 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |       |       logo_java.gif
 |   |       |       shdr_tile.gif
 |   |       |       
-|   |       \---scripts
+|   |       +---scripts
 |   |           |   cookies.js
 |   |           |   domdrag.js
 |   |           |   imageRollover.js
 |   |           |   prototype2.js
 |   |           |   RMSWebConfig.js
 |   |           |   
-|   |           \---rico
+|   |           +---rico
 |   |               |   rico.js
 |   |               |   ricoCommon.js
 |   |               |   ricoStyles.js
 |   |               |   
-|   |               \---translations
+|   |               +---translations
 |   |                       ricoLocale_de.js
 |   |                       ricoLocale_en.js
 |   |                       ricoLocale_es.js
@@ -1863,14 +1864,14 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   +---META-INF
 |   |       MANIFEST.MF
 |   |       
-|   \---web
+|   +---web
 |       +---assets
 |       |   |   amx-logo-blue.png
 |       |   |   amx-logo.png
 |       |   |   amx-rms-splash.png
 |       |   |   rms-logo-large.png
 |       |   |   
-|       |   \---ico
+|       |   +---ico
 |       |           favicon.ico
 |       |           rms-skinny.ico
 |       |           rms-thick.ico
@@ -1878,7 +1879,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |       +---css
 |       |   |   custom.css
 |       |   |   
-|       |   \---bootstrap-3.3.4
+|       |   +---bootstrap-3.3.4
 |       |           bootstrap-theme.css
 |       |           bootstrap-theme.css.map
 |       |           bootstrap-theme.min.css
@@ -1887,7 +1888,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |       |           bootstrap.min.css
 |       |           
 |       +---fonts
-|       |   \---bootstrap-3.3.4
+|       |   +---bootstrap-3.3.4
 |       |           glyphicons-halflings-regular.eot
 |       |           glyphicons-halflings-regular.svg
 |       |           glyphicons-halflings-regular.ttf
@@ -1897,7 +1898,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |       +---html
 |       |       main.html
 |       |       
-|       \---js
+|       +---js
 |           |   custom.js
 |           |   
 |           +---bootstrap-3.3.4
@@ -1906,24 +1907,24 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |           |       npm.js
 |           |       
 |           +---html5shiv
-|           |   \---3.7.0
+|           |   +---3.7.0
 |           |           html5shiv.js
 |           |           
 |           +---jquery
-|           |   \---1.11.0
+|           |   +---1.11.0
 |           |           jquery.min.js
 |           |           
-|           \---respond.js
-|               \---1.4.2
+|           +---respond.js
+|               +---1.4.2
 |                       respond.min.js
 |                       
 +---rmsclient
 |   |   rms-default.properties
 |   |   
 |   +---com
-|   |   \---amx
-|   |       \---rms
-|   |           \---client
+|   |   +---amx
+|   |       +---rms
+|   |           +---client
 |   |               |   ClientStateMachine.class
 |   |               |   RmsClient.class
 |   |               |   RmsClientConstants.class
@@ -2005,7 +2006,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |               |   |   LogFactory.class
 |   |               |   |   Logger.class
 |   |               |   |   
-|   |               |   \---impl
+|   |               |   +---impl
 |   |               |           DefaultLogFactory.class
 |   |               |           LoggerImpl.class
 |   |               |           
@@ -2023,7 +2024,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |               |   |   RmsSchedulingManager.class
 |   |               |   |   RmsServiceProviderManager.class
 |   |               |   |   
-|   |               |   \---impl
+|   |               |   +---impl
 |   |               |       |   RmsAssetManagerImpl.class
 |   |               |       |   RmsClientManagerImpl.class
 |   |               |       |   RmsCommunicationsManagerImpl.class
@@ -2043,8 +2044,8 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |               |       |   RmsSchedulingManagerImpl.class
 |   |               |       |   RmsServiceProviderManagerImpl.class
 |   |               |       |   
-|   |               |       \---connection
-|   |               |           \---state
+|   |               |       +---connection
+|   |               |           +---state
 |   |               |                   ConnectClientState.class
 |   |               |                   ConnectLocationState.class
 |   |               |                   ConnectServerState.class
@@ -2056,7 +2057,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |               |                   ReinitializeState.class
 |   |               |                   
 |   |               +---messaging
-|   |               |   \---command
+|   |               |   +---command
 |   |               |           AssetLocationChangeCommandHandler.class
 |   |               |           AssetRemovalCommandHandler.class
 |   |               |           BookingChangeCommandHandler$1.class
@@ -2221,7 +2222,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |               |   |       RmsSchedulingServiceImpl.class
 |   |               |   |       RmsServiceProviderServiceImpl.class
 |   |               |   |       
-|   |               |   \---result
+|   |               |   +---result
 |   |               |           RmsCreateEventBookingResult.class
 |   |               |           RmsDailyBookingCountResult.class
 |   |               |           RmsEndEventBookingResult.class
@@ -2232,7 +2233,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |               |           RmsLocationsResult.class
 |   |               |           RmsMonthlyBookingSummaryResult.class
 |   |               |           
-|   |               \---util
+|   |               +---util
 |   |                   |   ArrayUtil.class
 |   |                   |   DateTimeUtils.class
 |   |                   |   FileUtil.class
@@ -2247,21 +2248,21 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |                   |   Validator.class
 |   |                   |   XmlUtil.class
 |   |                   |   
-|   |                   \---fsm
+|   |                   +---fsm
 |   |                           State.class
 |   |                           StateMachine.class
 |   |                           Transition.class
 |   |                           TransitionEventListener.class
 |   |                           
-|   \---META-INF
+|   +---META-INF
 |           MANIFEST.MF
 |           
 +---rmsclient-osgi
 |   +---com
-|   |   \---amx
-|   |       \---rms
-|   |           \---client
-|   |               \---osgi
+|   |   +---amx
+|   |       +---rms
+|   |           +---client
+|   |               +---osgi
 |   |                   |   BaseOSGiServiceWrapper$RmsManagerEventListenerServiceListener.class
 |   |                   |   BaseOSGiServiceWrapper.class
 |   |                   |   OSGiServiceWrapperRegistrar.class
@@ -2279,21 +2280,21 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |                   |   RmsOSGiServiceTracker.class
 |   |                   |   RmsOSGiServiceTrackerDelegate.class
 |   |                   |   
-|   |                   \---util
+|   |                   +---util
 |   |                           BundleInfo.class
 |   |                           RmsServiceTracker.class
 |   |                           
-|   \---META-INF
+|   +---META-INF
 |           MANIFEST.MF
 |           
 +---RmsClientGui_dr4_0_0
 |   |   RmsClientGui_dr4_0_0.tko
 |   |   
 |   +---com
-|   |   \---amx
-|   |       \---rms
-|   |           \---client
-|   |               \---gui
+|   |   +---amx
+|   |       +---rms
+|   |           +---client
+|   |               +---gui
 |   |                   |   GuiConfiguration.class
 |   |                   |   RmsBottleneck.class
 |   |                   |   RmsClientGui$TouchPanelDataEventHandler.class
@@ -2351,35 +2352,35 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |                   |       SchedulingEventListener.class
 |   |                   |       VersionEventListener.class
 |   |                   |       
-|   |                   \---osgi
+|   |                   +---osgi
 |   |                           Activator.class
 |   |                           RmsGuiAdapterOSGiWrapper$1.class
 |   |                           RmsGuiAdapterOSGiWrapper$RmsOSGiServiceTrackerDelegateImpl.class
 |   |                           RmsGuiAdapterOSGiWrapper.class
 |   |                           
-|   \---META-INF
+|   +---META-INF
 |           .javadocdata
 |           components.xml
 |           MANIFEST.MF
 |           
 +---rmsddeadapter
 |   +---com
-|   |   \---amx
-|   |       \---rms
-|   |           \---client
-|   |               \---netlinx
-|   |                   \---devicedescriptor
-|   |                       \---adapter
+|   |   +---amx
+|   |       +---rms
+|   |           +---client
+|   |               +---netlinx
+|   |                   +---devicedescriptor
+|   |                       +---adapter
 |   |                           +---asset
 |   |                           |   |   DeviceAssetAdapter$1.class
 |   |                           |   |   DeviceAssetAdapter$DevicePropertyListenerImpl.class
 |   |                           |   |   DeviceAssetAdapter$RegisteredDevice.class
 |   |                           |   |   DeviceAssetAdapter.class
 |   |                           |   |   
-|   |                           |   \---parameter
+|   |                           |   +---parameter
 |   |                           |           DeviceOnlineStatusParameter.class
 |   |                           |           
-|   |                           \---osgi
+|   |                           +---osgi
 |   |                                   Activator.class
 |   |                                   DeviceAssetAdapterOSGiWrapper$1.class
 |   |                                   DeviceAssetAdapterOSGiWrapper$DdeOsgiServiceTrackerDelegateImpl.class
@@ -2388,18 +2389,18 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |                                   DeviceAssetAdapterOSGiWrapper.class
 |   |                                   
 |   +---device-descriptors
-|   \---META-INF
+|   +---META-INF
 |           MANIFEST.MF
 |           
 +---RmsNetLinxAdapter_dr4_0_0
 |   |   RmsNetLinxAdapter_dr4_0_0.tko
 |   |   
 |   +---com
-|   |   \---amx
-|   |       \---rms
-|   |           \---client
-|   |               \---netlinx
-|   |                   \---adapter
+|   |   +---amx
+|   |       +---rms
+|   |           +---client
+|   |               +---netlinx
+|   |                   +---adapter
 |   |                       |   RmsApi.class
 |   |                       |   RmsNetLinxAdapter$1.class
 |   |                       |   RmsNetLinxAdapter$NetLinxEvent.class
@@ -2436,7 +2437,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |                       |   |   BinaryDataStructure.class
 |   |                       |   |   NetLinxDataType.class
 |   |                       |   |   
-|   |                       |   \---exception
+|   |                       |   +---exception
 |   |                       |           BinaryDataEncodingBoundsException.class
 |   |                       |           BinaryDataEncodingInvalidTypeException.class
 |   |                       |           BinaryDataEncodingLengthException.class
@@ -2455,7 +2456,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |                       |   |   ServerInfoEventListener.class
 |   |                       |   |   SystemManagementEventListener.class
 |   |                       |   |   
-|   |                       |   \---custom
+|   |                       |   +---custom
 |   |                       |           RmsAssetCustomEvent.class
 |   |                       |           RmsBookingCustomEvent.class
 |   |                       |           RmsClientCustomEvent.class
@@ -2475,7 +2476,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |                       |   |   ResultHandler.class
 |   |                       |   |   SuccessHandler.class
 |   |                       |   |   
-|   |                       |   \---impl
+|   |                       |   +---impl
 |   |                       |           RmsCreateEventBookingHandler.class
 |   |                       |           RmsDailyBookingCountResultImpl.class
 |   |                       |           RmsEndEventBookingHandler.class
@@ -2522,14 +2523,14 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |                       |       RmsLocationStructure.class
 |   |                       |       RmsMonthlyBookingSummaryStructure.class
 |   |                       |       
-|   |                       \---util
+|   |                       +---util
 |   |                               HandlerUtil.class
 |   |                               NetLinxDateUtil.class
 |   |                               NetLinxDeviceEx.class
 |   |                               SendCommandParser.class
 |   |                               SendStringBuilder.class
 |   |                               
-|   \---META-INF
+|   +---META-INF
 |           .javadocdata
 |           components.xml
 |           MANIFEST.MF
@@ -2556,11 +2557,11 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |       VideoProjector.xml
 |   |       
 |   +---com
-|   |   \---amx
-|   |       \---rms
-|   |           \---client
-|   |               \---netlinx
-|   |                   \---platform
+|   |   +---amx
+|   |       +---rms
+|   |           +---client
+|   |               +---netlinx
+|   |                   +---platform
 |   |                       |   NLPlatformConstants.class
 |   |                       |   NlPlatformContainer.class
 |   |                       |   NlPlatformRmsClient.class
@@ -2574,7 +2575,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |                       |   |   |   NlpDuetAssetContainer.class
 |   |                       |   |   |   RmsDuetProperty.class
 |   |                       |   |   |   
-|   |                       |   |   \---parameter
+|   |                       |   |   +---parameter
 |   |                       |   |           DiscTransportRuntimeParameterListener.class
 |   |                       |   |           DisplayUsageParameterListener.class
 |   |                       |   |           DocCamLowerLampTimeParameterListener.class
@@ -2587,7 +2588,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |                       |   +---netlinx
 |   |                       |   |       NetLinxMasterSystemAsset.class
 |   |                       |   |       
-|   |                       |   \---template
+|   |                       |   +---template
 |   |                       |           AssetTemplate.class
 |   |                       |           AssetTemplateFileDeployer.class
 |   |                       |           ControlMethodArgumentsTemplate.class
@@ -2616,7 +2617,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |                       |   +---duet1
 |   |                       |   |       NlpDuet1Module.class
 |   |                       |   |       
-|   |                       |   \---duet2
+|   |                       |   +---duet2
 |   |                       |       |   NlpDuet2Module.class
 |   |                       |       |   
 |   |                       |       +---component
@@ -2632,7 +2633,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |                       |       |   +---device
 |   |                       |       |   |   |   NlpDuet2DeviceComponent.class
 |   |                       |       |   |   |   
-|   |                       |       |   |   \---assetparameter
+|   |                       |       |   |   +---assetparameter
 |   |                       |       |   |           DeviceDataInitializedParameter$1.class
 |   |                       |       |   |           DeviceDataInitializedParameter.class
 |   |                       |       |   |           DeviceModuleDebugStateParameter$1.class
@@ -2647,13 +2648,13 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |                       |       |   |   |       DisplayAspectRatioParameter$1.class
 |   |                       |       |   |   |       DisplayAspectRatioParameter.class
 |   |                       |       |   |   |       
-|   |                       |       |   |   \---controlmethod
+|   |                       |       |   |   +---controlmethod
 |   |                       |       |   |           DisplaySetAspectRatioControlMethod.class
 |   |                       |       |   |           
 |   |                       |       |   +---displayusage
 |   |                       |       |   |   |   NlpDisplayUsageComponent.class
 |   |                       |       |   |   |   
-|   |                       |       |   |   \---assetparameter
+|   |                       |       |   |   +---assetparameter
 |   |                       |       |   |           DisplayUsageParameter$1.class
 |   |                       |       |   |           DisplayUsageParameter$2.class
 |   |                       |       |   |           DisplayUsageParameter.class
@@ -2667,7 +2668,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |                       |       |   |   |       PowerStatusParameter$1.class
 |   |                       |       |   |   |       PowerStatusParameter.class
 |   |                       |       |   |   |       
-|   |                       |       |   |   \---controlmethod
+|   |                       |       |   |   +---controlmethod
 |   |                       |       |   |           PowerSetPowerControlMethod.class
 |   |                       |       |   |           
 |   |                       |       |   +---sourceselect
@@ -2677,7 +2678,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |                       |       |   |   |       SourceSelectInputSourceParameter$1.class
 |   |                       |       |   |   |       SourceSelectInputSourceParameter.class
 |   |                       |       |   |   |       
-|   |                       |       |   |   \---controlmethod
+|   |                       |       |   |   +---controlmethod
 |   |                       |       |   |           SourceSelectSelectInputSourceControlMethod.class
 |   |                       |       |   |           
 |   |                       |       |   +---tuner
@@ -2689,12 +2690,12 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |                       |       |   |   |       TunerStationParameter$1.class
 |   |                       |       |   |   |       TunerStationParameter.class
 |   |                       |       |   |   |       
-|   |                       |       |   |   \---controlmethod
+|   |                       |       |   |   +---controlmethod
 |   |                       |       |   |           TunerSelectStationPresetControlMethod.class
 |   |                       |       |   |           TunerSelectTunerBandControlMethod.class
 |   |                       |       |   |           TunerSetStationControlMethod.class
 |   |                       |       |   |           
-|   |                       |       |   \---volume
+|   |                       |       |   +---volume
 |   |                       |       |       |   NlpDuet2VolumeComponent.class
 |   |                       |       |       |   
 |   |                       |       |       +---assetparameter
@@ -2703,11 +2704,11 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |                       |       |       |       VolumeMuteParameter$1.class
 |   |                       |       |       |       VolumeMuteParameter.class
 |   |                       |       |       |       
-|   |                       |       |       \---controlmethod
+|   |                       |       |       +---controlmethod
 |   |                       |       |               VolumeSetVolumeLevelControlMethod.class
 |   |                       |       |               VolumeSetVolumeMuteControlMethod.class
 |   |                       |       |               
-|   |                       |       \---device
+|   |                       |       +---device
 |   |                       |               NlpDuet2Device.class
 |   |                       |               NlpDuet2MonitorDevice.class
 |   |                       |               NlpDuet2TelevisionDevice.class
@@ -2738,7 +2739,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |                       |   |       NlpTimeSyncManager.class
 |   |                       |   |       NlpWebConfigurationManager.class
 |   |                       |   |       
-|   |                       |   \---listeners
+|   |                       |   +---listeners
 |   |                       |           ConnectionEventListener.class
 |   |                       |           NlpAssetManagementEventListener.class
 |   |                       |           NlpDuetModuleManagerEventListenerImpl.class
@@ -2750,7 +2751,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |                       |   |   NlPlatformNetLinxDevice.class
 |   |                       |   |   RmsAssetAmxDevice.class
 |   |                       |   |   
-|   |                       |   \---duet
+|   |                       |   +---duet
 |   |                       |           NlpDuetAsset.class
 |   |                       |           
 |   |                       +---osgi
@@ -2770,17 +2771,17 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |                       |   |   NlpConfigurationService.class
 |   |                       |   |   NlpSystemAssetManagementService.class
 |   |                       |   |   
-|   |                       |   \---impl
+|   |                       |   +---impl
 |   |                       |           NlpAssetManagementServiceImpl.class
 |   |                       |           NlpConfigurationServiceImpl.class
 |   |                       |           NlpSystemAssetManagementServiceImpl.class
 |   |                       |           
-|   |                       \---util
+|   |                       +---util
 |   |                               DuetUtil.class
 |   |                               NetLinxUtil.class
 |   |                               NlpServiceTracker.class
 |   |                               
-|   \---META-INF
+|   +---META-INF
 |           MANIFEST.MF
 |           
 +---rpm_nx
@@ -2789,9 +2790,9 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |   
 |   +---devicesdkrt
 |   |   +---com
-|   |   |   \---amx
-|   |   |       \---duet
-|   |   |           \---devicesdk
+|   |   |   +---amx
+|   |   |       +---duet
+|   |   |           +---devicesdk
 |   |   |               |   Amplifier.class
 |   |   |               |   AudioConferencer.class
 |   |   |               |   AudioMixer.class
@@ -3438,7 +3439,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |   |               |       ZoomRamp.class
 |   |   |               |       ZOrderAdjust.class
 |   |   |               |       
-|   |   |               \---utilities
+|   |   |               +---utilities
 |   |   |                       ILevelTimeline.class
 |   |   |                       ILevelTimelineListener.class
 |   |   |                       IPriorityQueue.class
@@ -3450,7 +3451,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |   |                       Queue.class
 |   |   |                       ZOrder.class
 |   |   |                       
-|   |   \---META-INF
+|   |   +---META-INF
 |   |           MANIFEST.MF
 |   |           
 |   +---RPMUtility_dr1_0_0
@@ -3461,9 +3462,9 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |   |       org.eclipse.jdt.core.prefs
 |   |   |       
 |   |   +---com
-|   |   |   \---amx
+|   |   |   +---amx
 |   |   |       +---common
-|   |   |       |   \---util
+|   |   |       |   +---util
 |   |   |       |       +---beans
 |   |   |       |       |       PropertyChangeEvent.class
 |   |   |       |       |       PropertyChangeListener.class
@@ -3659,11 +3660,11 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |   |       |       |       URLConnect_Listener.class
 |   |   |       |       |       URLEncoding.class
 |   |   |       |       |       
-|   |   |       |       \---weatherconversion
+|   |   |       |       +---weatherconversion
 |   |   |       |               WeatherConversions.class
 |   |   |       |               
-|   |   |       \---rpmutility
-|   |   |           \---dr1_0_0
+|   |   |       +---rpmutility
+|   |   |           +---dr1_0_0
 |   |   |               |   Activator.class
 |   |   |               |   AMXRPMUtility.class
 |   |   |               |   BaseFunctions.class
@@ -3673,23 +3674,23 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |   |               |       PollingManager$SendDataRequest.class
 |   |   |               |       PollingManager.class
 |   |   |               |       
-|   |   |               \---xml
+|   |   |               +---xml
 |   |   |                       Keyvaluepairs.class
 |   |   |                       Kvp.class
 |   |   |                       Rpmstats.class
 |   |   |                       
-|   |   \---META-INF
+|   |   +---META-INF
 |   |           components.xml
 |   |           manifest.duetmf
 |   |           MANIFEST.MF
 |   |           module.xml
 |   |           
-|   \---snapirouter
+|   +---snapirouter
 |       +---com
-|       |   \---amx
-|       |       \---duet
-|       |           \---routers
-|       |               \---snapi
+|       |   +---amx
+|       |       +---duet
+|       |           +---routers
+|       |               +---snapi
 |       |                   |   Activator.class
 |       |                   |   ComponentBase.class
 |       |                   |   IComponentBase.class
@@ -3797,7 +3798,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |       |                   |       WeatherComponent.class
 |       |                   |       WindowComponent.class
 |       |                   |       
-|       |                   \---constants
+|       |                   +---constants
 |       |                           AmplifierSNAPIConstants.class
 |       |                           AudioConferencerSNAPIConstants.class
 |       |                           AudioMixerSNAPIConstants.class
@@ -3861,7 +3862,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |       |                           WeatherSNAPIConstants.class
 |       |                           WindowSNAPIConstants.class
 |       |                           
-|       \---META-INF
+|       +---META-INF
 |               MANIFEST.MF
 |               
 +---Samsung_DB55D_Comm_dr1_0_0
@@ -3869,12 +3870,12 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |   Samsung_DB55D_Comm_dr1_0_0.tko
 |   |   
 |   +---com
-|   |   \---amx
-|   |       \---duet
+|   |   +---amx
+|   |       +---duet
 |   |           +---impl
-|   |           |   \---Samsung
-|   |           |       \---DB55D
-|   |           |           \---dr1_0_0
+|   |           |   +---Samsung
+|   |           |       +---DB55D
+|   |           |           +---dr1_0_0
 |   |           |                   Activator.class
 |   |           |                   AspectRatioTSE.class
 |   |           |                   Command.class
@@ -3893,11 +3894,11 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |           |                   SuperTV$CheckPoint.class
 |   |           |                   SuperTV.class
 |   |           |                   
-|   |           \---util
+|   |           +---util
 |   |               +---comp
-|   |               |   \---Samsung
-|   |               |       \---DB55D
-|   |               |           \---dr1_0_0
+|   |               |   +---Samsung
+|   |               |       +---DB55D
+|   |               |           +---dr1_0_0
 |   |               |                   DisplayComponent$AspectRatioProperty.class
 |   |               |                   DisplayComponent.class
 |   |               |                   InputProperty.class
@@ -3907,9 +3908,9 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |               |                   TunerStationComponent.class
 |   |               |                   
 |   |               +---regexp
-|   |               |   \---Samsung
-|   |               |       \---DB55D
-|   |               |           \---dr1_0_0
+|   |               |   +---Samsung
+|   |               |       +---DB55D
+|   |               |           +---dr1_0_0
 |   |               |                   CharacterIterator.class
 |   |               |                   RE.class
 |   |               |                   RECompiler$RERange.class
@@ -3919,8 +3920,8 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |               |                   StringCharacterIterator.class
 |   |               |                   
 |   |               +---Samsung
-|   |               |   \---DB55D
-|   |               |       \---dr1_0_0
+|   |               |   +---DB55D
+|   |               |       +---dr1_0_0
 |   |               |               Bits.class
 |   |               |               ByteArrayWrapper.class
 |   |               |               ByteBuffer.class
@@ -3941,26 +3942,26 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
 |   |               |               SocketConnectionListener.class
 |   |               |               ValidateUtil.class
 |   |               |               
-|   |               \---tools
-|   |                   \---Samsung
-|   |                       \---DB55D
-|   |                           \---dr1_0_0
+|   |               +---tools
+|   |                   +---Samsung
+|   |                       +---DB55D
+|   |                           +---dr1_0_0
 |   |                                   ArrayUtil.class
 |   |                                   Math.class
 |   |                                   StringUtil.class
 |   |                                   
-|   \---META-INF
+|   +---META-INF
 |           components.xml
 |           manifest.duetmf
 |           MANIFEST.MF
 |           module.xml
 |           
-\---snapirouter2
++---snapirouter2
     +---com
-    |   \---amx
-    |       \---duet
-    |           \---routers
-    |               \---snapi2
+    |   +---amx
+    |       +---duet
+    |           +---routers
+    |               +---snapi2
     |                   |   Activator.class
     |                   |   ButtonHandler.class
     |                   |   ChannelHandler.class
@@ -3993,7 +3994,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
     |                   |   UserDefinedStringConstantParameterNormalizer.class
     |                   |   
     |                   +---controllers
-    |                   |   \---duet2
+    |                   |   +---duet2
     |                   |           AudioConferencerController$ChannelProxy$1.class
     |                   |           AudioConferencerController$ChannelProxy$2.class
     |                   |           AudioConferencerController$ChannelProxy$3.class
@@ -4656,7 +4657,7 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
     |                   |           WeatherController.class
     |                   |           
     |                   +---eventhandlers
-    |                   |   \---duet2
+    |                   |   +---duet2
     |                   |           BooleanHandlerFactory$1.class
     |                   |           BooleanHandlerFactory.class
     |                   |           ChannelHandlerFactory.class
@@ -4677,8 +4678,8 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
     |                   |       SNAPI2Standards$1.class
     |                   |       SNAPI2Standards.class
     |                   |       
-    |                   \---xsd
-    |                       \---snapi2
+    |                   +---xsd
+    |                       +---snapi2
     |                           |   AmxCDATASectionUtility.class
     |                           |   Channel.class
     |                           |   Channels.class
@@ -4699,12 +4700,13 @@ Level 1 contents of an RPMX file (in this example: dummy.rpmx).
     |                           |   Set.class
     |                           |   SNAPI2Standards.class
     |                           |   
-    |                           \---types
+    |                           +---types
     |                                   RangeDataTypeType.class
     |                                   
     +---META-INF
     |       MANIFEST.MF
     |       
-    \---res
+    +---res
             SNAPI2Standards.xml
             SNAPI2Standards.xsd
+</pre>
