@@ -40,6 +40,6 @@ Untampered contents of an RPMX file (in this example: dummy.rpmx).
     swtInputs.yaml
     TREE.TXT
     volume.yaml
-    
+</pre>
 No subfolders exist
 
