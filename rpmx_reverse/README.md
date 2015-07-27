@@ -8,8 +8,8 @@ Living list of reversed / unpacked contents: [here](https://github.com/joshaxey/
 ### Formats
 <pre>
 RPMX format: DynaZip
-RPM format: DynaZIP
-TKN format: DynaZIP (Protected and Unprotected)
+RPM format: DynaZip
+TKN format: DynaZip (Protected and Unprotected)
 Code format: Java, JavaScript
 </pre>
 <p>
@@ -18,7 +18,7 @@ Code format: Java, JavaScript
 Project Name
 Client Name
 Programmer Name
-Programmer Phone NUmber
+Programmer Phone Number
 Business Name
 Business Phone Number
 List of Devices
