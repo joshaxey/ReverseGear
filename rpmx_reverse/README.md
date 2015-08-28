@@ -32,7 +32,8 @@ Server Info (RMS)
 ### Higher Level Info / Code Exposed
 <pre>
 PowerPC 64
-VxWorks RTOS
+VxWorks RTOS on some devices
+Linux Embedded OS on some devices
 Java VM
 Duet Framework Info
 External Device Drivers
